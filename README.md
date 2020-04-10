@@ -1,2 +1,2 @@
-# grupo_3_pedifacil
+# Grupo 3: Pedí Fácil
 Proyecto Integrador Full Stack Digital House
