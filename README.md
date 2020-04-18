@@ -42,7 +42,7 @@
   <img width="272" height="200" src="assets/img_supplierProcess_README.png">
 </p>
 
-<img align="right" width="272" height="200" src="assets/img_chefOrder_README.png">
+<img align="left" width="272" height="200" src="assets/img_supplierProcess_README.png">
 
     - por otro lado, estan los proveedores que reciben ordenes de compra 
       por multiples vias.
