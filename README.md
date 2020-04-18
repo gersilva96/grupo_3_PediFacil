@@ -55,18 +55,25 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
 * Robinhood
 
 ## Equipo
-<p>
+
 > <img align="left" src="assets/team1_README.png">
   - Eduardo Andreu
   - Lic. Administracion de Empresas
-  </br>
-</p>
-<p>
+
+
 > <img align="left" src="assets/team2_README.png">
   - Eduardo Andreu
   - Lic. Administracion de Empresas
-  </br>
-</p>
+
+
+> <img align="left" src="assets/team3_README.png">
+  - Eduardo Andreu
+  - Lic. Administracion de Empresas
+
+
+> <img align="left" src="assets/team4_README.png">
+  - Eduardo Andreu
+  - Lic. Administracion de Empresas
 
 ## Contacto
 
