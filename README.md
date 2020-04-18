@@ -63,18 +63,31 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
   - Lic. Administracion de Empresas
   <br>
 </p>
-> <img align="left" src="assets/team2_README.png">
+<p>
+<img align="left" src="assets/team2_README.png">
+  <br>
   - Eduardo Andreu
+  <br>
   - Lic. Administracion de Empresas
-<p><br></p>
-> <img align="left" src="assets/team3_README.png">
+  <br>
+</p>
+<p>
+<img align="left" src="assets/team3_README.png">
+  <br>
   - Eduardo Andreu
+  <br>
   - Lic. Administracion de Empresas
-<p><br></p>
-> <img align="left" src="assets/team4_README.png">
+  <br>
+</p>
+<p>
+<img align="left" src="assets/team4_README.png">
+  <br>
   - Eduardo Andreu
+  <br>
   - Lic. Administracion de Empresas
-<p><br></p>
+  <br>
+</p>
+
 
 ## Contacto
 
