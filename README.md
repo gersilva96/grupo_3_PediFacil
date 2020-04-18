@@ -8,7 +8,7 @@
 
 ## Problema
 
-<h2 align="left">* Restaurantes</h2>
+<h3 align="left">* Restaurantes</h3>
 
 <img align="right" width="218" height="160" src="assets/img_chefOrder_README.png">
 
@@ -21,7 +21,7 @@
       promedio, una hora y cuarto a realizar los pedidos para el dia siguiente.
 
 </br>
-<h2 align="left">* Proveedores</h2>
+<h3 align="left">* Proveedores</h3>
 
 <img align="left" width="245" height="180" src="assets/img_supplierProcess_README.png">
 
@@ -33,7 +33,7 @@
     - este mecanismo requiere mucho tiempo y es muy propenso a errores, lo 
       cual genera mayores costos y menor rentabilidad.
 </br>
-<h3 align="center">Hay un problema de comunicacion!</h3>
+<h3 align="center"><em>Hay un problema de comunicacion!</em></h3>
 
 ## Solucion
 
