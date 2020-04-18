@@ -10,13 +10,11 @@
 
 #### Restaurantes
 
+<p align="center">
+  <img width="218" height="160" src="assets/img_chefOrder_README.png">
     > un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
     > cada proveedor tiene una via diferente para recibir sus ordenes de compra (email, telefono, whatsapp, etc).
     > todas los dias, al final del turno, el encargado de compras dedica ,en promedio, una hora y cuarto a realizar los pedidos para el dia siguiente.
-
-
-<p align="center">
-  <img width="218" height="160" src="assets/img_chefOrder_README.png">
 </p>
 
 
