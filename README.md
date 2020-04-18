@@ -8,8 +8,8 @@
 
 ## Problema
 
-#### Restaurantes
-
+#### * Restaurantes
+</br>
 <img align="right" width="218" height="160" src="assets/img_chefOrder_README.png">
 
     - un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
@@ -21,8 +21,8 @@
       promedio, una hora y cuarto a realizar los pedidos para el dia siguiente.
 
 
-#### Proveedores
-
+#### * Proveedores
+</br>
 <img align="left" width="245" height="180" src="assets/img_supplierProcess_README.png">
 
     - por otro lado, estan los proveedores que reciben ordenes de compra 
@@ -34,9 +34,7 @@
       cual genera mayores costos y menor rentabilidad.
 </br>
 </br>
-
-
-<p align="center"><h3>Hay un problema de comunicacion!</h3></p>
+<h3 align="center">Hay un problema de comunicacion!</h3>
 
 ## Solucion
 
