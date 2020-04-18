@@ -8,7 +8,7 @@
 
 ## Problema
 
-#### * Restaurantes
+<h2 align="left">* Restaurantes</h2>
 
 <img align="right" width="218" height="160" src="assets/img_chefOrder_README.png">
 
@@ -21,7 +21,7 @@
       promedio, una hora y cuarto a realizar los pedidos para el dia siguiente.
 
 </br>
-#### * Proveedores
+<h2 align="left">* Proveedores</h2>
 
 <img align="left" width="245" height="180" src="assets/img_supplierProcess_README.png">
 
