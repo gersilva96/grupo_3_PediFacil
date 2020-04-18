@@ -22,7 +22,10 @@
     > deben procesarlas a tiempo para cumplir con la entrega
     > este mecanismo requiere mucho tiempo y es muy propenso a errores, lo cual genera mayores costos y menor rentabilidad.
 
-<div style="text-align:center"><img src="assets/img_supplierProcess_README.png" /></div>
+<p align="center">
+  <img width="158" height="120" src="assets/img_supplierProcess_README.png">
+</p>
+
 
 ###### Hay un problema de comunicacion!
 
