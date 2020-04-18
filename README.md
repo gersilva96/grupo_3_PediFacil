@@ -35,26 +35,26 @@
 </br>
 <h3 align="center"><em>Hay un problema de comunicacion!</em></h3>
 
-## Solucion
+<h2>Solucion</h2>
 
-##### Simplemente traemos orden al caos!!!
+<h4>Simplemente traemos orden al caos!!!</h4>
 
 Como lo hacemos?
 
 Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de compras por una misma via en una fraccion del tiempo.
 
 
-## Funcionalidades
+<h2>Funcionalidades</h2>
 
 
-## Inspiracion
+<h2>Inspiracion</h2>
 > <a href="https://www.bluecart.com" target="_blank">Bluecart</a> 
 * <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a> 
 * <a href="https://www.marketman.com" target="_blank">Marketman</a> 
 * <a href="https://www.getorderly.com" target="_blank">Orderly</a> 
 * <a href="https://www.robinhood.com" target="_blank">Robinhood</a> 
 
-## Equipo
+<h2>Equipo</h2>
 
   <img align="left" src="assets/team1_README.png">
   - Eduardo Andreu<br>
@@ -78,5 +78,5 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
   <h6></h6>
   
 
-## Contacto
+<h2>Contacto</h2>
 
