@@ -48,7 +48,7 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
 
 
 ## Inspiracion
-> Bluecart - <a href="https://www.bluecart.com">link text</a>
+> <a href="https://www.bluecart.com" target="_blank">Bluecart</a> 
 * Simpleorder - version 2.0
 * Marketman - version 3.0
 * Orderly
