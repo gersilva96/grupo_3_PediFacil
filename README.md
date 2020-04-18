@@ -10,7 +10,7 @@
 
 <h3 align="left">* Restaurantes</h3>
 
-<img align="right" width="218" height="160" src="assets/img_chefOrder_README.png"><br>
+<img align="right" width="218" height="160" src="assets/img_chefOrder_README.png">
 
     - un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
     
