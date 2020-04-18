@@ -28,7 +28,7 @@
 
 
 <p align="center">
-  <img width="210" height="160" src="assets/img_supplierProcess_README.png">
+  <img width="245" height="180" src="assets/img_supplierProcess_README.png">
 </p>
 
 
