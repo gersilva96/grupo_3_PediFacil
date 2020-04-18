@@ -23,7 +23,7 @@
 
 #### Proveedores
 
-<img align="left" width="272" height="200" src="assets/img_supplierProcess_README.png">
+<img align="left" width="245" height="180" src="assets/img_supplierProcess_README.png">
 
     - por otro lado, estan los proveedores que reciben ordenes de compra 
       por multiples vias.
@@ -32,10 +32,11 @@
       
     - este mecanismo requiere mucho tiempo y es muy propenso a errores, lo 
       cual genera mayores costos y menor rentabilidad.
+</br>
+</br>
 
 
-
-<p align="center">###### Hay un problema de comunicacion!</p>
+<p align="center"><h3>Hay un problema de comunicacion!</h3></p>
 
 ## Solucion
 
