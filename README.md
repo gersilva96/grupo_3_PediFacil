@@ -3,10 +3,10 @@
   <img src="assets/logoPediFacil_README.png">
 </p>
 
-# Bienvenidos
+<h1>Bienvenidos</h1>
 > Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronomica.
 
-## Problema
+<h2>Problema</h2>
 
 <h3 align="left">* Restaurantes</h3>
 
@@ -49,10 +49,10 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
 
 ## Inspiracion
 > <a href="https://www.bluecart.com" target="_blank">Bluecart</a> 
-* Simpleorder - version 2.0
-* Marketman - version 3.0
-* Orderly
-* Robinhood
+* <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a> 
+* <a href="https://www.marketman.com" target="_blank">Marketman</a> 
+* <a href="https://www.getorderly.com" target="_blank">Orderly</a> 
+* <a href="https://www.robinhood.com" target="_blank">Robinhood</a> 
 
 ## Equipo
 
