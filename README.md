@@ -48,11 +48,11 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
 
 
 <h2>Inspiracion</h2>
-> <a href="https://www.bluecart.com" target="_blank">Bluecart</a> 
-* <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a> 
-* <a href="https://www.marketman.com" target="_blank">Marketman</a> 
-* <a href="https://www.getorderly.com" target="_blank">Orderly</a> 
-* <a href="https://www.robinhood.com" target="_blank">Robinhood</a> 
+* <a href="https://www.bluecart.com" target="_blank">Bluecart</a><br>
+* <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a><br>
+* <a href="https://www.marketman.com" target="_blank">Marketman</a><br>
+* <a href="https://www.getorderly.com" target="_blank">Orderly</a><br>
+* <a href="https://www.robinhood.com" target="_blank">Robinhood</a><br>
 
 <h2>Equipo</h2>
 
