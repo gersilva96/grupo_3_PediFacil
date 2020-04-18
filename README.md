@@ -56,7 +56,8 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
 
 ## Equipo
 <p>
-<img align="left" src="assets/team1_README.png">
+  <br>
+  <img align="left" src="assets/team1_README.png">
   <br>
   - Eduardo Andreu
   <br>
