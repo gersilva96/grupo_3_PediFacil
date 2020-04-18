@@ -1,5 +1,7 @@
-<div style="text-align:center"><img src="assets/logoPediFacil_README.png" /></div>
 
+<p align="center">
+  <img src="assets/logoPediFacil_README.png">
+</p>
 
 # Bienvenidos
 > Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronomica.
