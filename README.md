@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img width="400%" src="design/logo/logoColor.svg">
+  <img width="40%" src="design/logo/logoColor.svg">
 </p>
 
 <h1>Bienvenidos</h1>
