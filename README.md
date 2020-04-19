@@ -52,7 +52,7 @@ PedíFácil es una plataforma de gestión de pedidos creada para optimizar, mode
     - Simplemente traemos orden al caos.
 
 
-<h2>Como Funciona</h2>
+<h2>Funcionalidades</h2>
 
 <p align="center">
   <img width="600" height="250" src="design/logos/logos_README/img_process_README.png">
@@ -89,6 +89,3 @@ PedíFácil es una plataforma de gestión de pedidos creada para optimizar, mode
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
   <h6></h6>
-  
-
-<h2>Contacto</h2>
