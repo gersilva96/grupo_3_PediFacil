@@ -25,8 +25,10 @@
 
 <img align="left" width="245" height="180" src="assets/img_supplierProcess_README.png">
 
+   <div style="word-wrap: break-word; width: 800px>
     - por otro lado, estan los proveedores que reciben ordenes de compra 
       por multiples vias.
+  </div>
     
     - deben procesarlas a tiempo para cumplir con la entrega.
       
