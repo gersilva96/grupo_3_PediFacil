@@ -34,7 +34,7 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
       cual genera mayores costos y menor rentabilidad.
 </br>
 
-<h4 align="center" style="display: inline" style="clear:none">El problema es basicamente un problema de</h4> <h3 align="center" style="display: inline" style="clear:none"><em>COMUNICACION!!!</em></h2>
+<h4 align="center" style="display: inline" style="clear:none">El problema es basicamente de <em>COMUNICACION!!!</em></h4>
 
 <h2>Solucion</h2>
 
