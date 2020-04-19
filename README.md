@@ -70,7 +70,7 @@ PedíFácil es una plataforma de gestión de pedidos creada para optimizar, mode
 
       - por sus multiples funcionalidades.
 
-* <a href="https://www.mercadolibre.com" target="_blank">Orderly</a><br>
+* <a href="https://www.mercadolibre.com" target="_blank">MercadoLibre</a><br>
 
       - por el diseño y tipografia de la web.
   
@@ -98,5 +98,5 @@ PedíFácil es una plataforma de gestión de pedidos creada para optimizar, mode
   <img align="left" width="60" height="60" src="design/logos/logos_README/team6_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
-  - alguna otra sanata<br>
+  - el gastronomico del equipo<br>
   <h6></h6>
