@@ -81,22 +81,22 @@ PedíFácil es una plataforma de gestión de pedidos creada para optimizar, mode
 <h2>Equipo</h2>
 
   <img align="left" width="60" height="60" src="design/logos/logos_README/team7_README.png">
-  <h6>Germán Silva</h6>
-  - Futuro Full Stack Web Developer<br>
-  - Estudiante de Lic. en Ciencias de la Computación<br>
+  - Germán Silva<br>
+    - <en>Futuro Full Stack Web Developer</en><br>
+    - Estudiante de Lic. en Ciencias de la Computación<br>
   <h6></h6>
   <img align="left" width="60" height="60" src="design/logos/logos_README/team8_README.png">
   - Rodrigo Espinosa<br>
-  - sanata<br>
-  - alguna otra sanata<br>
+    - sanata<br>
+    - alguna otra sanata<br>
   <h6></h6>
   <img align="left" width="60" height="60" src="design/logos/logos_README/team5_README.png">
   - Guillermo Gonzales<br>
-  - Futuro Web Developer<br>
-  - Linux enthusiast<br>
+    - Futuro Web Developer<br>
+    - Linux enthusiast<br>
   <h6></h6>
   <img align="left" width="60" height="60" src="design/logos/logos_README/team6_README.png">
   - Eduardo Andreu<br>
-  - Lic. Administracion de Empresas<br>
-  - 10 años de experiencia en la industria gastronomica<br>
+    - Lic. Administracion de Empresas<br>
+    - 10 años de experiencia en la industria gastronomica<br>
   <h6></h6>
