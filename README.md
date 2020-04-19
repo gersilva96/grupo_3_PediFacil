@@ -97,6 +97,6 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
   <h6></h6>
   <img align="left" width="60" height="60" src="design/logos/logos_README/team6_README.png">
   > Eduardo Andreu<br>
-      - Lic. Administración de Empresas<br>
+      - Lic. en Administración de Empresas<br>
       - 10 años de experiencia en la industria gastronómica<br>
   <h6></h6>
