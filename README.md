@@ -81,7 +81,7 @@ PedíFácil es una plataforma de gestión de pedidos creada para optimizar, mode
 <h2>Equipo</h2>
 
   <img align="left" width="60" height="60" src="design/logos/logos_README/team7_README.png">
-  - Germán Silva<br>
+  - <h6>Germán Silva</h6><br>
   - Futuro Full Stack Web Developer<br>
   - Estudiante de Lic. en Ciencias de la Computación<br>
   <h6></h6>
