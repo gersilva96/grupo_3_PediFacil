@@ -4,7 +4,7 @@
 </p>
 
 <h1>Bienvenidos</h1>
-> Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronomica.
+> Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronomica.<br>
 
 <h2>Problema</h2>
 
@@ -27,7 +27,7 @@
 
     - por otro lado, estan los proveedores que reciben ordenes de compra 
       por multiples vias.
-    
+      
     - deben procesarlas a tiempo para cumplir con la entrega.
       
     - este mecanismo requiere mucho tiempo y es muy propenso a errores, lo 
@@ -39,9 +39,9 @@
 
 <h4>Simplemente traemos orden al caos!!!</h4>
 
-Como lo hacemos?
+Como lo hacemos?<br>
 
-Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de compras por una misma via en una fraccion del tiempo.
+Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de compras por una misma via en una fraccion del tiempo.<br>
 
 
 <h2>Funcionalidades</h2>
@@ -79,4 +79,3 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
   
 
 <h2>Contacto</h2>
-
