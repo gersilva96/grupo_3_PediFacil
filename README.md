@@ -98,5 +98,5 @@ PedíFácil es una plataforma de gestión de pedidos creada para optimizar, mode
   <img align="left" width="60" height="60" src="design/logos/logos_README/team6_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
-  - el gastronomico del equipo<br>
+  - 10 años de xperiencia en la industria gastronomica<br>
   <h6></h6>
