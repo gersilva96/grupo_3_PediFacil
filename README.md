@@ -4,7 +4,7 @@
 </p>
 
 <h1>Bienvenidos</h1>
-Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronomica.<br>
+PedíFácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronomica.<br>
 
 <h2>Problema</h2>
 
@@ -69,22 +69,22 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
 
 <h2>Equipo</h2>
 
-  <img align="left" src="design/logos/logos_README/team1_README.png">
-  - Eduardo Andreu<br>
-  - Lic. Administracion de Empresas<br>
+  <img align="left" width="60" height="60" src="design/logos/logos_README/team7_README.png">
+  - Germán Silva<br>
+  - santa<br>
   - alguna otra sanata<br>
   <h6></h6>
-  <img align="left" src="design/logos/logos_README/team2_README.png">
-  - Eduardo Andreu<br>
-  - Lic. Administracion de Empresas<br>
+  <img align="left" width="60" height="60" src="design/logos/logos_README/team8_README.png">
+  - Rodrigo Espinosa<br>
+  - sanata<br>
   - alguna otra sanata<br>
   <h6></h6>
-  <img align="left" width="50" height="50" src="design/logos/logos_README/team5_README.png">
-  - Eduardo Andreu<br>
-  - Lic. Administracion de Empresas<br>
+  <img align="left" width="60" height="60" src="design/logos/logos_README/team5_README.png">
+  - Guillermo Gonzales<br>
+  - santa<br>
   - alguna otra sanata<br>
   <h6></h6>
-  <img align="left" width="50" height="50" src="design/logos/logos_README/team6_README.png">
+  <img align="left" width="60" height="60" src="design/logos/logos_README/team6_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
