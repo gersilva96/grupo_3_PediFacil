@@ -19,6 +19,9 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
       
     - todas los dias, al final del turno, el encargado de compras dedica, en 
       promedio, una hora y cuarto a realizar los pedidos para el dia siguiente.
+      
+    - al otor dia, hay que volver a contactar al proveedor para asegurarse que
+      recibio correctamente la orden de compra.
 
 </br>
 <h3 align="left">* Proveedores</h3>
@@ -37,6 +40,12 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
 <h4 align="center" style="display: inline" style="clear:none">El problema es basicamente de <em>COMUNICACION!!!</em></h4>
 
 <h2>Solucion</h2>
+
+    - por otro lado, estan los proveedores que reciben ordenes de compra por multiples vias.
+      
+    - deben procesarlas a tiempo para cumplir con la entrega.
+      
+    - este mecanismo requiere mucho tiempo y es muy propenso a errores, lo cual genera mayores costos y menor rentabilidad.
 
 <h4>Simplemente traemos orden al caos!!!</h4>
 
