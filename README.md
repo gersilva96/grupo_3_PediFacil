@@ -4,7 +4,7 @@
 </p>
 
 <h1>Bienvenidos</h1>
-> Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronomica.<br>
+Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronomica.<br>
 
 <h2>Problema</h2>
 
@@ -33,7 +33,7 @@
     - este mecanismo requiere mucho tiempo y es muy propenso a errores, lo 
       cual genera mayores costos y menor rentabilidad.
 </br>
-<h3 align="center"><em>Hay un problema de comunicacion!</em></h3>
+<h3 align="center"></h3>El problema es basicamente un problema de <em>COMUNICACION</em></h3>
 
 <h2>Solucion</h2>
 
