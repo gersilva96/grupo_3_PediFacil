@@ -79,12 +79,12 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
   <h6></h6>
-  <img align="left" src="design/logos/logos_README/team3_README.png">
+  <img align="left" src="design/logos/logos_README/team5_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
   <h6></h6>
-  <img align="left" src="design/logos/logos_README/team4_README.png">
+  <img align="left" src="design/logos/logos_README/team6_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
