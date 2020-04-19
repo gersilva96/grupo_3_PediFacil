@@ -20,7 +20,7 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
     - todas los dias, al final del turno, el encargado de compras dedica, en 
       promedio, una hora y cuarto a realizar los pedidos para el dia siguiente.
       
-    - al otor dia, hay que volver a contactar al proveedor para asegurarse que
+    - al dia siguiente, se vuelve a contactar al proveedor para asegurarse que
       recibio correctamente la orden de compra.
 
 </br>
