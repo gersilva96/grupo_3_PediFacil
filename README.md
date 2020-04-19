@@ -41,22 +41,13 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
 
 <h2>Solucion</h2>
 
-    - por otro lado, estan los proveedores que reciben ordenes de compra por multiples vias.
+Una aplicacion que emite todas las ordenes de compras por una misma via en una fraccion del tiempo.
       
-    - deben procesarlas a tiempo para cumplir con la entrega.
-      
-    - este mecanismo requiere mucho tiempo y es muy propenso a errores, lo cual genera mayores costos y menor rentabilidad.
-
 <p align="center">
   <img width="600" height="250" src="design/logos/logos_README/img_process_README.png">
 </p>
 
 <h4 align="center" style="display: inline" style="clear:none">Simplemente traemos orden al caos!!!</h4>
-
-Como lo hacemos?<br>
-
-Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de compras por una misma via en una fraccion del tiempo.<br>
-
 
 <h2>Funcionalidades</h2>
 
