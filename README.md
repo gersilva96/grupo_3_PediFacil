@@ -49,6 +49,8 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
 
 <h4>Simplemente traemos orden al caos!!!</h4>
 
+<img align="right" src="design/logos/logos_README/img_process_README.png">
+
 Como lo hacemos?<br>
 
 Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de compras por una misma via en una fraccion del tiempo.<br>
