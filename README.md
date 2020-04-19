@@ -9,6 +9,7 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
 <h2>Problema</h2>
 
 <h3 align="left">* <u>Restaurantes</u></h3>
+<p>This is a <u>parragraph</u>.</p>
 
 <img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
 
