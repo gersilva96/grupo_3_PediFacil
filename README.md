@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="design/logos/logos_README/logoPediFacil_README.png">
+  <img src="design/logo/logoColor.svg">
 </p>
 
 <h1>Bienvenidos</h1>
