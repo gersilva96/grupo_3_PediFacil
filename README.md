@@ -104,4 +104,4 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
 <h2>Diseño</h2>
 
 <h3>Paleta de colores</h3>
-<img width="100%" src="design/colorPalette/colorPalette.svg">
+<img width="100%" src="design/colorPalette/ColorPalette.svg">
