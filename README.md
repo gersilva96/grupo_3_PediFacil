@@ -57,8 +57,11 @@ PedíFácil es una plataforma de gestión de pedidos creada para optimizar, mode
 
 
 <h2>Inspiracion</h2>
+
 * <a href="https://www.bluecart.com" target="_blank">Bluecart</a><br>
-    - Una aplicacion que emite todas las ordenes de compras por una misma via en una fraccion del tiempo.
+
+      - Una aplicacion que emite todas las ordenes de compras por una misma via en una fraccion del tiempo.
+
 * <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a><br>
 * <a href="https://www.marketman.com" target="_blank">Marketman</a><br>
 * <a href="https://www.getorderly.com" target="_blank">Orderly</a><br>
