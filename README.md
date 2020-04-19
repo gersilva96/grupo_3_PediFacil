@@ -10,7 +10,7 @@
 
 <h3 align="left">* Restaurantes</h3>
 
-<img align="right" width="218" height="160" src="assets/img_chefOrder_README.png">
+<img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
 
     - un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
     
@@ -23,7 +23,7 @@
 </br>
 <h3 align="left">* Proveedores</h3>
 
-<img align="left" width="245" height="180" src="assets/img_supplierProcess_README.png">
+<img align="left" width="245" height="180" src="design/logos/logos_README/img_supplierProcess_README.png">
 
     - por otro lado, estan los proveedores que reciben ordenes de compra 
       por multiples vias.
@@ -56,22 +56,22 @@ Mediante una aplicacion que permite al restaurante realizar todos sus ordenes de
 
 <h2>Equipo</h2>
 
-  <img align="left" src="assets/team1_README.png">
+  <img align="left" src="design/logos/logos_README/team1_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
   <h6></h6>
-  <img align="left" src="assets/team2_README.png">
+  <img align="left" src="design/logos/logos_README/team2_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
   <h6></h6>
-  <img align="left" src="assets/team3_README.png">
+  <img align="left" src="design/logos/logos_README/team3_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
   <h6></h6>
-  <img align="left" src="assets/team4_README.png">
+  <img align="left" src="design/logos/logos_README/team4_README.png">
   - Eduardo Andreu<br>
   - Lic. Administracion de Empresas<br>
   - alguna otra sanata<br>
