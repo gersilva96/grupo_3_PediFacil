@@ -100,3 +100,8 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
       - Lic. en Administración de Empresas<br>
       - 10 años de experiencia en la industria gastronómica<br>
   <h6></h6>
+
+<h2>Diseño</h2>
+
+<h3>Paleta de colores</h3>
+<img width="100%" src="design/colorPalette/colorPalette.svg">
