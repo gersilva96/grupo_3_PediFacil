@@ -49,7 +49,9 @@ Pedifacil es una plataforma de gestión de pedidos creada para optimizar, modern
 
 <h4>Simplemente traemos orden al caos!!!</h4>
 
-<img align="center" width="600" height="250" src="design/logos/logos_README/img_process_README.png">
+<p align="center">
+  <img width="600" height="250" src="design/logos/logos_README/img_process_README.png">
+</p>
 
 Como lo hacemos?<br>
 
