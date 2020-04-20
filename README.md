@@ -39,23 +39,22 @@
 ```
 
 <div align="center"><br>...el problema es básicamente de <b>comunicación</b>.</div>
-<div class="solucion">
-  <h2>Solución</h2>
 
-      - Una aplicación que emite todas las órdenes de compras por una misma vía en una fracción del tiempo.
+# Solución
 
-      - Permitiendo a todos los restaurantes, independientemente de su tamaño, acceder a las últimas herramientas
-        y tecnologías.
+- Una aplicación que emite todas las órdenes de compras por una misma vía en una fracción del tiempo.
 
-      - Brindando una comunicación clara entre cliente y proveedor, que se traduce en menos pedidos devueltos y
-        tiempos de respuesta de pedidos más rápidos.
+- Permitiendo a todos los restaurantes, independientemente de su tamaño, acceder a las últimas herramientas
+  y tecnologías.
 
-      - Simplemente traemos orden al caos.
+- Brindando una comunicación clara entre cliente y proveedor, que se traduce en menos pedidos devueltos y
+  tiempos de respuesta de pedidos más rápidos.
 
-  <p align="center">
-    <img width="600" height="250" src="design/logos/logos_README/img_process_README.png">
-  </p>
-</div>
+- Simplemente traemos orden al caos.
+
+<p align="center">
+  <img width="600" height="250" src="design/logos/logos_README/img_process_README.png">
+</p>
 
 <div class="inspiracion">
   <h2>Inspiración</h2>
