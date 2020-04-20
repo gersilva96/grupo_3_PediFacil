@@ -90,8 +90,8 @@
 * [Adobe XD link](https://xd.adobe.com/view/545bda9a-3633-4921-74ae-28f225b380b4-226a/)
 
 ### Tipografía
-* [Lato](https://fonts.google.com/specimen/Lato)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
+* [Nunito](https://fonts.google.com/specimen/Nunito)
 
 ### Paleta de colores
 ![Color Palette Pedí Fácil](design/images/README_colorPalette.svg)
