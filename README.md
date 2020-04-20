@@ -115,4 +115,4 @@
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
 
 ### Paleta de colores
-![Color Palette Pedí Fácil](design/colorPalette/ColorPalette.svg)
+![Color Palette Pedí Fácil](design/colorPalette/colorPalette.svg)
