@@ -24,7 +24,8 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
       que recibió correctamente la orden de compra.
 
 </br>
-<h4 align="left">* <em>Proveedores</em></h4>
+
+* ***Proveedores***
 
 <img align="left" width="245" height="180" src="design/logos/logos_README/img_supplierProcess_README.png">
 
