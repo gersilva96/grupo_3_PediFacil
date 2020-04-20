@@ -71,9 +71,9 @@
   ```
   - Por el diseño y tipografía de la web
   ```
-* [Extendeal](https://www.extendeal.com)
+* [Extendeal](https://extendeal.com)
   ```
-  - Plataforma de gestion de compras en latinoamerica
+  - Plataforma de gestión de compras en latinoamerica
   ```
 
 # Diseño
@@ -86,13 +86,15 @@
 ### Wireframe & Sitemap
 * [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
 
+### Prototipo de diseño
+* [Adobe XD link](https://xd.adobe.com/view/545bda9a-3633-4921-74ae-28f225b380b4-226a/)
+
 ### Tipografía
 * [Lato](https://fonts.google.com/specimen/Lato)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
 
 ### Paleta de colores
 ![Color Palette Pedí Fácil](design/images/README_colorPalette.svg)
-
 
 # Equipo
 
