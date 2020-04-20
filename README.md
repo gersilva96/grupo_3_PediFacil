@@ -77,12 +77,12 @@
   - Por el diseño y colores de la web
   ```
 
-<h2>Equipo</h2>
+# Equipo
 
 <img align="left" width="60" height="60" src="design/logos/logos_README/team7_README.png">
-> Germán Silva<br>
-    - Futuro Full Stack Web Developer<br>
-    - Estudiante de Lic. en Ciencias de la Computación<br>
+> Germán Silva
+- Futuro Full Stack Web Developer
+- Estudiante de Lic. en Ciencias de la Computación
 <h6></h6>
 <img align="left" width="60" height="60" src="design/logos/logos_README/team8_README.png">
 > Rodrigo Espinosa<br>
