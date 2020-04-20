@@ -13,7 +13,6 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
 <img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
 
 ```
-
 - Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
 
 - Cada proveedor tiene una vía diferente para recibir sus órdenes de
@@ -24,21 +23,21 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
 
 - Al día siguiente, se vuelve a contactar al proveedor para asegurarse de
   que recibió correctamente la orden de compra.
-
 ```
 
 * #### Proveedores
 
 <img align="left" width="245" height="180" src="design/logos/logos_README/img_supplierProcess_README.png">
 
-    - Por otro lado, están los proveedores que reciben órdenes de compra
-      por múltiples vías.
+```
+- Por otro lado, están los proveedores que reciben órdenes de compra
+  por múltiples vías.
 
-    - Deben procesarlas a tiempo para cumplir con la entrega.
+- Deben procesarlas a tiempo para cumplir con la entrega.
 
-    - Este mecanismo requiere mucho tiempo y es muy propenso a errores, lo
-      cual genera mayores costos y menor rentabilidad.
-
+- Este mecanismo requiere mucho tiempo y es muy propenso a errores, lo
+  cual genera mayores costos y menor rentabilidad.
+```
 
 <div align="center" style="display: inline" style="clear:none"><br>...el problema es básicamente de <b>comunicación</b>.</div>
 <div class="solucion">
