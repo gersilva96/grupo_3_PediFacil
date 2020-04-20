@@ -105,7 +105,7 @@
 ### Logo
 * El mismo logo en diferentes colores dependiendo del color de fondo en el momento
 
-<img width="250" src="design/logo/logoColor.svg"><img width="250" src="design/logo/logoGray.svg"><img width="250" src="design/logo/logoWhiteReadme.svg">
+<img width="250" src="design/logo/logoColor.svg"><h1></h1><img width="250" src="design/logo/logoGray.svg"><h1></h1><img width="250" src="design/logo/logoWhiteReadme.svg">
 
 ### Wireframe & Sitemap
 * [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
