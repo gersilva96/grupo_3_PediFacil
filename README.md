@@ -102,9 +102,9 @@
 
 # Diseño
 
-### Tipografía
+## Tipografía
 * [Lato](https://fonts.google.com/specimen/Lato)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
 
-### Paleta de colores
+## Paleta de colores
 ![Color Palette Pedí Fácil](design/colorPalette/ColorPalette.svg)
