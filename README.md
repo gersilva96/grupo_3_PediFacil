@@ -104,9 +104,8 @@
 
 ### Logo
 * El mismo logo en diferentes colores dependiendo del color de fondo en el momento
-<p align="center">
-<img src="design/logo/logosReadme.png">
-</p>
+
+![Logos Readme Pedí Fácil](design/logo/logosReadme.svg)
 
 ### Wireframe & Sitemap
 * [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
