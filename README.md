@@ -84,7 +84,6 @@
 - Futuro Full Stack Web Developer<br>
 - Estudiante de Lic. en Ciencias de la Computación<br>
 
-<br>
 
 <img align="left" width="70" height="70" src="design/logos/logos_README/team8_README.png">
 > Rodrigo Espinosa<br>
