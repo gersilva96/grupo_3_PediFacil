@@ -83,28 +83,35 @@
 > Germán Silva<br>
 - Futuro Full Stack Web Developer<br>
 - Estudiante de Lic. en Ciencias de la Computación<br>
-<h6></h6>
+
+<br>
+
 <img align="left" width="70" height="70" src="design/logos/logos_README/team8_README.png">
 > Rodrigo Espinosa<br>
 - sanata<br>
 - alguna otra sanata<br>
-<h6></h6>
+
+<br>
+
 <img align="left" width="70" height="70" src="design/logos/logos_README/team5_README.png">
 > Guillermo Gonzales<br>
 - Futuro Web Developer<br>
 - Linux enthusiast<br>
-<h6></h6>
+
+<br>
+
 <img align="left" width="70" height="70" src="design/logos/logos_README/team6_README.png">
 > Eduardo Andreu<br>
 - Lic. en Administración de Empresas<br>
 - 10 años de experiencia en la industria gastronómica<br>
-<h6></h6>
+
+<br>
 
 # Diseño
 
-## Tipografía
+### Tipografía
 * [Lato](https://fonts.google.com/specimen/Lato)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
 
-## Paleta de colores
+### Paleta de colores
 ![Color Palette Pedí Fácil](design/colorPalette/ColorPalette.svg)
