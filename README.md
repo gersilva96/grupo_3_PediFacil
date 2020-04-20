@@ -5,40 +5,39 @@
 # **Bienvenidos**
 Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronómica.<br>
 
-<div class="problema">
-  <h2>Problema</h2>
 
-  <h4 align="left">* <em>Restaurantes</em></h4>
+# Problema
 
-  <img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
+<h4 align="left">* <em>Restaurantes</em></h4>
 
-      - Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
+<img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
 
-      - Cada proveedor tiene una vía diferente para recibir sus órdenes de
-        compra (email, teléfono, WhatsApp, etc).
+    - Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
 
-      - Todos los días, al final del turno, el encargado de compras dedica, en
-        promedio, una hora y cuarto a realizar los pedidos para el día siguiente.
+    - Cada proveedor tiene una vía diferente para recibir sus órdenes de
+      compra (email, teléfono, WhatsApp, etc).
 
-      - Al día siguiente, se vuelve a contactar al proveedor para asegurarse de
-        que recibió correctamente la orden de compra.
+    - Todos los días, al final del turno, el encargado de compras dedica, en
+      promedio, una hora y cuarto a realizar los pedidos para el día siguiente.
 
-  </br>
-  <h4 align="left">* <em>Proveedores</em></h4>
+    - Al día siguiente, se vuelve a contactar al proveedor para asegurarse de
+      que recibió correctamente la orden de compra.
 
-  <img align="left" width="245" height="180" src="design/logos/logos_README/img_supplierProcess_README.png">
+</br>
+<h4 align="left">* <em>Proveedores</em></h4>
 
-      - Por otro lado, están los proveedores que reciben órdenes de compra
-        por múltiples vías.
+<img align="left" width="245" height="180" src="design/logos/logos_README/img_supplierProcess_README.png">
 
-      - Deben procesarlas a tiempo para cumplir con la entrega.
+    - Por otro lado, están los proveedores que reciben órdenes de compra
+      por múltiples vías.
 
-      - Este mecanismo requiere mucho tiempo y es muy propenso a errores, lo
-        cual genera mayores costos y menor rentabilidad.
-  </br>
+    - Deben procesarlas a tiempo para cumplir con la entrega.
 
-  <h4 align="center" style="display: inline" style="clear:none">... el problema es básicamente de <u>comunicación.</u></h4>
-</div>
+    - Este mecanismo requiere mucho tiempo y es muy propenso a errores, lo
+      cual genera mayores costos y menor rentabilidad.
+</br>
+
+<h4 align="center" style="display: inline" style="clear:none">... el problema es básicamente de <u>comunicación.</u></h4>
 <div class="solucion">
   <h2>Solución</h2>
 
