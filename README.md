@@ -102,6 +102,9 @@
 
 # Diseño
 
+### Wireframes
+* [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
+
 ### Tipografía
 * [Lato](https://fonts.google.com/specimen/Lato)
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
