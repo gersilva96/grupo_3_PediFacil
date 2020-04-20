@@ -8,7 +8,7 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
 
 # Problema
 
-\* *Restaurantes*
+* ***Restaurantes***
 
 <img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
 
