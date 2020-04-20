@@ -35,7 +35,7 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
 
     - Este mecanismo requiere mucho tiempo y es muy propenso a errores, lo
       cual genera mayores costos y menor rentabilidad.
-</br>
+
 
 <h4 align="center" style="display: inline" style="clear:none">... el problema es básicamente de <u>comunicación.</u></h4>
 <div class="solucion">
