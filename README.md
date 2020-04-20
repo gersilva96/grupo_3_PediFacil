@@ -52,9 +52,7 @@
 
 - Simplemente traemos orden al caos.
 
-<p align="center">
-  <img width="600" height="250" src="design/logos/logos_README/img_process_README.png">
-</p>
+![Solución Pedí Fácil](design/logos/logos_README/img_process_README.png)
 
 <div class="inspiracion">
   <h2>Inspiración</h2>
