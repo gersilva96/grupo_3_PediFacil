@@ -71,10 +71,28 @@
   ```
   - Por el diseño y tipografía de la web
   ```
-* [Robinhood](https://www.robinhood.com)
+* [Extendeal](https://www.extendeal.com)
   ```
-  - Por el diseño y colores de la web
+  - Plataforma de gestion de compras en latinoamerica
   ```
+
+# Diseño
+
+### Logo
+* El mismo logo en diferentes colores dependiendo del color de fondo en el momento
+
+![Logos Readme Pedí Fácil](design/images/README_logos.svg)
+
+### Wireframe & Sitemap
+* [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
+
+### Tipografía
+* [Lato](https://fonts.google.com/specimen/Lato)
+* [Montserrat](https://fonts.google.com/specimen/Montserrat)
+
+### Paleta de colores
+![Color Palette Pedí Fácil](design/images/README_colorPalette.svg)
+
 
 # Equipo
 
@@ -97,20 +115,3 @@
 > Eduardo Andreu<br>
 - Lic. en Administración de Empresas<br>
 - 10 años de experiencia en la industria gastronómica<br>
-
-# Diseño
-
-### Logo
-* El mismo logo en diferentes colores dependiendo del color de fondo en el momento
-
-![Logos Readme Pedí Fácil](design/images/README_logos.svg)
-
-### Wireframe & Sitemap
-* [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
-
-### Tipografía
-* [Lato](https://fonts.google.com/specimen/Lato)
-* [Montserrat](https://fonts.google.com/specimen/Montserrat)
-
-### Paleta de colores
-![Color Palette Pedí Fácil](design/images/README_colorPalette.svg)
