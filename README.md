@@ -105,7 +105,7 @@
 ### Logo
 * El mismo logo en diferentes colores dependiendo del color de fondo en el momento
 <p align="center">
-![Logos readme Pedí Fácil](design/logo/logosReadme.png)
+<img src="design/logo/logosReadme.png">
 </p>
 
 ### Wireframe & Sitemap
