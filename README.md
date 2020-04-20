@@ -106,7 +106,7 @@
 <img align="left" width="70" height="70" src="design/images/README_team2.png">
 > Rodrigo Espinosa<br>
 - Futuro Full Stack Developer<br>
-- Desarrollador activo.<br>
+- Desarrollador activo<br>
 <h6></h6>
 <img align="left" width="70" height="70" src="design/images/README_team3.png">
 > Guillermo Gonzales<br>
