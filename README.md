@@ -57,9 +57,9 @@
 # Inspiración
 
 * [BlueCart](https://www.bluecart.com)
-```
-- Por ser la plataforma de gestión de órdenes de compra líder en el mundo
-```
+  ```
+  - Por ser la plataforma de gestión de órdenes de compra líder en el mundo
+  ```
 
 * <a href="https://www.bluecart.com" target="_blank">Bluecart</a><br>
 
