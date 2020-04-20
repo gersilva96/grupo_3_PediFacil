@@ -79,7 +79,7 @@
 
 # Equipo
 
-<img align="left" width="60" height="60" src="design/logos/logos_README/team7_README.png">
+<img align="left" width="60" height="60" src="design/logos/logos_README/team7_README.png"><br>
 > Germán Silva<br>
 - Futuro Full Stack Web Developer<br>
 - Estudiante de Lic. en Ciencias de la Computación<br>
