@@ -2,7 +2,6 @@
   <img width="30%" src="design/images/logo/logoColor.svg">
 </p>
 
-# Bienvenidos
 **Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronómica.**
 
 # Problema
