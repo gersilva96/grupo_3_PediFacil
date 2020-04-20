@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="40%" src="design/logo/logoColor.svg">
+  <img width="30%" src="design/logo/logoColor.svg">
 </p>
 
 # Bienvenidos
@@ -38,7 +38,7 @@
   cual genera mayores costos y menor rentabilidad.
 ```
 
-<div align="center" style="display: inline" style="clear:none"><br>...el problema es básicamente de <b>comunicación</b>.</div>
+<div align="center"><br>...el problema es básicamente de <b>comunicación</b>.</div>
 <div class="solucion">
   <h2>Solución</h2>
 
