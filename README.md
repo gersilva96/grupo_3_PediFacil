@@ -101,9 +101,11 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
       - 10 años de experiencia en la industria gastronómica<br>
   <h6></h6>
 
-<h2>Tipografía</h2>
-* <a href="https://fonts.google.com/specimen/Lato" target="_blank">Lato</a><br>
-* <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a>
+<h2>Diseño</h2>
 
-<h2>Paleta de colores</h2>
-  <img width="100%" src="design/colorPalette/ColorPalette.svg">
+  <h3>Tipografía</h3>
+    - <a href="https://fonts.google.com/specimen/Lato" target="_blank">Lato</a><br>
+    - <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a>
+
+  <h3>Paleta de colores</h3>
+    <img width="100%" src="design/colorPalette/ColorPalette.svg">
