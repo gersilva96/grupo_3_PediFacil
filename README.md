@@ -100,11 +100,11 @@
 - 10 años de experiencia en la industria gastronómica<br>
 <h6></h6>
 
-<h2>Diseño</h2>
+# Diseño
 
-  <h3>Tipografía</h3>
-  * <a href="https://fonts.google.com/specimen/Lato" target="_blank">Lato</a><br>
-  * <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a>
+### Tipografía
+* [Lato](https://fonts.google.com/specimen/Lato)
+* [Montserrat](https://fonts.google.com/specimen/Montserrat)
 
-  <h3>Paleta de colores</h3>
-    <img width="100%" src="design/colorPalette/ColorPalette.svg">
+### Paleta de colores
+![Color Palette Pedí Fácil](design/colorPalette/ColorPalette.svg)
