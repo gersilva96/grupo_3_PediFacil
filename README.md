@@ -84,6 +84,7 @@
 - Futuro Full Stack Web Developer<br>
 - Estudiante de Lic. en Ciencias de la Computación<br>
 
+
 <img align="left" width="60" height="60" src="design/logos/logos_README/team8_README.png">
 > Rodrigo Espinosa<br>
     - sanata<br>
