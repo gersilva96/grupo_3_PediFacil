@@ -2,13 +2,13 @@
   <img width="40%" src="design/logo/logoColor.svg">
 </p>
 
-# **Bienvenidos**
+# Bienvenidos
 Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronómica.<br>
 
 
 # Problema
 
-<h4 align="left">* <em>Restaurantes</em></h4>
+* *Restaurantes*
 
 <img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
 
