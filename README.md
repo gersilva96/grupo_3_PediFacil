@@ -54,29 +54,27 @@
 
 ![Solución Pedí Fácil](design/logos/logos_README/img_process_README.png)
 
-<div class="inspiracion">
-  <h2>Inspiración</h2>
+# Inspiración
 
-  * <a href="https://www.bluecart.com" target="_blank">Bluecart</a><br>
+* <a href="https://www.bluecart.com" target="_blank">Bluecart</a><br>
 
-        - Por ser la plataforma de gestión de órdenes de compra líder en el mundo.
+      - Por ser la plataforma de gestión de órdenes de compra líder en el mundo.
 
-  * <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a><br>
+* <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a><br>
 
-        - Por tener muy buena UI/UX.
+      - Por tener muy buena UI/UX.
 
-  * <a href="https://www.marketman.com" target="_blank">Marketman</a><br>
+* <a href="https://www.marketman.com" target="_blank">Marketman</a><br>
 
-        - Por sus múltiples funcionalidades.
+      - Por sus múltiples funcionalidades.
 
-  * <a href="https://www.mercadolibre.com" target="_blank">MercadoLibre</a><br>
+* <a href="https://www.mercadolibre.com" target="_blank">MercadoLibre</a><br>
 
-        - Por el diseño y tipografía de la web.
+      - Por el diseño y tipografía de la web.
 
-  * <a href="https://www.robinhood.com" target="_blank">Robinhood</a><br>
+* <a href="https://www.robinhood.com" target="_blank">Robinhood</a><br>
 
-        - Por el diseño y colores de la web.
-</div>
+      - Por el diseño y colores de la web.
 
   <h2>Equipo</h2>
 
