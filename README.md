@@ -1,10 +1,9 @@
 <p align="center">
   <img width="40%" src="design/logo/logoColor.svg">
 </p>
-<div class="bienvenido">
-  <h1>Bienvenidos</h1>
+
+# **Bienvenidos**
   Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronómica.<br>
-</div>
 
 <div class="problema">
   <h2>Problema</h2>
