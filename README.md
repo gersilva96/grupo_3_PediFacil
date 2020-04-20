@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="30%" src="design/logo/logoColor.svg">
+  <img width="30%" src="design/images/logo/logoColor.svg">
 </p>
 
 # Bienvenidos
@@ -9,7 +9,7 @@
 
 * #### Restaurantes
 
-<img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
+<img align="right" width="218" height="160" src="design/images/README_chefOrder.png">
 
 ```
 - Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
@@ -26,7 +26,7 @@
 
 * #### Proveedores
 
-<img align="left" width="245" height="180" src="design/logos/logos_README/img_supplierProcess_README.png">
+<img align="left" width="245" height="180" src="design/images/README_supplierProcess.png">
 
 ```
 - Por otro lado, están los proveedores que reciben órdenes de compra
@@ -52,7 +52,7 @@
 
 - Simplemente traemos orden al caos.
 
-![Solución Pedí Fácil](design/logos/logos_README/img_process_README.png)
+![Solución Pedí Fácil](design/images/README_process.png)
 
 # Inspiración
 
@@ -79,33 +79,32 @@
 
 # Equipo
 
-<img align="left" width="70" height="70" src="design/logos/logos_README/team7_README.png">
+<img align="left" width="70" height="70" src="design/images/README_team1.png">
 > Germán Silva<br>
 - Futuro Full Stack Web Developer<br>
 - Estudiante de Lic. en Ciencias de la Computación<br>
 <h6></h6>
-<img align="left" width="70" height="70" src="design/logos/logos_README/team8_README.png">
+<img align="left" width="70" height="70" src="design/images/README_team2.png">
 > Rodrigo Espinosa<br>
 - sanata<br>
 - alguna otra sanata<br>
 <h6></h6>
-<img align="left" width="70" height="70" src="design/logos/logos_README/team5_README.png">
+<img align="left" width="70" height="70" src="design/images/README_team3.png">
 > Guillermo Gonzales<br>
 - Futuro Web Developer<br>
 - Linux enthusiast<br>
 <h6></h6>
-<img align="left" width="70" height="70" src="design/logos/logos_README/team6_README.png">
+<img align="left" width="70" height="70" src="design/images/README_team4.png">
 > Eduardo Andreu<br>
 - Lic. en Administración de Empresas<br>
 - 10 años de experiencia en la industria gastronómica<br>
-<h6></h6>
 
 # Diseño
 
 ### Logo
 * El mismo logo en diferentes colores dependiendo del color de fondo en el momento
 
-![Logos Readme Pedí Fácil](design/logo/logoReadme.svg)
+![Logos Readme Pedí Fácil](design/images/README_logos.svg)
 
 ### Wireframe & Sitemap
 * [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
@@ -115,4 +114,4 @@
 * [Montserrat](https://fonts.google.com/specimen/Montserrat)
 
 ### Paleta de colores
-![Color Palette Pedí Fácil](design/colorPalette/colorPalette.svg)
+![Color Palette Pedí Fácil](design/images/colorPalette.svg)
