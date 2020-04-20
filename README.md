@@ -56,50 +56,49 @@
 
 # Inspiración
 
-* [BlueCart](https://www.bluecart.com): por ser la plataforma de gestión de órdenes de compra líder en el mundo
+* [BlueCart](https://www.bluecart.com)
+  ```
+  - Por ser la plataforma de gestión de órdenes de compra líder en el mundo
+  ```
+* [SimpleOrder](https://www.simpleorder.com)
+  ```
+  - Por tener muy buena UI/UX
+  ```
+* [MarketMan](https://www.marketman.com)
+  ```
+  - Por sus múltiples funcionalidades
+  ```
+* [Mercado Libre](https://www.mercadolibre.com)
+  ```
+  - Por el diseño y tipografía de la web
+  ```
+* [Robinhood](https://www.robinhood.com)
+  ```
+  - Por el diseño y colores de la web
+  ```
 
-* <a href="https://www.bluecart.com" target="_blank">Bluecart</a><br>
+<h2>Equipo</h2>
 
-      - Por ser la plataforma de gestión de órdenes de compra líder en el mundo.
-
-* <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a><br>
-
-      - Por tener muy buena UI/UX.
-
-* <a href="https://www.marketman.com" target="_blank">Marketman</a><br>
-
-      - Por sus múltiples funcionalidades.
-
-* <a href="https://www.mercadolibre.com" target="_blank">MercadoLibre</a><br>
-
-      - Por el diseño y tipografía de la web.
-
-* <a href="https://www.robinhood.com" target="_blank">Robinhood</a><br>
-
-      - Por el diseño y colores de la web.
-
-  <h2>Equipo</h2>
-
-  <img align="left" width="60" height="60" src="design/logos/logos_README/team7_README.png">
-  > Germán Silva<br>
-      - Futuro Full Stack Web Developer<br>
-      - Estudiante de Lic. en Ciencias de la Computación<br>
-  <h6></h6>
-  <img align="left" width="60" height="60" src="design/logos/logos_README/team8_README.png">
-  > Rodrigo Espinosa<br>
-      - sanata<br>
-      - alguna otra sanata<br>
-  <h6></h6>
-  <img align="left" width="60" height="60" src="design/logos/logos_README/team5_README.png">
-  > Guillermo Gonzales<br>
-      - Futuro Web Developer<br>
-      - Linux enthusiast<br>
-  <h6></h6>
-  <img align="left" width="60" height="60" src="design/logos/logos_README/team6_README.png">
-  > Eduardo Andreu<br>
-      - Lic. en Administración de Empresas<br>
-      - 10 años de experiencia en la industria gastronómica<br>
-  <h6></h6>
+<img align="left" width="60" height="60" src="design/logos/logos_README/team7_README.png">
+> Germán Silva<br>
+    - Futuro Full Stack Web Developer<br>
+    - Estudiante de Lic. en Ciencias de la Computación<br>
+<h6></h6>
+<img align="left" width="60" height="60" src="design/logos/logos_README/team8_README.png">
+> Rodrigo Espinosa<br>
+    - sanata<br>
+    - alguna otra sanata<br>
+<h6></h6>
+<img align="left" width="60" height="60" src="design/logos/logos_README/team5_README.png">
+> Guillermo Gonzales<br>
+    - Futuro Web Developer<br>
+    - Linux enthusiast<br>
+<h6></h6>
+<img align="left" width="60" height="60" src="design/logos/logos_README/team6_README.png">
+> Eduardo Andreu<br>
+    - Lic. en Administración de Empresas<br>
+    - 10 años de experiencia en la industria gastronómica<br>
+<h6></h6>
 
 <h2>Diseño</h2>
 
