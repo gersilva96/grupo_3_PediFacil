@@ -104,8 +104,8 @@ Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, mod
 <h2>Diseño</h2>
 
 <h3>Tipografía</h3>
-* <a href="https://fonts.google.com/specimen/Lato" target="_blank">Lato</a><br>
-* <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a>
+· <a href="https://fonts.google.com/specimen/Lato" target="_blank">Lato</a><br>
+· <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a>
 
 <h3>Paleta de colores</h3>
 <img width="100%" src="design/colorPalette/ColorPalette.svg">
