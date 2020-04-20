@@ -6,39 +6,40 @@
   Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronómica.<br>
 </div>
 
-<h2>Problema</h2>
+<div class="problema">
+  <h2>Problema</h2>
 
-<h4 align="left">* <em>Restaurantes</em></h4>
+  <h4 align="left">* <em>Restaurantes</em></h4>
 
-<img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
+  <img align="right" width="218" height="160" src="design/logos/logos_README/img_chefOrder_README.png">
 
-    - Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
+      - Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
 
-    - Cada proveedor tiene una vía diferente para recibir sus órdenes de
-      compra (email, teléfono, WhatsApp, etc).
+      - Cada proveedor tiene una vía diferente para recibir sus órdenes de
+        compra (email, teléfono, WhatsApp, etc).
 
-    - Todos los días, al final del turno, el encargado de compras dedica, en
-      promedio, una hora y cuarto a realizar los pedidos para el día siguiente.
+      - Todos los días, al final del turno, el encargado de compras dedica, en
+        promedio, una hora y cuarto a realizar los pedidos para el día siguiente.
 
-    - Al día siguiente, se vuelve a contactar al proveedor para asegurarse de
-      que recibió correctamente la orden de compra.
+      - Al día siguiente, se vuelve a contactar al proveedor para asegurarse de
+        que recibió correctamente la orden de compra.
 
-</br>
-<h4 align="left">* <em>Proveedores</em></h4>
+  </br>
+  <h4 align="left">* <em>Proveedores</em></h4>
 
-<img align="left" width="245" height="180" src="design/logos/logos_README/img_supplierProcess_README.png">
+  <img align="left" width="245" height="180" src="design/logos/logos_README/img_supplierProcess_README.png">
 
-    - Por otro lado, están los proveedores que reciben órdenes de compra
-      por múltiples vías.
+      - Por otro lado, están los proveedores que reciben órdenes de compra
+        por múltiples vías.
 
-    - Deben procesarlas a tiempo para cumplir con la entrega.
+      - Deben procesarlas a tiempo para cumplir con la entrega.
 
-    - Este mecanismo requiere mucho tiempo y es muy propenso a errores, lo
-      cual genera mayores costos y menor rentabilidad.
-</br>
+      - Este mecanismo requiere mucho tiempo y es muy propenso a errores, lo
+        cual genera mayores costos y menor rentabilidad.
+  </br>
 
-<h4 align="center" style="display: inline" style="clear:none">... el problema es básicamente de <u>comunicación.</u></h4>
-
+  <h4 align="center" style="display: inline" style="clear:none">... el problema es básicamente de <u>comunicación.</u></h4>
+</div>
 <h2>Solución</h2>
 
     - Una aplicación que emite todas las órdenes de compras por una misma vía en una fracción del tiempo.
