@@ -83,25 +83,21 @@
 > Germán Silva<br>
 - Futuro Full Stack Web Developer<br>
 - Estudiante de Lic. en Ciencias de la Computación<br>
-<br>
 
 <img align="left" width="70" height="70" src="design/logos/logos_README/team8_README.png">
 > Rodrigo Espinosa<br>
 - sanata<br>
 - alguna otra sanata<br>
-<br>
 
 <img align="left" width="70" height="70" src="design/logos/logos_README/team5_README.png">
 > Guillermo Gonzales<br>
 - Futuro Web Developer<br>
 - Linux enthusiast<br>
-<br>
 
 <img align="left" width="70" height="70" src="design/logos/logos_README/team6_README.png">
 > Eduardo Andreu<br>
 - Lic. en Administración de Empresas<br>
 - 10 años de experiencia en la industria gastronómica<br>
-<br>
 
 <h2>Diseño</h2>
 
