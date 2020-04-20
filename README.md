@@ -40,44 +40,47 @@
 
   <h4 align="center" style="display: inline" style="clear:none">... el problema es básicamente de <u>comunicación.</u></h4>
 </div>
-<h2>Solución</h2>
+<div class="solucion">
+  <h2>Solución</h2>
 
-    - Una aplicación que emite todas las órdenes de compras por una misma vía en una fracción del tiempo.
+      - Una aplicación que emite todas las órdenes de compras por una misma vía en una fracción del tiempo.
 
-    - Permitiendo a todos los restaurantes, independientemente de su tamaño, acceder a las últimas herramientas
-      y tecnologías.
+      - Permitiendo a todos los restaurantes, independientemente de su tamaño, acceder a las últimas herramientas
+        y tecnologías.
 
-    - Brindando una comunicación clara entre cliente y proveedor, que se traduce en menos pedidos devueltos y
-      tiempos de respuesta de pedidos más rápidos.
+      - Brindando una comunicación clara entre cliente y proveedor, que se traduce en menos pedidos devueltos y
+        tiempos de respuesta de pedidos más rápidos.
 
-    - Simplemente traemos orden al caos.
+      - Simplemente traemos orden al caos.
 
-<p align="center">
-  <img width="600" height="250" src="design/logos/logos_README/img_process_README.png">
-</p>
+  <p align="center">
+    <img width="600" height="250" src="design/logos/logos_README/img_process_README.png">
+  </p>
+</div>
 
+<div class="inspiracion">
+  <h2>Inspiración</h2>
 
-<h2>Inspiración</h2>
+  * <a href="https://www.bluecart.com" target="_blank">Bluecart</a><br>
 
-* <a href="https://www.bluecart.com" target="_blank">Bluecart</a><br>
+        - Por ser la plataforma de gestión de órdenes de compra líder en el mundo.
 
-      - Por ser la plataforma de gestión de órdenes de compra líder en el mundo.
+  * <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a><br>
 
-* <a href="https://www.simpleorder.com" target="_blank">SimpleOrder</a><br>
+        - Por tener muy buena UI/UX.
 
-      - Por tener muy buena UI/UX.
+  * <a href="https://www.marketman.com" target="_blank">Marketman</a><br>
 
-* <a href="https://www.marketman.com" target="_blank">Marketman</a><br>
+        - Por sus múltiples funcionalidades.
 
-      - Por sus múltiples funcionalidades.
+  * <a href="https://www.mercadolibre.com" target="_blank">MercadoLibre</a><br>
 
-* <a href="https://www.mercadolibre.com" target="_blank">MercadoLibre</a><br>
+        - Por el diseño y tipografía de la web.
 
-      - Por el diseño y tipografía de la web.
+  * <a href="https://www.robinhood.com" target="_blank">Robinhood</a><br>
 
-* <a href="https://www.robinhood.com" target="_blank">Robinhood</a><br>
-
-      - Por el diseño y colores de la web.
+        - Por el diseño y colores de la web.
+</div>
 
 <h2>Equipo</h2>
 
