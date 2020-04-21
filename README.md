@@ -86,7 +86,7 @@
 ### Wireframe & Sitemap
 * [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
 
-### Mockups
+### Mockup
 * [Adobe XD link](https://xd.adobe.com/view/545bda9a-3633-4921-74ae-28f225b380b4-226a/)
 
 ### Tipografía
