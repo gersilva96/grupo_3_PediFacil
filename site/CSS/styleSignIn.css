@@ -1,0 +1,85 @@
+body{
+    background-color: rgb(212, 249, 255);
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    font-size: 15px;
+}
+
+div{
+    float: left;
+    background-color: white;
+    border-radius: 8px;
+    border: solid 1px rgb(235, 235, 235);
+    width: 35%;
+    height: 92vh;
+    padding: 3% 3% 3% 3%;
+    box-sizing: border-box;
+    position: relative;
+    left: 33.3%;
+    top:3vh;
+}
+
+div img{
+    width: 100%;
+    height: 20vh;
+}
+
+div h3{
+    text-align: center
+}
+
+form{
+    padding-left: 10%;
+    padding-right:10%;
+}
+
+.registro1 label{
+    width: 100%;
+    color: rgb(93, 93, 93);
+}
+
+.registro1 input{
+    width: 100%;
+    height: 4vh;
+    border-radius: 5px;
+    border: solid 0.9px rgb(93, 93, 93);
+    margin-top: 0%;
+    margin-bottom: 5%;
+}
+/*
+form a{
+    font-size: 0.6em;
+    text-decoration: none;
+    text-align: right;
+    float: inline-end;
+    color: rgb(93, 93, 93);
+}
+*/
+.registro2{
+    width: 40%;
+}
+
+
+form button{
+    width: 50%;
+    height: 4.6vh;
+    border-radius: 5px;
+    border: solid 2px #4285F4;
+    color: white;
+    background-color: #4285F4;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+#enlaceFormulario{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 87vh;
+}
+
+/*--------------------------------*/
+/*--------------------------------*/
+/*--------------------------------*/
