@@ -11,9 +11,12 @@
     <header>
         <img src="./img/logo/logoColor.svg" alt="">
         <div id="headerButtons">
-            <button id="button1" style="background-color: #4285F4;">Iniciar sesion</button>
-            <button id="button2" style="background-color: #313A46;">Pedir una demo</button>
+            <button id="button1" style="background-color: #4285F4;" onclick="location.href='./logIn.html'">Iniciar sesion</button>
+            <button id="button2" style="background-color: #313A46;" onclick="location.href='#pedirdemo'">Pedir una Demo</button>
         </div>
+
+
+        
     </header>
     <section id="section01">
         <div id="caja1">
@@ -49,10 +52,13 @@
     <section id="section03">
         <h2>EMPEZA HOY MISMO PIDIENDO UNA DEMO GRATIS!</h2>
         <form action="pedirDemo">
-            <input type="text" placeholder="  Nombre">
-            <input type="email" placeholder="  Email">
-            <input type="number" placeholder="  Telefono">
-            <button>PEDIR DEMO</button>
+            <label for="Nombre">Nombre</label>
+            <input id="Nombre" name="Nombre" type="text" placeholder="  Nombre">
+            <label for="Email">Email</label>
+            <input for="Email" name="Email" type="email" placeholder="  Email">
+            <label for="Telefono">Telefono</label>
+            <input id="Telefono" name="Telefono" type="number" placeholder="  Telefono">
+            <button type="submit" id="pedirdemo">PEDIR DEMO</button>
         </form>
     </section>
     <footer>

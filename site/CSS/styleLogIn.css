@@ -141,7 +141,7 @@ form button{
         color: rgb(93, 93, 93);
     }
     
-    form button{
+    form button a{
         width: 50%;
         height: 4.6vh;
         border-radius: 5px;
