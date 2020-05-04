@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/styleDashboard.css">
+    <link rel="stylesheet" href="./CSS/styleProductos.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-
+        <ul>
+            <span>PRODUCTOS</span>
+            <li><a href="">fotoPerfil</a></li>
+            <li><a href=""><i class="fas fa-cog"></i></a></li>
+        </ul>
     </header>
     <nav>
         <img src="./img/logo/logoWhite.svg" alt="">
@@ -20,9 +25,30 @@
             <li><a href="./productos.html">Productos</a></li>
             <li><a href="./misListas.html">Mis listas</a></li>
         </ul>
+        <span>Pedi Facil v1.0.0</span>
     </nav>
     <main>
-
+        <div id="selectors">
+            <select name="" id="">
+                <option value="">Proveedores</option>
+            </select>
+            <select name="" id="">
+                <option value="">Productos</option>
+            </select>
+            <select name="" id="">
+                <option value="">Tags</option>
+            </select>
+            <select name="" id="">
+                <option value="">Estado</option>
+            </select>
+        </div>
+        <div id="buttons">
+            <button style="background-color: #4285F4;">Filtrar</button>
+            <button style="background-color: red;">Eliminar</button>
+            <button style="background-color: #4285F4;">Exportar</button>
+            <button style="background-color: rgb(1, 158, 1);">Agregar producto</button>
+        </div>
+        <div id="bigBox"></div>
     </main>
 </body>
 </html>
