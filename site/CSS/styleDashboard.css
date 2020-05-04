@@ -13,12 +13,16 @@ header{
     border-bottom: solid 4px rgb(221, 221, 221);
     box-sizing: border-box;
     margin: 0%;
-    padding: 2vh 2% 2vh 2%;
+    padding: 2vh 2% 3vh 2%;
 }
 
 header ul{
     margin: 0;
     padding: 0;
+}
+
+header span{
+    margin-left: 45%;
 }
 
 header li{
