@@ -154,3 +154,9 @@ select{
     height: 60vh;
     background-color: white;
 }
+
+input{
+    width: 20%;
+    margin: 0% 3% 2% 3%;
+    height: 3vh;
+}
