@@ -51,7 +51,7 @@
 
 - Simplemente traemos orden al caos.
 
-- En primera instancia, como beta funcional, simplificamos la plataforma para transformarla en un ecommerce tradicional, pero siempre permitiendo la escalabilidad del proyecto para completar las funcionalidades planificadas desde el principio.
+- En primera instancia, como beta funcional, simplificamos la plataforma para transformarla en un e-commerce tradicional, pero siempre permitiendo la escalabilidad del proyecto para completar las funcionalidades planificadas desde el principio.
 
 ![Solución Pedí Fácil](design/images/README_process.png)
 
