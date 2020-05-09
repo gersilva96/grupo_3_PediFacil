@@ -96,7 +96,7 @@
 ![Color Palette Pedí Fácil](design/images/README_colorPalette.svg)
 
 # Tablero de trabajo (Trello)
-![Link Trello](https://trello.com/b/0qLG84ti/digital-house)
+* [Link Trello](https://trello.com/b/0qLG84ti/digital-house)
 
 # Equipo
 
