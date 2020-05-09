@@ -51,7 +51,7 @@
 
 - Simplemente traemos orden al caos.
 
-- En primera instancia, como beta funcional, simplificamos la plataforma para transformarla en un e-commerce tradicional, pero siempre permitiendo la escalabilidad del proyecto para completar las funcionalidades planificadas desde el principio.
+- En primera instancia, como beta funcional, simplificamos la plataforma para transformarla en un e-commerce tradicional simulando un único proveedor, pero siempre permitiendo la escalabilidad del proyecto para completar las funcionalidades planificadas desde el principio.
 
 ![Solución Pedí Fácil](design/images/README_process.png)
 
@@ -85,10 +85,7 @@
 
 ![Logos Readme Pedí Fácil](design/images/README_logos.svg)
 
-### Wireframe & Sitemap
-* [InVision App Freehand link](https://rapicompra.invisionapp.com/freehand/PediFacil-rVcIaO0qt?v=nXXmoQLwcbX%2B3H%2FBWztG2g%3D%3D&linkshare=urlcopied)
-
-### Mockups
+### Wireframe & Mockups
 * [Adobe XD link](https://xd.adobe.com/view/545bda9a-3633-4921-74ae-28f225b380b4-226a/)
 
 ### Tipografía
