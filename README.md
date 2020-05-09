@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="30%" src="design/images/logo/logoColor.svg">
+  <img width="30%" src="design/logo/logoColor.svg">
 </p>
 
 **Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronómica.**
