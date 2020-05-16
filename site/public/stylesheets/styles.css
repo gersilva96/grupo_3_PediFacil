@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4285F4;
+  text-decoration: none;
+}
+
+body .body-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+body .body-section .product-section_title {
+  margin-bottom: 60px;
+  color: #073042;
+  font-size: 30px;
+}
+
+body .body-section .table-responsive .table .thead-dark th {
+  background-color: #073042;
+  border: 0;
+}
+
+body .body-section .table-responsive .table tbody tr td .imagen {
+  background-color: gray;
+  width: 30px;
+  height: 30px;
+}
+
+body .body-section .table-responsive .table tbody tr td .custom-select {
+  width: 100px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 30px;
+}
+
+body .body-section .table-responsive .table tbody tr td a i {
+  font-size: 20px;
+}
+
+body .body-section .table-responsive .table tbody tr td a .fa-trash {
+  color: #dc3545;
+}
+
+body .body-section .table-responsive .table tbody tr td a .fa-trash:hover {
+  color: #c82333;
+}
+
+body .body-section .table-responsive .table tbody tr td a .fa-redo-alt {
+  color: #28a745;
+}
+
+body .body-section .table-responsive .table tbody tr td a .fa-redo-alt:hover {
+  color: #218838;
+}
+
+body .body-section .table-responsive .table tbody tr td a .fa-edit {
+  color: #073042;
+}
+
+body .body-section .table-responsive .table tbody tr td a .fa-toggle-on {
+  color: #28a745;
+}
+
+body .body-section .table-responsive .table tbody tr .product-actions {
+  position: relative;
+  top: -1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 11px;
+}
+
+body .body-section .table-responsive .table tbody .total-purchase {
+  font-weight: 800;
+}
+
+body .body-section .product-section_foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  margin-top: 50px;
+}
+
+body .body-section .product-section_foot .form-control {
+  margin-bottom: 50px;
+}
+
+body .body-section .product-section_foot .btn {
+  font-weight: 600;
+  min-width: 200px;
+  padding: 0;
+}
+
+body .body-section .product-section_foot .back {
+  width: 66px;
+  margin-bottom: 20px;
+}
+
+body .body-section .product-section_foot .back .btn-link {
+  min-width: auto;
+}
+
+body .body-section .product-section_foot .add-product_button {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body .body-section .product-section_foot {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 30px;
+  }
+  body .body-section .product-section_foot label {
+    margin: 0;
+    text-align: left;
+  }
+  body .body-section .product-section_foot .form-control {
+    margin-left: 10px;
+    margin-bottom: 0;
+    max-width: 300px;
+  }
+  body .body-section .product-section_foot .purchase, body .body-section .product-section_foot .add-product, body .body-section .product-section_foot .repeat {
+    margin-left: auto;
+  }
+  body .body-section .product-section_foot .back {
+    width: auto;
+    margin: 0;
+  }
+}
+
+body .body-section .admin-product {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px #00000050;
+          box-shadow: 0px 0px 10px #00000050;
+}
+
+body .body-section .admin-product .admin-product_buttons {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .body-section .admin-product .admin-product_buttons a .btn-link {
+  padding: 0;
+}
+/*# sourceMappingURL=styles.css.map */
