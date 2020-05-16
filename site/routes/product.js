@@ -6,9 +6,10 @@ const router = express.Router();
 const productController = require("../controllers/productController");
 
 //Obtengo las rutas principales
-router.get("/", productController.detail);
+router.get("/detail", productController.detail);
 router.get("/cart", productController.cart);
-router.get("/add", productController.add);
+router.get("/order-history", productController.orderHistory);
+router.get("/order-history-detail", productController.orderHistoryDetail);
 
 //Exporto el contenido de las rutas
 module.exports = router;
