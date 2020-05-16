@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = require("path");
 
 //Funciones privadas
 let leerHTML = fileName => fs.readFileSync(`${__dirname}/../views/admin/${fileName}.html`,"utf-8");
