@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 //Funciones privadas
-let leerHTML = fileName => fs.readFileSync(path.join(`${__dirname}/../views/${fileName}.html`),"utf-8");
+let leerHTML = fileName => fs.readFileSync(`${__dirname}/../views/${fileName}.html`,"utf-8");
 
 //Funciones públicas
 let mainController = {
