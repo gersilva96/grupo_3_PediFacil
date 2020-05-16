@@ -78,8 +78,6 @@ body .body-section .table-responsive .table tbody tr td a .fa-toggle-on {
 }
 
 body .body-section .table-responsive .table tbody tr .product-actions {
-  position: relative;
-  top: -1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
