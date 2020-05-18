@@ -5,17 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/reset.css">
-     <!--fontawesome icons-->
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
-     <!--bootstrap-->
-     <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css">
-     <!--fonts-->
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <!-- no quise tocar lo que tiene que ver con css porque creo que
-    te estas manejando de otra manera, cuando veas este mensaje
-    hablame :D -->
-     <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/homeStyle.css">
+    <link rel="shortcut icon" type="image/svg" href="/images/logo/favicon.svg">
     <title>Iniciar sesión | Pedí Fácil</title>
 </head>
 
@@ -25,14 +19,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 col-sm-3 col-lg-3 logo-header">
-                    <img src="../public/images/logo/logoColorH.svg" alt="">
+                    <img src="/images/logo/logoColorH.svg" alt="">
                 </div>
                 <div class="col-3 col-sm-1 col-lg-2 product-grid-header">
                     <i class="fas fa-th"></i>
                 </div>
                 <div class="col-3 menu-button-header">
                     <i onclick="on()" class="fas fa-bars"></i>
-                    <div id="overlay" >
+                    <div id="overlay">
                         <div class="col-12 close-overlay">
                             <button type="button" class="btn btn-danger" onclick="off()">x</button>
                         </div>
@@ -47,17 +41,18 @@
                 </div>
                 <div class="col-12 col-sm-4 col-lg-4 search-bar-header">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Que estas buscando?" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" placeholder="Que estas buscando?"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                          <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
+                            <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-sm-2 col-lg-1 dark-mode-switch-header">
                     <div class="custom-control custom-switch">
-                        <input   onclick="darkMode()" type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <input onclick="darkMode()" type="checkbox" class="custom-control-input" id="customSwitch1">
                         <label class="custom-control-label" for="customSwitch1"><i class="fas fa-adjust"></i></label>
-                      </div>
+                    </div>
                 </div>
                 <div class="col-sm-1 cl-lg-1 user-header">
                     <i class="fas fa-user-circle"></i>
@@ -103,7 +98,7 @@
                     </div>
                 </div>
             </form>
-            <p class="form-foot">¿No tenés cuenta? <a href="/register"><strong>Registrate acá</strong></a></p>
+            <p class="form-foot">¿No tenés cuenta? <a href="/register"><b>Registrate acá</b></a></p>
         </div>
     </section>
 
@@ -112,7 +107,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-2 col-sm-2 col-lg-2 logo-footer">
-                    <img src="../public/images/logo/logoWhite.svg" alt="">
+                    <img src="/images/logo/logoWhite.svg" alt="">
                 </div>
                 <div class="col-6 col-sm-8 col-lg-8 pf-inc">
                     <span>@ 2020 Pedi Facil Inc.</span>
@@ -128,28 +123,16 @@
         </div>
     </footer>
 
-    <!-- dark mode -->
-    <script>
-        function darkMode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-        }
-    </script>
+    <!-- Dark mode -->
+    <script src="/javascripts/darkMode.js"></script>
 
-    <!-- overlay menu -->
-    <script>
-        function on() {
-            document.getElementById("overlay").style.display = "block";
-        }
-        function off() {
-            document.getElementById("overlay").style.display = "none";
-        }
-    </script>
+    <!-- Overlay menu -->
+    <script src="/javascripts/overlayMenu.js"></script>
 
-    <!-- bootstrap -->
-    <script src="../public/javascripts/jquery.js"></script>
-	<script src="../public/javascripts/popper.js"></script>
-	<script src="../public/javascripts/bootstrap.js"></script>
+    <!-- Bootstrap -->
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/popper.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
 </body>
 
 </html>
