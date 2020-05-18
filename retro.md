@@ -4,15 +4,4 @@
 </div>
 
 
-- Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
-
-- Cada proveedor tiene una vía diferente para recibir sus órdenes de
-  compra (email, teléfono, WhatsApp, etc).
-
-- Todos los días, al final del turno, el encargado de compras dedica, en
-  promedio, una hora y cuarto a realizar los pedidos para el día siguiente.
-
-- Al día siguiente, se vuelve a contactar al proveedor para asegurarse de
-  que recibió correctamente la orden de compra.
-
-
+- El resultado del segundo sprint fue muy bueno ya que nos sirvio para realizar un pequeño pivot a la idea original. Dejó de ser una plataforma SaaS y se convierte en un e-commerce con un nicho muy especifico. Tambien nos sirvio para refactorizar el diseño de la app hacia un modelo mobile-first. El funcionamiento y la comunicacion del equipo es muy buena y eso nos permite tomar decisiones rapidamente. 
