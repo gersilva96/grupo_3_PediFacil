@@ -1,6 +1,6 @@
 # Retrospectiva
 
-<div align="center"><br>...el problema es básicamente de <b>comunicación</b>.</div>
+<img align="center" width="218" height="160" src="design/images/retro_starfish.png">
 
 
 - Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
