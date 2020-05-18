@@ -1,6 +1,6 @@
 # Retrospectiva
 <div align="center">
-  <img width="550" height="500" src="design/images/retro_starfish.png">
+  <img width="850" height="800" src="design/images/retro_starfish.png">
 </div>
 
 
