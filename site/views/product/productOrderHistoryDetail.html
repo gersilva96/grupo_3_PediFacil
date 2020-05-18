@@ -18,16 +18,20 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-6 col-sm-3 col-lg-3 logo-header">
-                    <img src="/images/logo/logoColorH.svg" alt="">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 logo-header">
+                    <a href="/">
+                        <img id="logoHeader" src="/images/logo/logoColorH.svg" alt="logo pedi facil">
+                     </a>
                 </div>
-                <div class="col-3 col-sm-1 col-lg-2 product-grid-header">
-                    <i class="fas fa-th"></i>
+                <div class="col-3 col-sm-3 col-md-1 col-lg-2 product-grid-header">
+                    <a href="#">
+                        <i class="fas fa-th"></i>
+                    </a>
                 </div>
-                <div class="col-3 menu-button-header">
+                <div class="col-3 col-sm-3 menu-button-header">
                     <i onclick="on()" class="fas fa-bars"></i>
                     <div id="overlay">
-                        <div class="col-12 close-overlay">
+                        <div class="col-12 col-sm-12 close-overlay">
                             <button type="button" class="btn btn-danger" onclick="off()">x</button>
                         </div>
                         <div id="overlay-menu">
@@ -39,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 col-lg-4 search-bar-header">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 search-bar-header">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Que estas buscando?"
                             aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -48,17 +52,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-2 col-lg-1 dark-mode-switch-header">
+                <div class="col-md-2 col-lg-1 dark-mode-switch-header">
                     <div class="custom-control custom-switch">
                         <input onclick="darkMode()" type="checkbox" class="custom-control-input" id="customSwitch1">
                         <label class="custom-control-label" for="customSwitch1"><i class="fas fa-adjust"></i></label>
                     </div>
                 </div>
-                <div class="col-sm-1 cl-lg-1 user-header">
-                    <i class="fas fa-user-circle"></i>
+                <div class="col-md-1 cl-lg-1 user-header">
+                    <a href="#">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
                 </div>
-                <div class="col-sm-1 col-lg-1 cart-header">
-                    <i class="fas fa-shopping-cart"></i>
+                <div class="col-md-1 col-lg-1 cart-header">
+                    <a href="/product/cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -173,13 +181,13 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-2 col-sm-2 col-lg-2 logo-footer">
+                <div class="col-3 col-sm-2 col-lg-2 logo-footer">
                     <img src="/images/logo/logoWhite.svg" alt="">
                 </div>
-                <div class="col-6 col-sm-8 col-lg-8 pf-inc">
+                <div class="col-7 col-sm-8 col-lg-8 pf-inc">
                     <span>@ 2020 Pedi Facil Inc.</span>
                 </div>
-                <div class="col-4 col-sm-2 col-lg-2 social-media-icons">
+                <div class="col-2 col-sm-2 col-lg-2 social-media-icons">
                     <ul>
                         <li><i class="fab fa-facebook"></i></li>
                         <li><i class="fab fa-instagram"></i></li>

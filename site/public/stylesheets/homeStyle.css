@@ -37,7 +37,7 @@ header{
 
 .product-grid-header i{
     font-size: 2rem;
-    color: #313A46;
+    /* color: #313A46; */
 }
 
 .search-bar-header{
@@ -148,6 +148,7 @@ footer i{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    
 }
 
 .pf-inc span{
@@ -159,7 +160,22 @@ footer i{
 
 /*------MEDIA QUERIES------*/
 
-@media (max-width:576px){
+@media (max-width: 460px){
+    /* ---FOOTER--- */
+    .logo-footer, .logo-footer img, .social-media-icons, .pf-inc{
+        height: 9vh;
+    }
+
+    footer i{
+        font-size: 1rem;
+    }
+
+    .pf-inc span{
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width:767px){
 
     .product-grid-header, .menu-button-header{
         font-size: 1rem;
@@ -176,8 +192,6 @@ footer i{
     .dark-mode-switch-header{
         display: none;
     }
-
-    
 
 }
 
@@ -223,10 +237,10 @@ footer i{
 
 .dark-mode {
     background-color: #222;
-    color: white;
+    color:white;
   }
 
-  #overlay {
+#overlay {
     position: fixed;
     display: none;
     width: 100vw;
@@ -238,9 +252,9 @@ footer i{
     background-color: #313A46;
     opacity: 0.96;
     z-index: 300;
-  }
+}
 
-  #overlay-menu{
+#overlay-menu{
     width: 100%;
     top: 50%;
     left: 50%;
@@ -252,18 +266,18 @@ footer i{
     background-color: #313A46;
     box-sizing: border-box;
     font-weight: bolder;
-  }
+}
 
-  .menu-button-header ul{
-      list-style: none;
-      padding: 0;
-      text-align: center;
-  }
+.menu-button-header ul{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
 
-  .close-overlay{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: flex-end;
-      margin-top: 3vh;
-  }
+.close-overlay{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 3vh;
+}
