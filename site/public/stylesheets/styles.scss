@@ -5,6 +5,7 @@ $gris: #313A46;
 $dark-blue: #073042;
 $light-blue: #4285F4;
 $white-blue: #F9FBFE;
+$shadow: 0 0 10px #00000050;
 
 //Estilos generales
 
@@ -25,220 +26,319 @@ a:hover {
 
 //Estilos puntuales
 
-body {
+.body-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
 
-    .body-section {
-        padding-top: 40px;
-        padding-bottom: 40px;
+    .form-title {
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
 
-        .form-title {
-            text-align: center;
-            font-weight: 600;
-            margin-bottom: 40px;
-        }
+    .product-section_title {
+        margin-bottom: 60px;
+        color: $dark-blue;
+        font-size: 30px;
+    }
 
-        .product-section_title {
-            margin-bottom: 60px;
-            color: $dark-blue;
-            font-size: 30px;
-        }
+    .table-responsive {
 
-        .table-responsive {
+        .table {
 
-            .table {
+            .thead-dark {
 
-                .thead-dark {
+                th {
+                    background-color: $dark-blue;
+                    border: 0;
+                }
+            }
 
-                    th {
-                        background-color: $dark-blue;
-                        border: 0;
+            tbody {
+
+                tr {
+
+                    td {
+
+                        .imagen {
+                            background-color: gray;
+                            width: 30px;
+                            height: 30px;
+                        }
+
+                        .custom-select {
+                            width: 100px;
+                            paddingpro-top: 0;
+                            padding-bottom: 0;
+                            height: 30px;
+                        }
+
+                        a {
+
+                            i {
+                                font-size: 20px;
+                            }
+
+                            .fa-trash {
+                                color: #dc3545;
+                            }
+
+                            .fa-trash:hover {
+                                color: #c82333;
+                            }
+
+                            .fa-redo-alt {
+                                color: #28a745;
+                            }
+
+                            .fa-redo-alt:hover {
+                                color: #218838;
+                            }
+
+                            .fa-edit {
+                                color: $dark-blue;
+                            }
+
+                            .fa-toggle-on {
+                                color: #28a745;
+                            }
+                        }
+                    }
+
+                    .product-actions {
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: space-around;
+                        align-items: center;
+                        padding-top: 11px;
                     }
                 }
 
-                tbody {
-
-                    tr {
-
-                        td {
-
-                            .imagen {
-                                background-color: gray;
-                                width: 30px;
-                                height: 30px;
-                            }
-
-                            .custom-select {
-                                width: 100px;
-                                padding-top: 0;
-                                padding-bottom: 0;
-                                height: 30px;
-                            }
-
-                            a {
-
-                                i {
-                                    font-size: 20px;
-                                }
-
-                                .fa-trash {
-                                    color: #dc3545;
-                                }
-
-                                .fa-trash:hover {
-                                    color: #c82333;
-                                }
-
-                                .fa-redo-alt {
-                                    color: #28a745;
-                                }
-
-                                .fa-redo-alt:hover {
-                                    color: #218838;
-                                }
-
-                                .fa-edit {
-                                    color: $dark-blue;
-                                }
-
-                                .fa-toggle-on {
-                                    color: #28a745;
-                                }
-                            }
-                        }
-
-                        .product-actions {
-                            display: flex;
-                            flex-flow: row wrap;
-                            justify-content: space-around;
-                            align-items: center;
-                            padding-top: 11px;
-                        }
-                    }
-
-                    .total-purchase {
-                        font-weight: 800;
-                    }
+                .total-purchase {
+                    font-weight: 800;
                 }
             }
         }
+    }
 
-        .product-section_foot {
-            display: flex;
-            flex-flow: column wrap;
-            margin-top: 50px;
+    .product-section_foot {
+        display: flex;
+        flex-flow: column wrap;
+        margin-top: 50px;
+
+        .form-control {
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            font-weight: 600;
+            min-width: 200px;
+            padding: 0;
+        }
+
+        .back {
+            width: 66px;
+            margin-bottom: 20px;
+
+            .btn-link {
+                min-width: auto;
+            }
+        }
+
+        .add-product_button {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            align-items: center;
+            margin-top: 30px;
+
+            label {
+                margin: 0;
+                text-align: left;
+            }
 
             .form-control {
-                margin-bottom: 50px;
+                margin-left: 10px;
+                margin-bottom: 0;
+                max-width: 300px;
             }
 
-            .btn {
-                font-weight: 600;
-                min-width: 200px;
-                padding: 0;
+            .purchase, .add-product, .repeat {
+                margin-left: auto;
             }
 
             .back {
-                width: 66px;
-                margin-bottom: 20px;
+                width: auto;
+                margin: 0;
+            }
+        }
+    }
+
+    .admin-product {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: $shadow;
+
+        .admin-product_buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
 
                 .btn-link {
-                    min-width: auto;
+                    padding: 0;
                 }
             }
+        }
+    }
 
-            .add-product_button {
+    .social {
+        margin-top: 40px;
+
+        .social-login {
+            display: block;
+            width: 100%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+
+            i {
+                margin-left: 25px;
+            }
+
+            img {
+                margin-left: 20px;
+                height: 16px;
+            }
+
+            span {
+                margin-left: 20px;
+            }
+        }
+
+        .facebook {
+            background-color: #1A538A;
+            color: white;
+        }
+
+        .google {
+            background-color: white;
+            color: $gris;
+            border: 1px solid $gris;
+        }
+    }
+
+    .form-foot {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .product-detail_h2 {
+        display: none;
+
+        @media (min-width: 768px) {
+            display: block;
+            color: #aaa;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .product-detail_section {
+        border-radius: 10px;
+        box-shadow: $shadow;
+        overflow: hidden;
+        display: flex;
+        flex-flow: column wrap;
+
+        .left {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            img {
                 width: 100%;
             }
 
             @media (min-width: 768px) {
-                flex-direction: row;
-                align-items: center;
-                margin-top: 30px;
-
-                label {
-                    margin: 0;
-                    text-align: left;
-                }
-
-                .form-control {
-                    margin-left: 10px;
-                    margin-bottom: 0;
-                    max-width: 300px;
-                }
-
-                .purchase, .add-product, .repeat {
-                    margin-left: auto;
-                }
-
-                .back {
-                    width: auto;
-                    margin: 0;
-                }
+                width: 50%;
+                margin-bottom: 0;
             }
         }
 
-        .admin-product {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #00000050;
+        .right {
+            padding: 10px;
+            width: 100%;
 
-            .admin-product_buttons {
-                margin-top: 40px;
+            h1 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin-bottom: 60px;
+
+                @media (min-width: 768px) and (max-width: 991px) {
+                    margin-bottom: 35px;
+                }
+            }
+
+            span {
+                display: block;
+                font-size: 30px;
+                margin-bottom: 60px;
+
+                @media (min-width: 768px) and (max-width: 991px) {
+                    margin-bottom: 35px;
+                }
+            }
+
+            form {
+                margin-bottom: 20px;
                 display: flex;
-                justify-content: space-between;
+                flex-flow: row wrap;
                 align-items: center;
+                justify-content: center;
 
-                a {
+                .product-detail_quantity {
+                    width: 70px;
+                }
 
-                    .btn-link {
-                        padding: 0;
+                .product-detail_button {
+                    margin-left: 20px;
+                    width: calc(100% - 90px);
+                    font-weight: 600;
+
+                    @media (min-width: 768px) {
+                        max-width: 300px;
                     }
                 }
+
+                @media (min-width: 768px) {
+                    margin-bottom: 0;
+                }
+            }
+
+            @media (min-width: 768px) {
+                width: 50%;
+            }
+
+            @media (min-width: 992px) {
+                padding-top: 50px;
+                padding-left: 25px;
+                padding-right: 25px;
             }
         }
 
-        .social {
-            margin-top: 40px;
-
-            .social-login {
-                display: block;
-                width: 100%;
-                height: 30px;
-                display: flex;
-                align-items: center;
-                border-radius: 5px;
-    
-                i {
-                    margin-left: 25px;
-                }
-    
-                img {
-                    margin-left: 20px;
-                    height: 16px;
-                }
-    
-                span {
-                    margin-left: 20px;
-                }
-            }
-
-            .facebook {
-                background-color: #1A538A;
-                color: white;
-            }
-
-            .google {
-                background-color: white;
-                color: $gris;
-                border: 1px solid $gris;
-            }
-        }
-
-        .form-foot {
-            text-align: center;
-            margin-top: 20px;
+        @media (min-width: 768px) {
+            flex-direction: row;
         }
     }
 }

@@ -14,70 +14,70 @@ a:hover {
   text-decoration: none;
 }
 
-body .body-section {
+.body-section {
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
-body .body-section .form-title {
+.body-section .form-title {
   text-align: center;
   font-weight: 600;
   margin-bottom: 40px;
 }
 
-body .body-section .product-section_title {
+.body-section .product-section_title {
   margin-bottom: 60px;
   color: #073042;
   font-size: 30px;
 }
 
-body .body-section .table-responsive .table .thead-dark th {
+.body-section .table-responsive .table .thead-dark th {
   background-color: #073042;
   border: 0;
 }
 
-body .body-section .table-responsive .table tbody tr td .imagen {
+.body-section .table-responsive .table tbody tr td .imagen {
   background-color: gray;
   width: 30px;
   height: 30px;
 }
 
-body .body-section .table-responsive .table tbody tr td .custom-select {
+.body-section .table-responsive .table tbody tr td .custom-select {
   width: 100px;
-  padding-top: 0;
+  paddingpro-top: 0;
   padding-bottom: 0;
   height: 30px;
 }
 
-body .body-section .table-responsive .table tbody tr td a i {
+.body-section .table-responsive .table tbody tr td a i {
   font-size: 20px;
 }
 
-body .body-section .table-responsive .table tbody tr td a .fa-trash {
+.body-section .table-responsive .table tbody tr td a .fa-trash {
   color: #dc3545;
 }
 
-body .body-section .table-responsive .table tbody tr td a .fa-trash:hover {
+.body-section .table-responsive .table tbody tr td a .fa-trash:hover {
   color: #c82333;
 }
 
-body .body-section .table-responsive .table tbody tr td a .fa-redo-alt {
+.body-section .table-responsive .table tbody tr td a .fa-redo-alt {
   color: #28a745;
 }
 
-body .body-section .table-responsive .table tbody tr td a .fa-redo-alt:hover {
+.body-section .table-responsive .table tbody tr td a .fa-redo-alt:hover {
   color: #218838;
 }
 
-body .body-section .table-responsive .table tbody tr td a .fa-edit {
+.body-section .table-responsive .table tbody tr td a .fa-edit {
   color: #073042;
 }
 
-body .body-section .table-responsive .table tbody tr td a .fa-toggle-on {
+.body-section .table-responsive .table tbody tr td a .fa-toggle-on {
   color: #28a745;
 }
 
-body .body-section .table-responsive .table tbody tr .product-actions {
+.body-section .table-responsive .table tbody tr .product-actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,11 +93,11 @@ body .body-section .table-responsive .table tbody tr .product-actions {
   padding-top: 11px;
 }
 
-body .body-section .table-responsive .table tbody .total-purchase {
+.body-section .table-responsive .table tbody .total-purchase {
   font-weight: 800;
 }
 
-body .body-section .product-section_foot {
+.body-section .product-section_foot {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,31 +108,31 @@ body .body-section .product-section_foot {
   margin-top: 50px;
 }
 
-body .body-section .product-section_foot .form-control {
+.body-section .product-section_foot .form-control {
   margin-bottom: 50px;
 }
 
-body .body-section .product-section_foot .btn {
+.body-section .product-section_foot .btn {
   font-weight: 600;
   min-width: 200px;
   padding: 0;
 }
 
-body .body-section .product-section_foot .back {
+.body-section .product-section_foot .back {
   width: 66px;
   margin-bottom: 20px;
 }
 
-body .body-section .product-section_foot .back .btn-link {
+.body-section .product-section_foot .back .btn-link {
   min-width: auto;
 }
 
-body .body-section .product-section_foot .add-product_button {
+.body-section .product-section_foot .add-product_button {
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  body .body-section .product-section_foot {
+  .body-section .product-section_foot {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -142,34 +142,34 @@ body .body-section .product-section_foot .add-product_button {
             align-items: center;
     margin-top: 30px;
   }
-  body .body-section .product-section_foot label {
+  .body-section .product-section_foot label {
     margin: 0;
     text-align: left;
   }
-  body .body-section .product-section_foot .form-control {
+  .body-section .product-section_foot .form-control {
     margin-left: 10px;
     margin-bottom: 0;
     max-width: 300px;
   }
-  body .body-section .product-section_foot .purchase, body .body-section .product-section_foot .add-product, body .body-section .product-section_foot .repeat {
+  .body-section .product-section_foot .purchase, .body-section .product-section_foot .add-product, .body-section .product-section_foot .repeat {
     margin-left: auto;
   }
-  body .body-section .product-section_foot .back {
+  .body-section .product-section_foot .back {
     width: auto;
     margin: 0;
   }
 }
 
-body .body-section .admin-product {
+.body-section .admin-product {
   max-width: 500px;
   margin: 0 auto;
   padding: 50px;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 10px #00000050;
-          box-shadow: 0px 0px 10px #00000050;
+  -webkit-box-shadow: 0 0 10px #00000050;
+          box-shadow: 0 0 10px #00000050;
 }
 
-body .body-section .admin-product .admin-product_buttons {
+.body-section .admin-product .admin-product_buttons {
   margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -182,15 +182,15 @@ body .body-section .admin-product .admin-product_buttons {
           align-items: center;
 }
 
-body .body-section .admin-product .admin-product_buttons a .btn-link {
+.body-section .admin-product .admin-product_buttons a .btn-link {
   padding: 0;
 }
 
-body .body-section .social {
+.body-section .social {
   margin-top: 40px;
 }
 
-body .body-section .social .social-login {
+.body-section .social .social-login {
   display: block;
   width: 100%;
   height: 30px;
@@ -203,32 +203,174 @@ body .body-section .social .social-login {
   border-radius: 5px;
 }
 
-body .body-section .social .social-login i {
+.body-section .social .social-login i {
   margin-left: 25px;
 }
 
-body .body-section .social .social-login img {
+.body-section .social .social-login img {
   margin-left: 20px;
   height: 16px;
 }
 
-body .body-section .social .social-login span {
+.body-section .social .social-login span {
   margin-left: 20px;
 }
 
-body .body-section .social .facebook {
+.body-section .social .facebook {
   background-color: #1A538A;
   color: white;
 }
 
-body .body-section .social .google {
+.body-section .social .google {
   background-color: white;
   color: #313A46;
   border: 1px solid #313A46;
 }
 
-body .body-section .form-foot {
+.body-section .form-foot {
   text-align: center;
   margin-top: 20px;
+}
+
+.body-section .product-detail_h2 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .body-section .product-detail_h2 {
+    display: block;
+    color: #aaa;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.body-section .product-detail_section {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #00000050;
+          box-shadow: 0 0 10px #00000050;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.body-section .product-detail_section .left {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.body-section .product-detail_section .left img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .body-section .product-detail_section .left {
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.body-section .product-detail_section .right {
+  padding: 10px;
+  width: 100%;
+}
+
+.body-section .product-detail_section .right h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.body-section .product-detail_section .right p {
+  margin-bottom: 60px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .body-section .product-detail_section .right p {
+    margin-bottom: 35px;
+  }
+}
+
+.body-section .product-detail_section .right span {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .body-section .product-detail_section .right span {
+    margin-bottom: 35px;
+  }
+}
+
+.body-section .product-detail_section .right form {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.body-section .product-detail_section .right form .product-detail_quantity {
+  width: 70px;
+}
+
+.body-section .product-detail_section .right form .product-detail_button {
+  margin-left: 20px;
+  width: calc(100% - 90px);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .body-section .product-detail_section .right form .product-detail_button {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .body-section .product-detail_section .right form {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .body-section .product-detail_section .right {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .body-section .product-detail_section .right {
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .body-section .product-detail_section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

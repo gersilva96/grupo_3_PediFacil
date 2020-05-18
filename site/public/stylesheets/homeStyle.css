@@ -35,8 +35,9 @@ header{
     font-size: 2.5rem;
 }
 
-.product-grid-header{
+.product-grid-header i{
     font-size: 2rem;
+    color: #313A46;
 }
 
 .search-bar-header{
@@ -59,21 +60,21 @@ header{
     color: white;
     background-color: #313A46;
     border-radius: 5px;
-    padding: 6px 9px 6px 9px;
+    padding: 6px 9px;
     box-sizing: border-box;
 }
 
 /*------BANNER------*/
 .d-block, .w-100{
     height: 70vh;
-    padding: 3vh 0 3vh 0;
+    padding: 3vh 0;
 }
 
 /*------MAIN------ */
 main{
     display: flex;
     height: auto;
-    margin: 3vh 0 3vh 0;
+    margin: 3vh 0;
 }
 
 
@@ -82,11 +83,12 @@ main{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 3vh 0 3vh 0;
+    margin: 3vh 0;
+    font-size: 1.5rem;
 }
 
-.info-home li{
-    font-size: 1.5rem;
+.info-home span {
+    font-weight: 800;
 }
 
 /*------FOOTER------*/
@@ -220,7 +222,7 @@ footer i{
 /*------NEW------*/
 
 .dark-mode {
-    background-color: black;
+    background-color: #222;
     color: white;
   }
 
