@@ -1,6 +1,7 @@
 # Retrospectiva
-
-<img align="center" width="218" height="160" src="design/images/retro_starfish.png">
+<div align="center">
+  <img width="350" height="350" src="design/images/retro_starfish.png">
+</div>
 
 
 - Un restaurante promedio tiene entre 15 y 20 proveedores diferentes.
