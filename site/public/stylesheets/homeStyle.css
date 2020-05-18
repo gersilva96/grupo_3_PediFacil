@@ -35,6 +35,10 @@ header{
     font-size: 2.5rem;
 }
 
+.product-grid-header a, .user-header a, .cart-header a {
+    color: #073042;
+}
+
 .product-grid-header i{
     font-size: 2rem;
     /* color: #313A46; */
@@ -266,6 +270,10 @@ footer i{
     background-color: #313A46;
     box-sizing: border-box;
     font-weight: bolder;
+}
+
+#overlay-menu ul li a {
+    color: white;
 }
 
 .menu-button-header ul{
