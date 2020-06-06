@@ -5,9 +5,15 @@ let leerHTML = fileName => fs.readFileSync(`${__dirname}/../views/admin/${fileNa
 
 //Funciones públicas
 let adminController = {
-    list: (req,res) => res.send(leerHTML("productList")),
-    add: (req,res) => res.send(leerHTML("productAdd")),
-    edit: (req,res) => res.send(leerHTML("productEdit"))
+    list: (req,res) => {
+        res.render("productList");
+    },
+    add: (req,res) => {
+        res.render("productAdd");
+    },
+    edit: (req,res) => {
+        res.render("productEdit");
+    }
 }
 
 module.exports = adminController;

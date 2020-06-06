@@ -5,9 +5,9 @@ let leerHTML = fileName => fs.readFileSync(`${__dirname}/../views/${fileName}.ht
 
 //Funciones públicas
 let mainController = {
-    home: (req,res) => res.send(leerHTML("index")),
-    login: (req,res) => res.send(leerHTML("login")),
-    register: (req,res) => res.send(leerHTML("register"))
+    home: (req,res) => {
+        res.render("index");
+    },
 }
 
 module.exports = mainController;

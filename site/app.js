@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 //Llamo a las rutas
 const mainRouter = require("./routes/main");
+const userRouter = require("./routes/user");
 const productRouter = require("./routes/product");
 const adminRouter = require("./routes/admin");
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Rutas
 app.use("/", mainRouter);
+app.use("/user", userRouter);
 app.use("/product", productRouter);
 app.use("/admin", adminRouter);
 

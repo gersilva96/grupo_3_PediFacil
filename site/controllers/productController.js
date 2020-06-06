@@ -5,10 +5,18 @@ let leerHTML = fileName => fs.readFileSync(`${__dirname}/../views/product/${file
 
 //Funciones públicas
 let productController = {
-    cart: (req,res) => res.send(leerHTML("productCart")),
-    detail: (req,res) => res.send(leerHTML("productDetail")),
-    orderHistory: (req,res) => res.send(leerHTML("productOrderHistory")),
-    orderHistoryDetail: (req,res) => res.send(leerHTML("productOrderHistoryDetail"))
+    cart: (req,res) => {
+        res.render("productCart");
+    },
+    detail: (req,res) => {
+        res.render("productDetail");
+    },
+    orderHistory: (req,res) => {
+        res.render("productOrderHistory");
+    },
+    orderHistoryDetail: (req,res) => {
+        res.render("productOrderHistoryDetail");
+    },
 }
 
 module.exports = productController;
