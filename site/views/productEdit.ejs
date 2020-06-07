@@ -2,15 +2,8 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/reset.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="stylesheet" href="/stylesheets/homeStyle.css">
-    <link rel="shortcut icon" type="image/svg" href="/images/logo/favicon.svg">
-    <title>Admin: modificar producto | Pedí Fácil</title>
+    <%- include("partials/head") %>
+    <title>Modificar producto | Pedí Fácil</title>
 </head>
 
 <body>
@@ -20,18 +13,10 @@
     <section class="body-section">
         <div class="container">
             <h1 class="product-section_title"><i class="fas fa-user-cog"></i> Modificar producto</h1>
-            <form class="admin-product">
+            <form class="admin-product" action="/products/<%= product.id %>?_method=PUT" method="POST">
                 <div class="form-group">
                     <label for="name">Nombre:</label>
-                    <input type="text" class="form-control" id="name" name="name" value="Lorem ipsum dolor sit">
-                </div>
-                <div class="form-group">
-                    <label for="brand">Marca:</label>
-                    <input type="text" class="form-control" id="brand" name="brand" value="Lorem ipsum dolor sit">
-                </div>
-                <div class="form-group">
-                    <label for="quantity">Cantidad:</label>
-                    <input type="text" class="form-control" id="quantity" name="quantity" value="1L">
+                    <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">
                 </div>
                 <div class="form-group">
                     <label for="price">Precio:</label>
@@ -39,29 +24,30 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                         </div>
-                        <input type="number" id="price" name="price" class="form-control" value="19.95">
+                        <input type="number" id="price" name="price" class="form-control" value="<%= product.price %>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="discount">Descuento:</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" id="discount" name="discount" class="form-control" value="<%= product.discount %>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="stock">Stock:</label>
-                    <input type="number" class="form-control" id="stock" name="stock" value="9999">
+                    <input type="number" class="form-control" id="stock" name="stock" value="<%= product.stock %>">
                 </div>
                 <div class="form-group">
                     <label for="description">Descripción:</label>
                     <textarea class="form-control" id="description" name="description"
-                        rows="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ex facere ducimus iusto doloribus veritatis ut inventore, impedit laudantium molestiae natus sapiente exercitationem itaque in molestias maxime voluptates. Consectetur, necessitatibus.</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="image">Imagen del producto:</label>
-                    <input type="file" class="form-control-file" id="image" name="image">
-                </div>
-                <div class="form-group">
-                    <label for="id">Id:</label>
-                    <input type="number" class="form-control" id="id" name="id" value="2">
+                        rows="3"><%= product.description %></textarea>
                 </div>
                 <div class="form-group">
                     <div class="admin-product_buttons">
-                        <a href="/admin/list"><button type="button" class="btn btn-link"><i
+                        <a href="/products"><button type="button" class="btn btn-link"><i
                                     class="fas fa-angle-left"></i> Volver</button></a>
                         <button type="reset" class="btn btn-outline-warning">Reiniciar</button>
                         <button type="submit" class="btn btn-success">Aceptar</button>

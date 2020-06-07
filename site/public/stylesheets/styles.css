@@ -93,6 +93,20 @@ a:hover {
   padding-top: 11px;
 }
 
+.body-section .table-responsive .table tbody tr .product-actions form button {
+  border: none;
+}
+
+.body-section .table-responsive .table tbody tr .product-actions form button .fa-trash {
+  color: #dc3545;
+  font-size: 20px;
+}
+
+.body-section .table-responsive .table tbody tr .product-actions form button .fa-trash:hover {
+  color: #c82333;
+  font-size: 20px;
+}
+
 .body-section .table-responsive .table tbody .total-purchase {
   font-weight: 800;
 }
@@ -267,10 +281,13 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .body-section .product-detail_section .left img {
-  width: 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -300,14 +317,30 @@ a:hover {
   }
 }
 
-.body-section .product-detail_section .right span {
-  display: block;
-  font-size: 30px;
+.body-section .product-detail_section .right .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 60px;
 }
 
+.body-section .product-detail_section .right .price span:first-child {
+  display: block;
+  font-size: 30px;
+}
+
+.body-section .product-detail_section .right .price .discount {
+  font-size: 1em;
+  font-weight: 500;
+  color: #39b54a;
+  margin: 0 0 0 10px;
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
-  .body-section .product-detail_section .right span {
+  .body-section .product-detail_section .right .price {
     margin-bottom: 35px;
   }
 }
@@ -371,6 +404,12 @@ a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+}
+
+@media (min-width: 992px) {
+  .body-section .product-detail_section {
+    min-height: 450px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

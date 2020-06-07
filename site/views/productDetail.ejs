@@ -2,15 +2,8 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/reset.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="stylesheet" href="/stylesheets/homeStyle.css">
-    <link rel="shortcut icon" type="image/svg" href="/images/logo/favicon.svg">
-    <title>Nombre producto - Marca - Cantidad | Pedí Fácil</title>
+    <%- include("partials/head") %>
+    <title><%= product.name %> | Pedí Fácil</title>
 </head>
 
 <body>
@@ -19,16 +12,18 @@
 
     <section class="body-section">
         <div class="container">
-            <h2 class="product-detail_h2">Detalle del producto: Nombre producto - Marca - Cantidad</h2>
+            <h2 class="product-detail_h2">Detalle del producto: <%= product.name %></h2>
             <section class="product-detail_section">
                 <figure class="left">
-                    <img src="https://dummyimage.com/1000x1000/aaa/fff" alt="imagen de producto">
+                    <img src="/images/products/<%= product.image %>" alt="imagen de producto">
                 </figure>
                 <article class="right">
-                    <h1>Nombre producto - Marca - Cantidad</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit ipsam laborum
-                    </p>
-                    <span>$999.99</span>
+                    <h1><%= product.name %></h1>
+                    <p><%= product.description %> </p>
+                    <div class="price">
+                        <span>$<%= formatPrice(product.price,product.discount) %></span>
+                        <span class="discount"><% if (product.discount != 0) { %><%= product.discount %>% OFF<% } %></span>
+                    </div>
                     <form>
                         <input type="number" class="form-control product-detail_quantity" id="product" name="product"
                             value="1">

@@ -2,14 +2,7 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/reset.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="stylesheet" href="/stylesheets/homeStyle.css">
-    <link rel="shortcut icon" type="image/svg" href="/images/logo/favicon.svg">
+    <%- include("partials/head") %>
     <title>Admin: listado de productos | Pedí Fácil</title>
 </head>
 
@@ -20,113 +13,38 @@
     <section class="body-section">
         <div class="container">
             <h1 class="product-section_title"><i class="fas fa-user-cog"></i> Administrar productos</h1>
-            <form action="" class="product-section_form">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Producto</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Stock</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="imagen"></div>
-                                </td>
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>$19.95</td>
-                                <td>
-                                    <select class="custom-select" id="inputGroupSelect01" name="producto1">
-                                        <option selected value="9999">9999</option>
-                                    </select>
-                                </td>
-                                <td class="product-actions">
-                                    <a href="/admin/edit"><i class="fas fa-edit"></i></a>
-                                    <a href="#"><i class="fas fa-toggle-on"></i></a>
-                                    <a href="#"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imagen"></div>
-                                </td>
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>$25.50</td>
-                                <td>
-                                    <select class="custom-select" id="inputGroupSelect01" name="producto2">
-                                        <option selected value="9999">9999</option>
-                                    </select>
-                                </td>
-                                <td class="product-actions">
-                                    <a href="/admin/edit"><i class="fas fa-edit"></i></a>
-                                    <a href="#"><i class="fas fa-toggle-on"></i></a>
-                                    <a href="#"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imagen"></div>
-                                </td>
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>$200.00</td>
-                                <td>
-                                    <select class="custom-select" id="inputGroupSelect01" name="producto3">
-                                        <option selected value="9999">9999</option>
-                                    </select>
-                                </td>
-                                <td class="product-actions">
-                                    <a href="/admin/edit"><i class="fas fa-edit"></i></a>
-                                    <a href="#"><i class="fas fa-toggle-on"></i></a>
-                                    <a href="#"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imagen"></div>
-                                </td>
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>$5.90</td>
-                                <td>
-                                    <select class="custom-select" id="inputGroupSelect01" name="producto4">
-                                        <option selected value="9999">9999</option>
-                                    </select>
-                                </td>
-                                <td class="product-actions">
-                                    <a href="/admin/edit"><i class="fas fa-edit"></i></a>
-                                    <a href="#"><i class="fas fa-toggle-on"></i></a>
-                                    <a href="#"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imagen"></div>
-                                </td>
-                                <td>Lorem ipsum dolor sit</td>
-                                <td>$1589.95</td>
-                                <td>
-                                    <select class="custom-select" id="inputGroupSelect01" name="producto5">
-                                        <option selected value="9999">9999</option>
-                                    </select>
-                                </td>
-                                <td class="product-actions">
-                                    <a href="/admin/edit"><i class="fas fa-edit"></i></a>
-                                    <a href="#"><i class="fas fa-toggle-on"></i></a>
-                                    <a href="#"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="product-section_foot">
-                    <a href="/admin/add" class="add-product">
-                        <button type="button" class="btn btn-primary add-product_button">Agregar producto</button>
-                    </a>
-                </div>
-            </form>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach(product => { %>
+                        <tr>
+                            <td>
+                                <div class="imagen"><img src="/images/products/<%= product.image %>" alt="imagen de producto"></div>
+                            </td>
+                            <td><%= product.name %></td>
+                            <td class="product-actions">
+                                <a href="/products/<%= product.id %>/edit"><i class="fas fa-edit"></i></a>
+                                <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                                    <button type="submit"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="product-section_foot">
+                <a href="/products/create" class="add-product">
+                    <button type="button" class="btn btn-primary add-product_button">Agregar producto</button>
+                </a>
+            </div>
         </div>
     </section>
 
