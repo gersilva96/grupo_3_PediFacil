@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('../partials/head')%>
+
+<body>
+
+    <!-- HEADER -->
+    <%- include('../partials/header')%>
+
+    <!-- MAIN -->
+    <section class="body-section">
+        <div class="container">
+            <h2 class="product-detail_h2">Detalle del producto: Nombre producto - Marca - Cantidad</h2>
+            <section class="product-detail_section">
+                <figure class="left">
+                    <img src="https://dummyimage.com/1000x1000/aaa/fff" alt="imagen de producto">
+                </figure>
+                <article class="right">
+                    <h1>Nombre producto - Marca - Cantidad</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus reprehenderit ipsam laborum
+                    </p>
+                    <span>$999.99</span>
+                    <form>
+                        <input type="number" class="form-control product-detail_quantity" id="product" name="product"
+                            value="1">
+                        <button type="submit" class="btn btn-primary product-detail_button"><i
+                                class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                    </form>
+                </article>
+            </section>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer')%>
+
+    <!-- SCRIPTS -->
+    <%- include('../partials/scripts')%>
+
+</body>
+
+</html>

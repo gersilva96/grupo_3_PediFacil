@@ -1,14 +1,11 @@
 const fs = require("fs");
 
-//Funciones privadas
-let leerHTML = fileName => fs.readFileSync(`${__dirname}/../views/product/${fileName}.html`,"utf-8");
-
 //Funciones públicas
 let productController = {
-    cart: (req,res) => res.send(leerHTML("productCart")),
-    detail: (req,res) => res.send(leerHTML("productDetail")),
-    orderHistory: (req,res) => res.send(leerHTML("productOrderHistory")),
-    orderHistoryDetail: (req,res) => res.send(leerHTML("productOrderHistoryDetail"))
+    cart: (req,res) => {res.render('product/productCart', {title:'Carrito | Pedí Fácil'})},
+    detail: (req,res) => {res.render('product/productDetail', {title:'Detalle de Pedidos | Pedí Fácil'})},
+    orderHistory: (req,res) => {res.render('product/productOrderHistory', {title:'Historial de Pedidos | Pedí Fácil'})},
+    orderHistoryDetail: (req,res) => {res.render('product/productOrderHistoryDetail', {title:'Historial de Pedidos | Pedí Fácil'})}
 }
 
 module.exports = productController;
