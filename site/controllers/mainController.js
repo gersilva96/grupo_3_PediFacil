@@ -1,4 +1,3 @@
-const fs = require("fs");
 const productController = require("./productController");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -14,7 +13,7 @@ let mainController = {
             }
         });
         res.render("index", {products, formatPrice});
-    },
+    }
 }
 
 module.exports = mainController;

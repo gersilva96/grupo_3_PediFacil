@@ -27,6 +27,10 @@ header{
     border-right: white;
 }
 
+.search-button {
+    background: none;
+}
+
 .product-grid-header, .search-bar-header, .dark-mode-switch-header, .user-header, .cart-header{
     display: flex;
     flex-wrap: wrap;

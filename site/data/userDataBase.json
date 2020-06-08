@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "business_name": "Pedifacil",
+        "email": "gersilva96@hotmail.com",
+        "first_name": "German",
+        "last_name": "Silva",
+        "password": "$2b$10$vDM7dTsNuvfrbP6q3sA.JOOO30o9FqPpMxRUUHYwhepD03Ehd3jXW",
+        "admin": true,
+        "image": "avatar-1.jpg"
+    },
+    {
+        "id": 2,
+        "business_name": "Pedifacil",
+        "email": "espinosarodrigo177@gmail.com",
+        "first_name": "Rodrigo",
+        "last_name": "Espinosa",
+        "password": "$2b$10$vDM7dTsNuvfrbP6q3sA.JOOO30o9FqPpMxRUUHYwhepD03Ehd3jXW",
+        "admin": true,
+        "image": "avatar-2.jpg"
+    },
+    {
+        "id": 3,
+        "business_name": "Pedifacil",
+        "email": "gagc@protonmail.ch",
+        "first_name": "Guillermo",
+        "last_name": "Gonzales",
+        "password": "$2b$10$vDM7dTsNuvfrbP6q3sA.JOOO30o9FqPpMxRUUHYwhepD03Ehd3jXW",
+        "admin": true,
+        "image": "avatar-3.jpg"
+    },
+    {
+        "id": 4,
+        "business_name": "Pedifacil",
+        "email": "edu.andreu747@gmail.com",
+        "first_name": "Eduardo",
+        "last_name": "Andreu",
+        "password": "$2b$10$vDM7dTsNuvfrbP6q3sA.JOOO30o9FqPpMxRUUHYwhepD03Ehd3jXW",
+        "admin": true,
+        "image": "avatar-4.jpg"
+    },
+    {
+        "id": 5,
+        "business_name": "DigitalHouse",
+        "email": "ccia@digitalhouse.com",
+        "first_name": "Carolina",
+        "last_name": "Cia",
+        "password": "$2b$10$vDM7dTsNuvfrbP6q3sA.JOOO30o9FqPpMxRUUHYwhepD03Ehd3jXW",
+        "admin": false,
+        "image": "avatar-5.jpg"
+    },
+    {
+        "id": 6,
+        "business_name": "DigitalHouse",
+        "email": "jesus@digitalhouse.com",
+        "first_name": "Jesus",
+        "last_name": "Arce",
+        "password": "$2b$10$vDM7dTsNuvfrbP6q3sA.JOOO30o9FqPpMxRUUHYwhepD03Ehd3jXW",
+        "admin": false,
+        "image": "avatar-6.jpg"
+    }
+]

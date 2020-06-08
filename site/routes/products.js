@@ -9,6 +9,8 @@ const uploadImgProduct = require("../middlewares/uploadImgProduct");
 const productController = require("../controllers/productController");
 
 //Obtengo las rutas principales
+router.get("/search", productController.search);    //GET - Muestra los resultados de búsqueda
+
 router.get("/all-products", productController.root);   //GET - Muestra todos los productos
 
 router.get("/detail/:id", productController.detail);   //GET - Muestra el detalle de un producto

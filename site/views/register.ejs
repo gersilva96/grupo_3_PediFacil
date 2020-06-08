@@ -11,26 +11,26 @@
 
     <section class="body-section">
         <div class="container">
-            <form class="admin-product" method="POST" action="/user/register">
+            <form class="admin-product" method="POST" action="/user/register" enctype="multipart/form-data">
                 <div class="form-group">
                     <h1 class="form-title">Registrate</h1>
                 </div>
                 <div class="form-group">
                     <label for="business_name">Nombre de tu negocio:</label>
-                    <input type="text" class="form-control" id="business_name" name="business_name">
+                    <input type="text" class="form-control" id="business_name" name="business_name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-row">
                     <div class="col-12 col-md-6 mb-3">
                         <label for="first_name">Tu nombre:</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name">
+                        <input type="text" class="form-control" id="first_name" name="first_name" required>
                     </div>
                     <div class="col-12 col-md-6 mb-3">
                         <label for="last_name">Tu apellido:</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name">
+                        <input type="text" class="form-control" id="last_name" name="last_name" required>
                     </div>
                 </div>
                 <div class="form-row">
@@ -42,6 +42,10 @@
                         <label for="password_repeat">Confirmar</label>
                         <input type="password" class="form-control" id="password_repeat" name="password_repeat" required>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="avatar">Avatar:</label>
+                    <input type="file" class="form-control-file" id="avatar" name="avatar" required>
                 </div>
                 <div class="form-group">
                     <div class="admin-product_buttons">

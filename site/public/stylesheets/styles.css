@@ -186,6 +186,7 @@ a:hover {
 
 .body-section .table-responsive .table tbody tr .product-actions form button {
   border: none;
+  background: none;
 }
 
 .body-section .table-responsive .table tbody tr .product-actions form button .fa-trash {
