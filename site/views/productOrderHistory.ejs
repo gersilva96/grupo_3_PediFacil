@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<!-- HEAD -->
-<%- include('../partials/head')%>
+<head>
+    <%- include("partials/head", {title: "Historial de pedidos"}) %>
+</head>
 
 <body>
-
     <!-- HEADER -->
-    <%- include('../partials/header')%>
+    <%- include("partials/header") %>
 
-    <!-- MAIN -->
     <section class="body-section">
         <div class="container">
             <h1 class="product-section_title"><i class="fas fa-history"></i> Historial de pedidos</h1>
@@ -29,31 +28,31 @@
                                 <td>01/01/2020</td>
                                 <td>Lorem ipsum dolor sit amet, consectetur</td>
                                 <td>$119.70</td>
-                                <td><a href="/product/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
+                                <td><a href="/products/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
                             </tr>
                             <tr>
                                 <td>01/01/2020</td>
                                 <td>Lorem ipsum dolor sit amet, consectetur</td>
                                 <td>$76.50</td>
-                                <td><a href="/product/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
+                                <td><a href="/products/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
                             </tr>
                             <tr>
                                 <td>01/01/2020</td>
                                 <td>Lorem ipsum dolor sit amet, consectetur</td>
                                 <td>$400.00</td>
-                                <td><a href="/product/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
+                                <td><a href="/products/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
                             </tr>
                             <tr>
                                 <td>01/01/2020</td>
                                 <td>Lorem ipsum dolor sit amet, consectetur</td>
                                 <td>$118.00</td>
-                                <td><a href="/product/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
+                                <td><a href="/products/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
                             </tr>
                             <tr>
                                 <td>01/01/2020</td>
                                 <td>Lorem ipsum dolor sit amet, consectetur</td>
                                 <td>$1589.95</td>
-                                <td><a href="/product/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
+                                <td><a href="/products/order-history-detail"><i class="fas fa-redo-alt"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -63,11 +62,10 @@
     </section>
 
     <!-- FOOTER -->
-    <%- include('../partials/footer')%>
+    <%- include("partials/footer") %>
 
     <!-- SCRIPTS -->
-    <%- include('../partials/scripts')%>
-
+    <%- include("partials/scripts") %>
 </body>
 
 </html>
