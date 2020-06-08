@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<!-- HEAD -->
-<%- include('../partials/head')%>
+<head>
+    <%- include("partials/head", {title: "Carrito"}) %>
+</head>
 
 <body>
 
     <!-- HEADER -->
-    <%- include('../partials/header')%>
+    <%- include("partials/header") %>
 
     <!-- MAIN -->
     <section class="body-section">
         <div class="container">
-            <h1 class="product-section_title"><i class="fas fa-history"></i> Historial de pedidos</h1>
-            <p>Descripición: <strong>Lorem ipsum dolor sit amet, consectetur</strong></p>
-            <p>Fecha: <strong>01/01/2020</strong></p>
-            <p>Detalle:</p>
+            <h1 class="product-section_title"><i class="fas fa-shopping-cart"></i> Carrito de compras</h1>
             <form action="" class="product-section_form">
                 <div class="table-responsive">
                     <table class="table">
@@ -26,6 +24,7 @@
                                 <th scope="col">Precio</th>
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">Total</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,7 +32,7 @@
                                 <td>
                                     <div class="imagen"></div>
                                 </td>
-                                <td><a href="/product/detail">Lorem ipsum dolor sit</a></td>
+                                <td><a href="/products/detail">Lorem ipsum dolor sit</a></td>
                                 <td>$19.95</td>
                                 <td>
                                     <select class="custom-select" id="inputGroupSelect01" name="producto1">
@@ -41,12 +40,13 @@
                                     </select>
                                 </td>
                                 <td>$119.70</td>
+                                <td><a href="#"><i class="fas fa-trash"></i></a></td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="imagen"></div>
                                 </td>
-                                <td><a href="/product/detail">Lorem ipsum dolor sit</a></td>
+                                <td><a href="/products/detail">Lorem ipsum dolor sit</a></td>
                                 <td>$25.50</td>
                                 <td>
                                     <select class="custom-select" id="inputGroupSelect01" name="producto2">
@@ -54,12 +54,13 @@
                                     </select>
                                 </td>
                                 <td>$76.50</td>
+                                <td><a href="#"><i class="fas fa-trash"></i></a></td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="imagen"></div>
                                 </td>
-                                <td><a href="/product/detail">Lorem ipsum dolor sit</a></td>
+                                <td><a href="/products/detail">Lorem ipsum dolor sit</a></td>
                                 <td>$200.00</td>
                                 <td>
                                     <select class="custom-select" id="inputGroupSelect01" name="producto3">
@@ -67,12 +68,13 @@
                                     </select>
                                 </td>
                                 <td>$400.00</td>
+                                <td><a href="#"><i class="fas fa-trash"></i></a></td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="imagen"></div>
                                 </td>
-                                <td><a href="/product/detail">Lorem ipsum dolor sit</a></td>
+                                <td><a href="/products/detail">Lorem ipsum dolor sit</a></td>
                                 <td>$5.90</td>
                                 <td>
                                     <select class="custom-select" id="inputGroupSelect01" name="producto4">
@@ -80,12 +82,13 @@
                                     </select>
                                 </td>
                                 <td>$118.00</td>
+                                <td><a href="#"><i class="fas fa-trash"></i></a></td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="imagen"></div>
                                 </td>
-                                <td><a href="/product/detail">Lorem ipsum dolor sit</a></td>
+                                <td><a href="/products/detail">Lorem ipsum dolor sit</a></td>
                                 <td>$1589.95</td>
                                 <td>
                                     <select class="custom-select" id="inputGroupSelect01" name="producto5">
@@ -93,6 +96,7 @@
                                     </select>
                                 </td>
                                 <td>$1589.95</td>
+                                <td><a href="#"><i class="fas fa-trash"></i></a></td>
                             </tr>
                             <tr class="total-purchase">
                                 <td></td>
@@ -100,15 +104,16 @@
                                 <td></td>
                                 <td></td>
                                 <td>$2304.15</td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="product-section_foot">
-                    <a href="/product/order-history" class="back">
-                        <button type="button" class="btn btn-link"><i class="fas fa-angle-left"></i> Volver</button>
-                    </a>
-                    <button type="submit" class="btn btn-success repeat">Repetir pedido</button>
+                    <label for="description">Descripción: </label>
+                    <input class="form-control" id="description" name="description" type="text"
+                        placeholder="Descripción">
+                    <button type="submit" class="btn btn-primary purchase">Finalizar compra</button>
                 </div>
 
             </form>
@@ -116,11 +121,10 @@
     </section>
 
     <!-- FOOTER -->
-    <%- include('../partials/footer')%>
+    <%- include("partials/footer") %>
 
     <!-- SCRIPTS -->
-    <%- include('../partials/scripts')%>
-
+    <%- include("partials/scripts") %>
 </body>
 
 </html>

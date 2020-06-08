@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<!-- HEAD -->
-<%- include('partials/head')%>
+<head>
+    <%- include("partials/head", {title: "Registrarse"}) %>
+</head>
 
 <body>
-
     <!-- HEADER -->
-    <%- include('partials/header')%>
+    <%- include("partials/header") %>
 
-    <!-- MAIN -->
     <section class="body-section">
         <div class="container">
-            <form class="admin-product" method="POST">
+            <form class="admin-product" method="POST" action="/user/register" enctype="multipart/form-data">
                 <div class="form-group">
                     <h1 class="form-title">Registrate</h1>
                 </div>
                 <div class="form-group">
-                    <label for="business-name">Nombre de tu negocio:</label>
-                    <input type="text" class="form-control" id="business-name" name="business-name">
+                    <label for="business_name">Nombre de tu negocio:</label>
+                    <input type="text" class="form-control" id="business_name" name="business_name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
-                <div class="form-group">
-                    <label for="name">Tu nombre:</label>
-                    <input type="text" class="form-control" id="name" name="name">
+                <div class="form-row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="first_name">Tu nombre:</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="last_name">Tu apellido:</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="col-12 col-md-6 mb-3">
@@ -34,9 +39,13 @@
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                     <div class="col-12 col-md-6 mb-3">
-                        <label for="password">Confirmar</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <label for="password_repeat">Confirmar</label>
+                        <input type="password" class="form-control" id="password_repeat" name="password_repeat" required>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="avatar">Avatar:</label>
+                    <input type="file" class="form-control-file" id="avatar" name="avatar" required>
                 </div>
                 <div class="form-group">
                     <div class="admin-product_buttons">
@@ -58,16 +67,15 @@
                     </div>
                 </div>
             </form>
-            <p class="form-foot">¿Ya tenés cuenta? <a href="/login"><strong>Ingresá acá</strong></a></p>
+            <p class="form-foot">¿Ya tenés cuenta? <a href="/user/login"><strong>Ingresá acá</strong></a></p>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <%- include('partials/footer')%>
+    <%- include("partials/footer") %>
 
     <!-- SCRIPTS -->
-    <%- include('partials/scripts')%>
-    
+    <%- include("partials/scripts") %>
 </body>
 
 </html>

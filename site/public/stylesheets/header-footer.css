@@ -27,6 +27,10 @@ header{
     border-right: white;
 }
 
+.search-button {
+    background: none;
+}
+
 .product-grid-header, .search-bar-header, .dark-mode-switch-header, .user-header, .cart-header{
     display: flex;
     flex-wrap: wrap;
@@ -66,33 +70,6 @@ header{
     border-radius: 5px;
     padding: 6px 9px;
     box-sizing: border-box;
-}
-
-/*------BANNER------*/
-.d-block, .w-100{
-    height: 70vh;
-    padding: 3vh 0;
-}
-
-/*------MAIN------ */
-main{
-    display: flex;
-    height: auto;
-    margin: 3vh 0;
-}
-
-
-.info-home{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 3vh 0;
-    font-size: 1.5rem;
-}
-
-.info-home span {
-    font-weight: 800;
 }
 
 /*------FOOTER------*/
@@ -152,7 +129,7 @@ footer i{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    
+    justify-content: space-evenly;
 }
 
 .pf-inc span{
@@ -160,6 +137,10 @@ footer i{
     flex-wrap: wrap;
     justify-content: flex-end;
     font-size: 0.8rem;
+}
+
+.pf-inc span a {
+    color: white;
 }
 
 /*------MEDIA QUERIES------*/

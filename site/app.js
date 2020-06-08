@@ -3,11 +3,12 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const methodOverride = require('method-override');
 
 //Llamo a las rutas
 const mainRouter = require("./routes/main");
-const productRouter = require("./routes/product");
-const adminRouter = require("./routes/admin");
+const userRouter = require("./routes/user");
+const productsRouter = require("./routes/products");
 
 const app = express();
 
@@ -20,11 +21,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 //Rutas
 app.use("/", mainRouter);
-app.use("/product", productRouter);
-app.use("/admin", adminRouter);
+app.use("/user", userRouter);
+app.use("/products", productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

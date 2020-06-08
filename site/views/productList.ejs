@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("partials/head", {title: "Listado de productos"}) %>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <%- include("partials/header") %>
+
+    <section class="body-section">
+        <div class="container">
+            <h1 class="product-section_title"><i class="fas fa-user-cog"></i> Administrar productos</h1>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach(product => { %>
+                        <tr>
+                            <td>
+                                <div class="imagen"><img src="/images/products/<%= product.image %>" alt="imagen de producto"></div>
+                            </td>
+                            <td><a href="/products/detail/<%= product.id %>"><%= product.name %></a></td>
+                            <td class="product-actions">
+                                <a href="/products/<%= product.id %>/edit"><i class="fas fa-edit"></i></a>
+                                <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                                    <button type="submit"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="product-section_foot">
+                <a href="/products/create" class="add-product">
+                    <button type="button" class="btn btn-primary add-product_button">Agregar producto</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <%- include("partials/footer") %>
+
+    <!-- SCRIPTS -->
+    <%- include("partials/scripts") %>
+</body>
+
+</html>

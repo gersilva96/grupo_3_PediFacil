@@ -7,8 +7,6 @@ const mainController = require("../controllers/mainController");
 
 //Obtengo las rutas principales
 router.get("/", mainController.home);
-router.get("/login", mainController.login);
-router.get("/register", mainController.register);
 
 //Exporto el contenido de las rutas
 module.exports = router;
