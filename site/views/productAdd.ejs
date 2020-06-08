@@ -13,10 +13,14 @@
     <section class="body-section">
         <div class="container">
             <h1 class="product-section_title"><i class="fas fa-user-cog"></i> Agregar producto</h1>
-            <form class="admin-product" action="/products/create" method="POST">
+            <form class="admin-product" action="/products" method="POST">
                 <div class="form-group">
                     <label for="name">Nombre:</label>
                     <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoría:</label>
+                    <input type="text" class="form-control" id="category" name="category">
                 </div>
                 <div class="form-group">
                     <label for="price">Precio:</label>
@@ -25,6 +29,15 @@
                             <span class="input-group-text">$</span>
                         </div>
                         <input type="number" id="price" name="price" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="discount">Descuento:</label>
+                    <div class="input-group mb-3">
+                        <input type="number" id="discount" name="discount" class="form-control">
+                        <div class="input-group-append">
+                            <span class="input-group-text">%</span>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">

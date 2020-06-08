@@ -11,13 +11,13 @@ const formatPrice = (price,discount) => toThousand(Math.round(price*(1-(discount
 
 const searchProduct = id => {
     let productos = readJSONFile();
-    let productFound = null;
+    let productoEncontrado = null;
     productos.forEach(prod => {
         if (prod["id"] == id) {
-            productFound = prod;
+            productoEncontrado = prod;
         }
     });
-    return productFound; // si no lo encuentra devuelve null
+    return productoEncontrado; // si no lo encuentra devuelve null
 };
 
 //Funciones públicas
@@ -62,7 +62,25 @@ let productController = {
 
     //Agrega un producto al JSON
     store: (req,res) => {
-        res.send("Hola");
+        let products = readJSONFile();
+        let lastId = 0;
+		products.forEach(producto => {
+			if(producto.id > lastId) {
+				lastId = producto.id;
+			}
+		});
+        products.push({
+            id: lastId+1,
+            name: req.body.name,
+            category: req.body.category,
+            price: parseInt(req.body.price),
+            discount: parseInt(req.body.discount),
+            stock: parseInt(req.body.stock),
+            description: req.body.description,
+            image: `img-${lastId+1}.jpg`
+        });
+        saveJSONFile(products);
+        res.redirect("/products");
     },
 
     //Formulario de edición de un producto
@@ -93,7 +111,7 @@ let productController = {
         const newProducts = products.filter(prod => prod.id != req.params.id);
         saveJSONFile(newProducts);
         res.redirect("/products");
-    },
+    }
 }
 
 module.exports = productController;

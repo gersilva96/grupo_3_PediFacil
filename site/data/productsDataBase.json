@@ -1,15 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Cafetera Moulinex Dolce Gusto",
-        "price": 12000,
-        "discount": 50,
-        "category": "category",
-        "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
-        "image": "img-cafetera-moulinex.jpg",
-        "stock": 9999
-    },
-    {
         "id": 2,
         "name": "Macbook Pro 2022",
         "price": 99999,
@@ -17,7 +7,7 @@
         "category": "category",
         "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
         "image": "img-macbook-pro-2019.jpg",
-        "stock": 9999
+        "stock": 456
     },
     {
         "id": 3,
@@ -158,5 +148,45 @@
         "description": "Deja que la música dance cobre vida con EXTRA BASS™ Anima el ambiente con EXTRA BASS™1. Un radiador pasivo trabaja con el parlante monoaural para potenciar los tonos bajos y mejorar los graves, a pesar del tamaño compacto. ",
         "image": "img-parlante-sony.jpg",
         "stock": 9999
+    },
+    {
+        "id": 17,
+        "name": "Producto 1",
+        "category": "category",
+        "price": 45678,
+        "discount": 20,
+        "stock": 123456,
+        "description": "Lorem ipsum dolor sit amet consectetur",
+        "image": "img-undefined.jpg"
+    },
+    {
+        "id": 18,
+        "name": "dsads",
+        "category": "dsadsa",
+        "price": 456,
+        "discount": 4151,
+        "stock": 45162,
+        "description": "djsaidlksjandsjkdnamsdas",
+        "image": "img-undefined.jpg"
+    },
+    {
+        "id": 19,
+        "name": "dsadsa",
+        "category": "415ds6a3",
+        "price": 123456,
+        "discount": 11,
+        "stock": 123456,
+        "description": "dsadsdsadsa",
+        "image": "img-19.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Holita",
+        "category": "Holita",
+        "price": 123,
+        "discount": 100,
+        "stock": 123,
+        "description": "123456789",
+        "image": "img-20.jpg"
     }
 ]
