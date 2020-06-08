@@ -1,30 +1,26 @@
 const fs = require("fs");
 const path = require("path");
 
-//Funciones privadas
-const productsFile = path.join(__dirname,"..","data","productsDataBase.json");
-const readJSONFile = () => JSON.parse(fs.readFileSync(productsFile, "utf-8"));
-const saveJSONFile = elem => fs.writeFileSync(productsFile, JSON.stringify(elem));
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const formatPrice = (price,discount) => toThousand(Math.round(price*(1-(discount/100))));
 
-const searchProduct = id => {
-    let productos = readJSONFile();
-    let productoEncontrado = null;
-    productos.forEach(prod => {
-        if (prod["id"] == id) {
-            productoEncontrado = prod;
-        }
-    });
-    return productoEncontrado; // si no lo encuentra devuelve null
-};
-
-//Funciones públicas
 let productController = {
     //Funciones
+    productsFile: path.join(__dirname,"..","data","productsDataBase.json"),
+    readJSONFile: () => JSON.parse(fs.readFileSync(productController.productsFile, "utf-8")),
+    saveJSONFile: elem => fs.writeFileSync(productController.productsFile, JSON.stringify(elem)),
+    searchProduct: id => {
+        let productos = productController.readJSONFile();
+        let productoEncontrado = null;
+        productos.forEach(prod => {
+            if (prod["id"] == id) {
+                productoEncontrado = prod;
+            }
+        });
+        return productoEncontrado; // si no lo encuentra devuelve null
+    },
     getNewId: () => {
-        const prods = readJSONFile();
+        const prods = productController.readJSONFile();
         let lastId = 0;
         prods.forEach(producto => {
             if(producto.id > lastId) {
@@ -36,13 +32,13 @@ let productController = {
 
     //Muestra todos los productos
     root: (req,res) => {
-        const products = readJSONFile();
+        const products = productController.readJSONFile();
         res.render("products", {products, formatPrice, toThousand});
     },
 
     //Muestra el detalle de un producto
     detail: (req,res) => {
-        const product = searchProduct(req.params.id);
+        const product = productController.searchProduct(req.params.id);
         res.render("productDetail", {product, formatPrice});
     },
 
@@ -63,7 +59,7 @@ let productController = {
 
     //Lista todos los productos
     list: (req,res) => {
-        const products = readJSONFile();
+        const products = productController.readJSONFile();
         res.render("productList", {products});
     },
 
@@ -75,7 +71,7 @@ let productController = {
 
     //Agrega un producto al JSON
     store: (req,res) => {
-        let products = readJSONFile();
+        let products = productController.readJSONFile();
         products.push({
             id: productController.getNewId(),
             name: req.body.name,
@@ -86,19 +82,19 @@ let productController = {
             description: req.body.description,
             image: req.file.filename
         });
-        saveJSONFile(products);
+        productController.saveJSONFile(products);
         res.redirect("/products");
     },
 
     //Formulario de edición de un producto
     edit: (req,res) => {
-        const product = searchProduct(req.params.id);
+        const product = productController.searchProduct(req.params.id);
         res.render("productEdit", {product});
     },
 
     //Edita un producto del JSON
     update: (req,res) => {
-        let products = readJSONFile();
+        let products = productController.readJSONFile();
         products.forEach(product => {
             if (product.id == req.params.id) {
                 product.name = req.body.name;
@@ -108,15 +104,15 @@ let productController = {
                 product.description = req.body.description;
             }
         });
-        saveJSONFile(products);
+        productController.saveJSONFile(products);
         res.redirect("/products");
     },
 
     //Elimina un producto del JSON
     delete: (req,res) => {
-        const products = readJSONFile();
+        const products = productController.readJSONFile();
         const newProducts = products.filter(prod => prod.id != req.params.id);
-        saveJSONFile(newProducts);
+        productController.saveJSONFile(newProducts);
         res.redirect("/products");
     }
 }

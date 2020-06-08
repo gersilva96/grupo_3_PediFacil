@@ -2,7 +2,9 @@
 
 //Variables
 $gray: #313A46;
+$light-gray: #666666;
 $dark-blue: #073042;
+$dark-blue-transparent: #4285F460;
 $light-blue: #4285F4;
 $white-blue: #F9FBFE;
 $green: #39b54a;
@@ -31,10 +33,93 @@ a:hover {
     padding-top: 40px;
     padding-bottom: 40px;
 
+    .banner {
+
+        .d-block{
+            height: 70vh;
+            padding: 3vh 0;
+        }
+    }
+
     .form-title {
         text-align: center;
         font-weight: 600;
         margin-bottom: 40px;
+    }
+
+    .products-wrapper {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        .products-title {
+            font-size: 1.8em;
+            font-weight: 400;
+            color: $light-gray;
+
+        }
+
+        .product-box {
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: 150ms;
+            margin: 20px 0;
+            border: 1px solid $dark-blue-transparent;
+
+            a {
+                display: block;
+                color: $dark-blue;
+            }
+
+            .product-box_image {
+                border-bottom: 1px solid $dark-blue-transparent;
+                margin: 0;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .product-box_data {
+                padding: 15px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                h2 {
+                    font-size: 1.6em;
+                    font-weight: 300;
+                    margin: 0;
+                }
+
+                span {
+                    font-size: 1em;
+                    font-weight: 500;
+                    color: $green;
+                    margin: 0 0 0 10px;
+                }
+
+                p {
+                    font-size: 1em;
+                    width: 100%;
+                    color: $light-gray;
+                    margin: 0;
+                    height: 0;
+                    transition: 150ms;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .product-box:hover {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+            p {
+                height: 50px;
+                margin-top: 15px;
+            }
+        }
     }
 
     .product-section_title {
@@ -65,6 +150,10 @@ a:hover {
                             background-color: gray;
                             width: 30px;
                             height: 30px;
+
+                            img {
+                                width: 100%;
+                            }
                         }
 
                         .custom-select {

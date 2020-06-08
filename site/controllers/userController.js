@@ -3,7 +3,6 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 
 //Funciones privadas
-let leerHTML = fileName => fs.readFileSync(`${__dirname}/../views/${fileName}.html`,"utf-8");
 const usersFile = path.join(__dirname,"..","data","users.json");
 const readJSONFile = () => JSON.parse(fs.readFileSync(usersFile, "utf-8"));
 const searchByEmail = email => {
@@ -14,7 +13,7 @@ const searchByEmail = email => {
             userFound = elem;
         }
     });
-    return userFound; // si no lo encuentra devuelve null
+    return userFound;
 };
 
 //Funciones públicas

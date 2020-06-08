@@ -1,12 +1,19 @@
 const fs = require("fs");
+const productController = require("./productController");
 
-//Funciones privadas
-let leerHTML = fileName => fs.readFileSync(`${__dirname}/../views/${fileName}.html`,"utf-8");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const formatPrice = (price,discount) => toThousand(Math.round(price*(1-(discount/100))));
 
-//Funciones públicas
 let mainController = {
     home: (req,res) => {
-        res.render("index");
+        const productsTotal = productController.readJSONFile();
+        let products = [];
+        productsTotal.forEach(prod => {
+            if (prod.discount > 0) {
+                products.push(prod);
+            }
+        });
+        res.render("index", {products, formatPrice});
     },
 }
 

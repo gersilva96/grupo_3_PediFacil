@@ -2,8 +2,7 @@
 <html lang="es">
 
 <head>
-    <%- include("partials/head") %>
-    <title><%= product.name %> | Pedí Fácil</title>
+    <%- include("partials/head", {title: "Detalle de producto"}) %>
 </head>
 
 <body>
@@ -37,6 +36,9 @@
 
     <!-- FOOTER -->
     <%- include("partials/footer") %>
+
+    <!-- SCRIPTS -->
+    <%- include("partials/scripts") %>
 </body>
 
 </html>

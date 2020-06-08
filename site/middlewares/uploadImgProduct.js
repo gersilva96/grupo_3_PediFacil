@@ -7,7 +7,7 @@ var storage = multer.diskStorage({
      cb(null, 'public/images/products')
   },
   filename: function (req, file, cb) {
-    cb(null, "img-" + productController.getNewId() + path.extname(file.originalname));
+    cb(null, "img-prod" + productController.getNewId() + path.extname(file.originalname));
   }
 });
 

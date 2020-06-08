@@ -2,8 +2,7 @@
 <html lang="es">
 
 <head>
-    <%- include("partials/head") %>
-    <title>Agregar producto | Pedí Fácil</title>
+    <%- include("partials/head", {title: "Añadir producto"}) %>
 </head>
 
 <body>
@@ -13,30 +12,6 @@
     <section class="body-section">
         <div class="container">
             <h1 class="product-section_title"><i class="fas fa-user-cog"></i> Agregar producto</h1>
-            <%
-            if (typeof(mensaje) != "undefined" || typeof(status) != "undefined") {
-                if(status == "success") { %>
-                    <div class="alert alert-success" role="alert">
-                        <%= mensaje %>
-                    </div>
-                <%
-                } else if(status == "error") { %>
-                    <div class="alert alert-danger" role="alert">
-                        <%= mensaje %>
-                    </div>
-                <%
-                }
-            }
-            if (typeof(errors) != "undefined") { %>
-                <div class="alert alert-warning" role="alert">
-                    <ul>
-                        <% errors.forEach((e,i) => { %>
-                        <li> <%= e.msg %></li>
-                        <% }); %>
-                    </ul>
-                </div>
-            <%
-            } %>
             <form class="admin-product" action="/products" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="id">Id:</label>
@@ -94,6 +69,9 @@
 
     <!-- FOOTER -->
     <%- include("partials/footer") %>
+
+    <!-- SCRIPTS -->
+    <%- include("partials/scripts") %>
 </body>
 
 </html>
