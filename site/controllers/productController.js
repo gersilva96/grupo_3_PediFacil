@@ -22,6 +22,18 @@ const searchProduct = id => {
 
 //Funciones públicas
 let productController = {
+    //Funciones
+    getNewId: () => {
+        const prods = readJSONFile();
+        let lastId = 0;
+        prods.forEach(producto => {
+            if(producto.id > lastId) {
+                lastId = producto.id;
+            }
+        });
+        return lastId+=1;   //Retorna el id que le corresponde al nuevo producto
+    },
+
     //Muestra todos los productos
     root: (req,res) => {
         const products = readJSONFile();
@@ -57,27 +69,22 @@ let productController = {
 
     //Formulario de carga de un producto
     create: (req,res) => {
-        res.render("productAdd");
+        const newId = productController.getNewId();
+        res.render("productAdd", {newId});
     },
 
     //Agrega un producto al JSON
     store: (req,res) => {
         let products = readJSONFile();
-        let lastId = 0;
-		products.forEach(producto => {
-			if(producto.id > lastId) {
-				lastId = producto.id;
-			}
-		});
         products.push({
-            id: lastId+1,
+            id: productController.getNewId(),
             name: req.body.name,
             category: req.body.category,
             price: parseInt(req.body.price),
             discount: parseInt(req.body.discount),
             stock: parseInt(req.body.stock),
             description: req.body.description,
-            image: `img-${lastId+1}.jpg`
+            image: req.file.filename
         });
         saveJSONFile(products);
         res.redirect("/products");
