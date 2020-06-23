@@ -413,22 +413,37 @@ a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 60px;
 }
 
-.body-section .product-detail_section .right .price span:first-child {
-  display: block;
-  font-size: 30px;
+.body-section .product-detail_section .right .price .price_old {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2em;
+  color: #39b54a;
 }
 
-.body-section .product-detail_section .right .price .discount {
-  font-size: 1em;
+.body-section .product-detail_section .right .price .price_old .price_old_mount {
+  margin-right: 5px;
+  text-decoration: line-through;
+}
+
+.body-section .product-detail_section .right .price .price_old .price_old_discount {
+  margin-left: 5px;
   font-weight: 500;
-  color: #39b54a;
-  margin: 0 0 0 10px;
+}
+
+.body-section .product-detail_section .right .price .price_final {
+  display: block;
+  font-size: 2.6em;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

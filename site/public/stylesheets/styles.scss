@@ -401,19 +401,29 @@ a:hover {
 
             .price {
                 display: flex;
-                align-items: center;
+                flex-direction: column;
                 margin-bottom: 60px;
 
-                span:first-child {
-                    display: block;
-                    font-size: 30px;
+                .price_old {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.2em;
+                    color: $green;
+
+                    .price_old_mount {
+                        margin-right: 5px;
+                        text-decoration: line-through;
+                    }
+
+                    .price_old_discount {
+                        margin-left: 5px;
+                        font-weight: 500;
+                    }
                 }
 
-                .discount {
-                    font-size: 1em;
-                    font-weight: 500;
-                    color: $green;
-                    margin: 0 0 0 10px;
+                .price_final {
+                    display: block;
+                    font-size: 2.6em;
                 }
 
                 @media (min-width: 768px) and (max-width: 991px) {
