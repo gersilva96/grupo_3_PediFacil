@@ -2,16 +2,16 @@
 <html lang="es">
 
 <head>
-    <%- include("partials/head", {title: "Iniciar sesión"}) %>
+    <%- include("../partials/head", {title: "Iniciar sesión"}) %>
 </head>
 
 <body>
     <!-- HEADER -->
-    <%- include("partials/header") %>
+    <%- include("../partials/header") %>
 
     <section class="body-section">
         <div class="container">
-            <form class="admin-product" method="POST" action="/user/login">
+            <form class="admin-product" method="POST" action="/users/login">
                 <div class="form-group">
                     <h1 class="form-title">Iniciá sesión</h1>
                 </div>
@@ -43,15 +43,15 @@
                     </div>
                 </div>
             </form>
-            <p class="form-foot">¿No tenés cuenta? <a href="/user/register"><b>Registrate acá</b></a></p>
+            <p class="form-foot">¿No tenés cuenta? <a href="/users/register"><b>Registrate acá</b></a></p>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <%- include("partials/footer") %>
+    <%- include("../partials/footer") %>
 
     <!-- SCRIPTS -->
-    <%- include("partials/scripts") %>
+    <%- include("../partials/scripts") %>
 </body>
 
 </html>

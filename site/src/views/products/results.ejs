@@ -2,20 +2,20 @@
 <html lang="es">
 
 <head>
-    <%- include("partials/head", {title: "Todos los productos"}) %>
+    <%- include("../partials/head", {title: "Resultado de búsqueda"}) %>
 </head>
 
 <body>
     <!-- HEADER -->
-    <%- include("partials/header") %>
+    <%- include("../partials/header") %>
 
 	<div class="body-section">
 		<div class="container products-wrapper">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="products-title">Todos los productos</h2>
+					<h2 class="products-title">Resultados de la búsqueda: <%= search %></h2>
 				</div>
-				<% products.forEach(product => { %>
+				<% results.forEach(product => { %>
 					<% if (product.stock != 0) { %>
 						<div class="col-12 col-sm-6 col-lg-3">
 							<section class="product-box">
@@ -34,14 +34,15 @@
 					<% } %>
 				<% }); %>
 			</div>
+			<% if (results.length == 0) {%> <p style="color: red; margin-top: 20px;">No se encontraron coincidencias</p> <% } %>
 		</div>
 	</div>
 
     <!-- FOOTER -->
-    <%- include("partials/footer") %>
+    <%- include("../partials/footer") %>
 
     <!-- SCRIPTS -->
-    <%- include("partials/scripts") %>
+    <%- include("../partials/scripts") %>
 </body>
 
 </html>

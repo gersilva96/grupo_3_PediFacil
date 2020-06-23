@@ -30,18 +30,18 @@ let userController = {
 
     //Métodos
     login: (req,res) => {
-        res.render("login");
+        res.render("users/login");
     },
     processLogin: (req,res) => {
         const user = userController.searchByEmail(req.body.email);
         if (user != null && bcrypt.compareSync(req.body.password, user.password)) {
             res.send("Estás logueado!");
         } else {
-            res.render("login");
+            res.render("users/login");
         }
     },
     register: (req,res) => {
-        res.render("register");
+        res.render("users/register");
     },
     create: (req,res) => {
         if (req.body.password == req.body.password_repeat) {

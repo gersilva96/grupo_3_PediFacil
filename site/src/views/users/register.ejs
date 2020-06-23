@@ -2,16 +2,16 @@
 <html lang="es">
 
 <head>
-    <%- include("partials/head", {title: "Registrarse"}) %>
+    <%- include("../partials/head", {title: "Registrarse"}) %>
 </head>
 
 <body>
     <!-- HEADER -->
-    <%- include("partials/header") %>
+    <%- include("../partials/header") %>
 
     <section class="body-section">
         <div class="container">
-            <form class="admin-product" method="POST" action="/user/register" enctype="multipart/form-data">
+            <form class="admin-product" method="POST" action="/users/register" enctype="multipart/form-data">
                 <div class="form-group">
                     <h1 class="form-title">Registrate</h1>
                 </div>
@@ -67,15 +67,15 @@
                     </div>
                 </div>
             </form>
-            <p class="form-foot">¿Ya tenés cuenta? <a href="/user/login"><strong>Ingresá acá</strong></a></p>
+            <p class="form-foot">¿Ya tenés cuenta? <a href="/users/login"><strong>Ingresá acá</strong></a></p>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <%- include("partials/footer") %>
+    <%- include("../partials/footer") %>
 
     <!-- SCRIPTS -->
-    <%- include("partials/scripts") %>
+    <%- include("../partials/scripts") %>
 </body>
 
 </html>

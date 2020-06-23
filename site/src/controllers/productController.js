@@ -40,46 +40,46 @@ let productController = {
 				results.push(product);
 			}
 		});
-		res.render("results", {results, toThousand, formatPrice, search: req.query.keywords});
+		res.render("products/results", {results, toThousand, formatPrice, search: req.query.keywords});
     },
 
     //Muestra todos los productos
     root: (req,res) => {
         const products = productController.readJSONFile();
-        res.render("products", {products, formatPrice, toThousand});
+        res.render("products/products", {products, formatPrice, toThousand});
     },
 
     //Muestra el detalle de un producto
     detail: (req,res) => {
         const product = productController.searchProduct(req.params.id);
-        res.render("productDetail", {product, formatPrice});
+        res.render("products/productDetail", {product, formatPrice});
     },
 
     //Muestra el carrito
     cart: (req,res) => {
-        res.render("productCart");
+        res.render("products/productCart");
     },
 
     //Historial de compra
     orderHistory: (req,res) => {
-        res.render("productOrderHistory");
+        res.render("products/productOrderHistory");
     },
 
     //Detalle de historial de compra
     orderHistoryDetail: (req,res) => {
-        res.render("productOrderHistoryDetail");
+        res.render("products/productOrderHistoryDetail");
     },
 
     //Lista todos los productos
     list: (req,res) => {
         const products = productController.readJSONFile();
-        res.render("productList", {products});
+        res.render("products/productList", {products});
     },
 
     //Formulario de carga de un producto
     create: (req,res) => {
         const newId = productController.getNewId();
-        res.render("productAdd", {newId});
+        res.render("products/productAdd", {newId});
     },
 
     //Agrega un producto al JSON
@@ -102,7 +102,7 @@ let productController = {
     //Formulario de edición de un producto
     edit: (req,res) => {
         const product = productController.searchProduct(req.params.id);
-        res.render("productEdit", {product});
+        res.render("products/productEdit", {product});
     },
 
     //Edita un producto del JSON
