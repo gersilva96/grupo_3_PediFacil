@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("partials/head", {title: "Inicio"}) %>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <%- include("partials/header") %>
+
+    <div class="body-section">
+        <div class="container">
+            <div class="error">
+                <p><i class="fas fa-exclamation-triangle"></i></p>
+                <p><%= error.status %></p>
+                <span>Ups! Error trying to access to: <b><%= path %></b></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <%- include("partials/footer") %>
+
+    <!-- SCRIPTS -->
+    <%- include("partials/scripts") %>
+</body>
+
+</html>

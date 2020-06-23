@@ -519,4 +519,37 @@ a:hover {
     min-height: 450px;
   }
 }
+
+.body-section .error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #313A46;
+  margin: 30px 0;
+}
+
+.body-section .error p i {
+  font-size: 100px;
+  margin-bottom: 30px;
+}
+
+.body-section .error p:nth-child(2) {
+  font-size: 150px;
+  margin-bottom: 20px;
+  line-height: 150px;
+}
+
+.body-section .error span {
+  font-size: 30px;
+}
 /*# sourceMappingURL=styles.css.map */

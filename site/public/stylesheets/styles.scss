@@ -476,4 +476,30 @@ a:hover {
             min-height: 450px;
         }
     }
+
+    .error {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        color: $gray;
+        margin: 30px 0;
+
+        p {
+            i {
+                font-size: 100px;
+                margin-bottom: 30px;
+            }
+        }
+
+        p:nth-child(2) {
+            font-size: 150px;
+            margin-bottom: 20px;
+            line-height: 150px;
+        }
+
+        span {
+            font-size: 30px;
+        }
+    }
 }
