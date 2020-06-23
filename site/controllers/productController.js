@@ -3,7 +3,7 @@ const path = require("path");
 const glob = require("glob");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const formatPrice = (price,discount) => toThousand(Math.round(price*(1-(discount/100))));
+const formatPrice = (price,discount) => toThousand((price*(1-(discount/100))).toFixed(2));
 
 let productController = {
     //Funciones
