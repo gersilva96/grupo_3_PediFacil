@@ -6,14 +6,14 @@ const router = express.Router();
 const uploadAvatarUser = require("../middlewares/uploadAvatarUser");
 
 //Llamo al controlador de la ruta home
-const userController = require("../controllers/userController");
+const usersController = require("../controllers/usersController");
 
 //Obtengo las rutas principales
-router.get("/login", userController.login);     //GET - Muestra el formulario de Login
-router.post("/login", userController.processLogin);     //POST - Loguea a un usuario
+router.get("/login", usersController.login);     //GET - Muestra el formulario de Login
+router.post("/login", usersController.processLogin);     //POST - Loguea a un usuario
 
-router.get("/register", userController.register);   //GET - Muestra el formulario de Registro
-router.post("/register",uploadAvatarUser.uploadFile, userController.create);    //POST - Registra a un nuevo usuario
+router.get("/register", usersController.register);   //GET - Muestra el formulario de Registro
+router.post("/register",uploadAvatarUser.uploadFile, usersController.create);    //POST - Registra a un nuevo usuario
 
 //Exporto el contenido de las rutas
 module.exports = router;
