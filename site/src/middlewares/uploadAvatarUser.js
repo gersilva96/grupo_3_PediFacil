@@ -1,13 +1,13 @@
 const multer = require('multer'); // file uploads
 const path = require('path');
-const userController = require("../controllers/userController")
+const usersController = require("../controllers/usersController")
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
      cb(null, 'public/images/avatars')
   },
   filename: function (req, file, cb) {
-    cb(null, "avatar-" + userController.getNewId() + path.extname(file.originalname));
+    cb(null, "avatar-" + usersController.getNewId() + path.extname(file.originalname));
   }
 });
 

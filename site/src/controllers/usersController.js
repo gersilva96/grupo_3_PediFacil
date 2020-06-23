@@ -2,13 +2,13 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
 
-let userController = {
+let usersController = {
     //Funciones
-    usersFile: path.join(__dirname,"..","data","userDataBase.json"),   //Directorio del archivo de usuarios
-    readJSONFile: () => JSON.parse(fs.readFileSync(userController.usersFile, "utf-8")),     //Leo el archivo userDataBase.json y lo parseo
-    saveJSONFile: elem => fs.writeFileSync(userController.usersFile, JSON.stringify(elem)),     //Sobreescribo el archivo userDataBase.json
+    usersFile: path.join(__dirname,"..","data","users.json"),   //Directorio del archivo de usuarios
+    readJSONFile: () => JSON.parse(fs.readFileSync(usersController.usersFile, "utf-8")),     //Leo el archivo userDataBase.json y lo parseo
+    saveJSONFile: elem => fs.writeFileSync(usersController.usersFile, JSON.stringify(elem)),     //Sobreescribo el archivo userDataBase.json
     searchByEmail: email => {       //Busco y retorno un usuario por su email
-        let archivoJson = userController.readJSONFile();
+        let archivoJson = usersController.readJSONFile();
         let userFound = null;
         archivoJson.forEach(elem => {
             if (elem["email"] == email) {
@@ -18,7 +18,7 @@ let userController = {
         return userFound;
     },
     getNewId: () => {   //Obtengo el id que le corresponde al nuevo usuario
-        const users = userController.readJSONFile();
+        const users = usersController.readJSONFile();
         let lastId = 0;
         users.forEach(user => {
             if(user.id > lastId) {
@@ -33,7 +33,7 @@ let userController = {
         res.render("users/login");
     },
     processLogin: (req,res) => {
-        const user = userController.searchByEmail(req.body.email);
+        const user = usersController.searchByEmail(req.body.email);
         if (user != null && bcrypt.compareSync(req.body.password, user.password)) {
             res.send("Estás logueado!");
         } else {
@@ -46,7 +46,7 @@ let userController = {
     create: (req,res) => {
         if (req.body.password == req.body.password_repeat) {
             const newUser = {
-                id: userController.getNewId(),
+                id: usersController.getNewId(),
                 business_name: req.body.business_name.trim(),
                 email: req.body.email.trim(),
                 first_name: req.body.first_name.trim(),
@@ -55,9 +55,9 @@ let userController = {
                 admin: false,
                 image: req.file.filename
             };
-            const users = userController.readJSONFile();
+            const users = usersController.readJSONFile();
             users.push(newUser);
-            userController.saveJSONFile(users);
+            usersController.saveJSONFile(users);
             res.redirect("/user/login");
         } else {
             res.redirect("/user/register");
@@ -65,4 +65,4 @@ let userController = {
     }
 }
 
-module.exports = userController;
+module.exports = usersController;

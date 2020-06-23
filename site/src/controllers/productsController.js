@@ -5,13 +5,13 @@ const glob = require("glob");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const formatPrice = (price,discount) => toThousand((price*(1-(discount/100))).toFixed(2));
 
-let productController = {
+let productsController = {
     //Funciones
-    productsFile: path.join(__dirname,"..","data","productDataBase.json"),     //Directorio del archivo productDataBase.json
-    readJSONFile: () => JSON.parse(fs.readFileSync(productController.productsFile, "utf-8")),   //Leo el archivo prducts.json y lo parseo
-    saveJSONFile: elem => fs.writeFileSync(productController.productsFile, JSON.stringify(elem)),   //Sobreescribo el archivo productDataBase.json
+    productsFile: path.join(__dirname,"..","data","products.json"),     //Directorio del archivo productDataBase.json
+    readJSONFile: () => JSON.parse(fs.readFileSync(productsController.productsFile, "utf-8")),   //Leo el archivo prducts.json y lo parseo
+    saveJSONFile: elem => fs.writeFileSync(productsController.productsFile, JSON.stringify(elem)),   //Sobreescribo el archivo productDataBase.json
     searchProduct: id => {  //Busco y retorno un producto por su id
-        let productos = productController.readJSONFile();
+        let productos = productsController.readJSONFile();
         let productoEncontrado = null;
         productos.forEach(prod => {
             if (prod["id"] == id) {
@@ -21,7 +21,7 @@ let productController = {
         return productoEncontrado; // si no lo encuentra devuelve null
     },
     getNewId: () => {   //Obtengo el id que le corresponde al nuevo producto
-        const prods = productController.readJSONFile();
+        const prods = productsController.readJSONFile();
         let lastId = 0;
         prods.forEach(producto => {
             if(producto.id > lastId) {
@@ -33,7 +33,7 @@ let productController = {
 
     //Muestra los resultados de búsqueda
     search: (req,res) => {
-        const products = productController.readJSONFile();
+        const products = productsController.readJSONFile();
         let results = [];
 		products.forEach(product => {
 			if(product.name.toLowerCase().includes(req.query.keywords.toLowerCase().trim()) || product.description.toLowerCase().includes(req.query.keywords.toLowerCase().trim())){
@@ -45,13 +45,13 @@ let productController = {
 
     //Muestra todos los productos
     root: (req,res) => {
-        const products = productController.readJSONFile();
+        const products = productsController.readJSONFile();
         res.render("products/products", {products, formatPrice, toThousand});
     },
 
     //Muestra el detalle de un producto
     detail: (req,res) => {
-        const product = productController.searchProduct(req.params.id);
+        const product = productsController.searchProduct(req.params.id);
         res.render("products/productDetail", {product, formatPrice});
     },
 
@@ -72,21 +72,21 @@ let productController = {
 
     //Lista todos los productos
     list: (req,res) => {
-        const products = productController.readJSONFile();
+        const products = productsController.readJSONFile();
         res.render("products/productList", {products});
     },
 
     //Formulario de carga de un producto
     create: (req,res) => {
-        const newId = productController.getNewId();
+        const newId = productsController.getNewId();
         res.render("products/productAdd", {newId});
     },
 
     //Agrega un producto al JSON
     store: (req,res) => {
-        let products = productController.readJSONFile();
+        let products = productsController.readJSONFile();
         products.push({
-            id: productController.getNewId(),
+            id: productsController.getNewId(),
             name: req.body.name.trim(),
             category: req.body.category.trim(),
             price: parseFloat(req.body.price),
@@ -95,19 +95,19 @@ let productController = {
             description: req.body.description.trim(),
             image: req.file.filename
         });
-        productController.saveJSONFile(products);
+        productsController.saveJSONFile(products);
         res.redirect("/products");
     },
 
     //Formulario de edición de un producto
     edit: (req,res) => {
-        const product = productController.searchProduct(req.params.id);
+        const product = productsController.searchProduct(req.params.id);
         res.render("products/productEdit", {product});
     },
 
     //Edita un producto del JSON
     update: (req,res) => {
-        let products = productController.readJSONFile();
+        let products = productsController.readJSONFile();
         products.forEach(product => {
             if (product.id == req.params.id) {
                 product.name = req.body.name.trim();
@@ -118,19 +118,19 @@ let productController = {
                 product.description = req.body.description.trim();
             }
         });
-        productController.saveJSONFile(products);
+        productsController.saveJSONFile(products);
         res.redirect("/products");
     },
 
     //Elimina un producto del JSON
     delete: (req,res) => {
-        const products = productController.readJSONFile();
+        const products = productsController.readJSONFile();
         const newProducts = products.filter(prod => prod.id != req.params.id);
-        productController.saveJSONFile(newProducts);
-        const imageFile = glob.sync(path.join(__dirname, "..", "public", "images", "products", `img-prod${req.params.id}.{jpg,jpeg,png}`));
+        productsController.saveJSONFile(newProducts);
+        const imageFile = glob.sync(path.join(__dirname, "..", "..", "public", "images", "products", `img-prod${req.params.id}.{jpg,jpeg,png}`));
         imageFile.forEach(file => fs.unlinkSync(file));
         res.redirect("/products");
     }
 }
 
-module.exports = productController;
+module.exports = productsController;

@@ -1,11 +1,11 @@
-const productController = require("./productController");
+const productsController = require("./productsController");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const formatPrice = (price,discount) => toThousand((price*(1-(discount/100))).toFixed(2));
 
 let mainController = {
     home: (req,res) => {
-        const productsTotal = productController.readJSONFile();
+        const productsTotal = productsController.readJSONFile();
         let products = [];
         productsTotal.forEach(prod => {
             if (prod.discount > 0) {
