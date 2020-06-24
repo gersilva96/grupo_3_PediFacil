@@ -103,7 +103,7 @@ let productsController = {
                 name: req.body.name,
                 category: req.body.category,
                 price: parseFloat(req.body.price),
-                discount: parseInt(req.body.discount),
+                discount: parseFloat(req.body.discount),
                 stock: parseInt(req.body.stock),
                 description: req.body.description.trim(),
                 image: req.file.filename
@@ -131,7 +131,7 @@ let productsController = {
                     product.name = req.body.name;
                     product.category = req.body.category;
                     product.price = parseFloat(req.body.price);
-                    product.discount = parseInt(req.body.discount);
+                    product.discount = parseFloat(req.body.discount);
                     product.stock = parseInt(req.body.stock);
                     product.description = req.body.description.trim();
                 }
