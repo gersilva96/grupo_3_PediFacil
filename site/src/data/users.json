@@ -1,17 +1,17 @@
 [
     {
         "id": 1,
-        "business_name": "Pedifacil",
+        "business_name": "PedíFácil",
         "email": "gersilva96@hotmail.com",
-        "first_name": "German",
+        "first_name": "Germán",
         "last_name": "Silva",
         "password": "$2b$10$vDM7dTsNuvfrbP6q3sA.JOOO30o9FqPpMxRUUHYwhepD03Ehd3jXW",
         "admin": true,
-        "image": "avatar-1.jpg"
+        "image": "avatar-1.png"
     },
     {
         "id": 2,
-        "business_name": "Pedifacil",
+        "business_name": "PedíFácil",
         "email": "espinosarodrigo177@gmail.com",
         "first_name": "Rodrigo",
         "last_name": "Espinosa",
@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "business_name": "Pedifacil",
+        "business_name": "PedíFácil",
         "email": "gagc@protonmail.ch",
         "first_name": "Guillermo",
         "last_name": "Gonzales",
@@ -31,7 +31,7 @@
     },
     {
         "id": 4,
-        "business_name": "Pedifacil",
+        "business_name": "PedíFácil",
         "email": "edu.andreu747@gmail.com",
         "first_name": "Eduardo",
         "last_name": "Andreu",
@@ -41,7 +41,7 @@
     },
     {
         "id": 5,
-        "business_name": "DigitalHouse",
+        "business_name": "Digital House",
         "email": "ccia@digitalhouse.com",
         "first_name": "Carolina",
         "last_name": "Cia",
@@ -51,9 +51,9 @@
     },
     {
         "id": 6,
-        "business_name": "DigitalHouse",
+        "business_name": "Digital House",
         "email": "jesus@digitalhouse.com",
-        "first_name": "Jesus",
+        "first_name": "Jesús",
         "last_name": "Arce",
         "password": "$2b$10$vDM7dTsNuvfrbP6q3sA.JOOO30o9FqPpMxRUUHYwhepD03Ehd3jXW",
         "admin": false,

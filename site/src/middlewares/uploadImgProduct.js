@@ -1,4 +1,4 @@
-const multer = require('multer'); // file uploads
+const multer = require('multer');
 const path = require('path');
 const productsController = require("../controllers/productsController")
 
@@ -18,10 +18,10 @@ var upload = multer({
     const fileTypes = /png|jpg|jpeg/;
     const mimeType = fileTypes.test(file.mimetype);
     const extName = fileTypes.test(path.extname(file.originalname));
-    if (!mimeType && !extName) {
-      return callback("El archivo debe ser una imagen válida (.png, .jpg, .jpeg)");
-    } else {
+    if (mimeType && extName) {
       return callback(null,true);
+    } else {
+      return callback("El archivo debe ser una imagen válida (.png, .jpg, .jpeg)");
     }
   }
 }).single('image');

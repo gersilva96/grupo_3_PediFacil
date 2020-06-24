@@ -30,6 +30,10 @@ a:hover {
   margin-bottom: 40px;
 }
 
+.body-section .alert {
+  margin-bottom: 60px;
+}
+
 .body-section .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -108,7 +112,7 @@ a:hover {
 }
 
 .body-section .products-wrapper .product-box:hover p {
-  height: 50px;
+  height: auto;
   margin-top: 15px;
 }
 
@@ -517,6 +521,51 @@ a:hover {
 @media (min-width: 992px) {
   .body-section .product-detail_section {
     min-height: 450px;
+  }
+}
+
+.body-section .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.body-section .user .user_avatar {
+  width: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.body-section .user .user_avatar img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .body-section .user {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .body-section .user .user_avatar {
+    width: 35%;
+  }
+  .body-section .user .user_data {
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .body-section .user .user_avatar {
+    width: 25%;
   }
 }
 

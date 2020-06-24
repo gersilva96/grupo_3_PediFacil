@@ -11,6 +11,15 @@
 
     <section class="body-section">
         <div class="container">
+            <% if (typeof(errors) != "undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <% errors.forEach(errores => { %>
+                            <li><%= errores.msg %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
             <form class="admin-product" method="POST" action="/users/login">
                 <div class="form-group">
                     <h1 class="form-title">Iniciá sesión</h1>

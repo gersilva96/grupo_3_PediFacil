@@ -87,13 +87,13 @@ let productsController = {
     store: (req,res) => {
         let errors = validationResult(req);
         if (typeof req.file === 'undefined') {
-            let nuevoError = {
+            let newError = {
                value: '',
                msg: 'Debe cargar una imagen de producto',
                param: 'image',
                location: 'files'
             }
-            errors.errors.push(nuevoError);
+            errors.errors.push(newError);
         };
 
         if (errors.isEmpty()) {

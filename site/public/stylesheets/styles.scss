@@ -47,6 +47,10 @@ a:hover {
         margin-bottom: 40px;
     }
 
+    .alert {
+        margin-bottom: 60px;
+    }
+
     .products-wrapper {
         margin-top: 30px;
         margin-bottom: 30px;
@@ -116,7 +120,7 @@ a:hover {
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
             p {
-                height: 50px;
+                height: auto;
                 margin-top: 15px;
             }
         }
@@ -474,6 +478,40 @@ a:hover {
 
         @media (min-width: 992px) {
             min-height: 450px;
+        }
+    }
+
+    .user {
+        display: flex;
+        flex-flow: column wrap;
+
+        .user_avatar {
+            width: 50%;
+            align-self: center;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            flex-flow: row wrap;
+            align-items: center;
+
+            .user_avatar {
+                width: 35%;
+            }
+
+            .user_data {
+                margin-left: 50px;
+            }
+        }
+
+        @media (min-width: 992px) {
+
+            .user_avatar {
+                width: 25%;
+            }
         }
     }
 

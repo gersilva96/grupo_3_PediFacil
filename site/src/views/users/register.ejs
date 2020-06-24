@@ -11,6 +11,22 @@
 
     <section class="body-section">
         <div class="container">
+            <% if (typeof(mensaje) != "undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <li><%= mensaje %></li>
+                    </ul>
+                </div>
+            <% } %>
+            <% if (typeof(errors) != "undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <% errors.forEach(errores => { %>
+                            <li><%= errores.msg %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
             <form class="admin-product" method="POST" action="/users/register" enctype="multipart/form-data">
                 <div class="form-group">
                     <h1 class="form-title">Registrate</h1>
@@ -45,7 +61,7 @@
                 </div>
                 <div class="form-group">
                     <label for="avatar">Avatar:</label>
-                    <input type="file" class="form-control-file" id="avatar" name="avatar" required>
+                    <input type="file" class="form-control-file" id="avatar" name="avatar" accept=".png, .jpg, .jpeg" required>
                 </div>
                 <div class="form-group">
                     <div class="admin-product_buttons">

@@ -14,7 +14,9 @@
             <h1 class="product-section_title"><i class="fas fa-user-cog"></i> Agregar producto</h1>
             <% if (typeof(mensaje) != "undefined") { %>
                 <div class="alert alert-danger" role="alert">
-                    <p><%= mensaje %></p>
+                    <ul>
+                        <li><%= mensaje %></li>
+                    </ul>
                 </div>
             <% } %>
             <% if (typeof(errors) != "undefined") { %>
