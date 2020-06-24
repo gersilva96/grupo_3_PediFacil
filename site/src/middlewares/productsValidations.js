@@ -9,8 +9,7 @@ const productsValidations = [
     check("category")
         .exists().withMessage("Error de seguridad")
         .trim()
-        .notEmpty().withMessage("Debe ingresar la categoría")
-        .isLength({max: 20}).withMessage("La categoría no puede tener más de 20 caracteres"),
+        .notEmpty().withMessage("Debe ingresar la categoría"),
     check("price")
         .exists().withMessage("Error de seguridad")
         .trim()
@@ -20,8 +19,8 @@ const productsValidations = [
         .exists().withMessage("Error de seguridad")
         .trim()
         .notEmpty().withMessage("Debe ingresar el descuento")
-        .isInt({no_symbols: true}).withMessage("El descuento solo puede ser numérico, no puede contener otros caracteres")
-        .isInt({min: 0, max: 100}).withMessage("El descuento no puede ser menor a 0 ni mayor a 100"),
+        .isFloat({no_symbols: true}).withMessage("El descuento solo puede ser numérico, no puede contener otros caracteres")
+        .isFloat({min: 0, max: 100}).withMessage("El descuento no puede ser menor a 0 ni mayor a 100"),
     check("stock")
         .exists().withMessage("Error de seguridad")
         .trim()
