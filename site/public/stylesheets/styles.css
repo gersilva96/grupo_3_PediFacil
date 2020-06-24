@@ -532,6 +532,7 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
+  margin: 50px 0;
 }
 
 .body-section .user .user_avatar {
