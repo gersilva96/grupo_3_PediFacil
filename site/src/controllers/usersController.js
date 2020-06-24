@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const {check, validationResult, body} = require("express-validator");
-const { use } = require("../routes/users");
 
 let usersController = {
     //Funciones
@@ -53,6 +52,9 @@ let usersController = {
         if (errors.isEmpty()) {
             const user = usersController.searchByEmail(req.body.email);
             req.session.userLogged = user;
+            if (req.body.remember != undefined) {
+                res.cookie("userLogged", user.email, {maxAge: 60000});
+            }
             res.redirect(`/users/${user.id}/profile`);
         } else {
             res.render("users/login", {errors: errors.errors});
@@ -60,6 +62,7 @@ let usersController = {
     },
     logout: (req,res) => {
         req.session.userLogged = undefined;
+        res.cookie("userLogged", undefined);
         res.redirect("/users/login");
     },
     register: (req,res) => {
@@ -91,6 +94,7 @@ let usersController = {
             users.push(newUser);
             usersController.saveJSONFile(users);
             req.session.userLogged = newUser;
+            res.cookie("userLogged", newUser.email, {maxAge: 60000});
             res.redirect(`/users/${newUser.id}/profile`);
         } else {
             res.render("users/register", {errors: errors.errors})
