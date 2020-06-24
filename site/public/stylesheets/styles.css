@@ -279,6 +279,14 @@ a:hover {
           box-shadow: 0 0 10px #00000050;
 }
 
+.body-section .admin-product .fix-form-text {
+  margin-top: -.7rem;
+}
+
+.body-section .admin-product .text-danger {
+  margin: 35px 0 0 0;
+}
+
 .body-section .admin-product .admin-product_buttons {
   margin-top: 40px;
   display: -webkit-box;
@@ -532,7 +540,6 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  margin: 50px 0;
 }
 
 .body-section .user .user_avatar {
@@ -559,6 +566,7 @@ a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin: 50px 0;
   }
   .body-section .user .user_avatar {
     width: 35%;

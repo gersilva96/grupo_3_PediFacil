@@ -295,6 +295,14 @@ a:hover {
         border-radius: 10px;
         box-shadow: $shadow;
 
+        .fix-form-text {
+            margin-top: -.7rem;
+        }
+
+        .text-danger {
+            margin: 35px 0 0 0;
+        }
+
         .admin-product_buttons {
             margin-top: 40px;
             display: flex;
@@ -484,7 +492,6 @@ a:hover {
     .user {
         display: flex;
         flex-flow: column wrap;
-        margin: 50px 0;
 
         .user_avatar {
             width: 50%;
@@ -505,6 +512,7 @@ a:hover {
         @media (min-width: 768px) {
             flex-flow: row wrap;
             align-items: center;
+            margin: 50px 0;
 
             .user_avatar {
                 width: 35%;
