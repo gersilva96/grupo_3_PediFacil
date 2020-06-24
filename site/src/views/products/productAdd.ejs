@@ -12,6 +12,21 @@
     <section class="body-section">
         <div class="container">
             <h1 class="product-section_title"><i class="fas fa-user-cog"></i> Agregar producto</h1>
+            <% if (typeof(mensaje) != "undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <p><%= mensaje %></p>
+                </div>
+            <% } %>
+            <% if (typeof(errors) != "undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <% errors.forEach(errores => { %>
+                            <li><%= errores.msg %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
+
             <form class="admin-product" action="/products" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="id">Id:</label>
@@ -53,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <label for="image">Imagen del producto:</label>
-                    <input type="file" class="form-control-file" id="image" name="image" required>
+                    <input type="file" class="form-control-file" id="image" name="image" accept=".png, .jpg, .jpeg" required>
                 </div>
                 <div class="form-group">
                     <div class="admin-product_buttons">

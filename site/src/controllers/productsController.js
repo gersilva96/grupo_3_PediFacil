@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
+const {check, validationResult, body} = require("express-validator");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const formatPrice = (price,discount) => toThousand((price*(1-(discount/100))).toFixed(2));
@@ -18,7 +19,7 @@ let productsController = {
                 productoEncontrado = prod;
             }
         });
-        return productoEncontrado; // si no lo encuentra devuelve null
+        return productoEncontrado; // Si no lo encuentro devuelvo null
     },
     getNewId: () => {   //Obtengo el id que le corresponde al nuevo producto
         const prods = productsController.readJSONFile();
@@ -28,7 +29,7 @@ let productsController = {
                 lastId = producto.id;
             }
         });
-        return lastId+=1;   //Retorna el id que le corresponde al nuevo producto
+        return lastId+=1;   //Retorno el id que le corresponde al nuevo producto
     },
 
     //Muestra los resultados de búsqueda
@@ -84,19 +85,34 @@ let productsController = {
 
     //Agrega un producto al JSON
     store: (req,res) => {
-        let products = productsController.readJSONFile();
-        products.push({
-            id: productsController.getNewId(),
-            name: req.body.name.trim(),
-            category: req.body.category.trim(),
-            price: parseFloat(req.body.price),
-            discount: parseInt(req.body.discount),
-            stock: parseInt(req.body.stock),
-            description: req.body.description.trim(),
-            image: req.file.filename
-        });
-        productsController.saveJSONFile(products);
-        res.redirect("/products");
+        let errors = validationResult(req);
+        if (typeof req.file === 'undefined') {
+            let nuevoError = {
+               value: '',
+               msg: 'Debe cargar una imagen de producto',
+               param: 'image',
+               location: 'files'
+            }
+            errors.errors.push(nuevoError);
+        };
+
+        if (errors.isEmpty()) {
+            let products = productsController.readJSONFile();
+            products.push({
+                id: productsController.getNewId(),
+                name: req.body.name,
+                category: req.body.category,
+                price: parseFloat(req.body.price),
+                discount: parseInt(req.body.discount),
+                stock: parseInt(req.body.stock),
+                description: req.body.description.trim(),
+                image: req.file.filename
+            });
+            productsController.saveJSONFile(products);
+            res.redirect("/products");
+        } else {
+            res.render("products/productAdd", {errors: errors.errors, newId: productsController.getNewId()});
+        }
     },
 
     //Formulario de edición de un producto
@@ -107,19 +123,31 @@ let productsController = {
 
     //Edita un producto del JSON
     update: (req,res) => {
-        let products = productsController.readJSONFile();
-        products.forEach(product => {
-            if (product.id == req.params.id) {
-                product.name = req.body.name.trim();
-                product.category = req.body.category.trim();
-                product.price = parseFloat(req.body.price);
-                product.discount = parseInt(req.body.discount);
-                product.stock = parseInt(req.body.stock);
-                product.description = req.body.description.trim();
-            }
-        });
-        productsController.saveJSONFile(products);
-        res.redirect("/products");
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let products = productsController.readJSONFile();
+            products.forEach(product => {
+                if (product.id == req.params.id) {
+                    product.name = req.body.name;
+                    product.category = req.body.category;
+                    product.price = parseFloat(req.body.price);
+                    product.discount = parseInt(req.body.discount);
+                    product.stock = parseInt(req.body.stock);
+                    product.description = req.body.description.trim();
+                }
+            });
+            productsController.saveJSONFile(products);
+            res.redirect("/products");
+        } else {
+            let product = {};
+            let products = productsController.readJSONFile();
+            products.forEach(prod => {
+                if (prod.id == req.params.id) {
+                    product = prod;
+                }
+            });
+            res.render("products/productEdit", {errors: errors.errors, product})
+        }
     },
 
     //Elimina un producto del JSON

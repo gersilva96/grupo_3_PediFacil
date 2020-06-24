@@ -13,23 +13,22 @@ var storage = multer.diskStorage({
 
 var upload = multer({
   storage: storage,
-  fileFilter: function (req, file, callback) {
-    var ext = path.extname(file.originalname);
-    if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
-        return callback(new Error('El formato de la imagen de producto sólo puede ser JPG, PNG, JPEG.'))
-      }
-    callback(null, true)
+  limits: {fileSize: 5000000},
+  fileFilter: (req, file, callback) => {
+    const fileTypes = /png|jpg|jpeg/;
+    const mimeType = fileTypes.test(file.mimetype);
+    const extName = fileTypes.test(path.extname(file.originalname));
+    if (!mimeType && !extName) {
+      return callback("El archivo debe ser una imagen válida (.png, .jpg, .jpeg)");
+    } else {
+      return callback(null,true);
+    }
   }
 }).single('image');
 
 let uploadFile = {
-  uploadFile: function (req,res,next) {
-    upload(req, res, function(err){
-      if(err) {
-        console.log(err);
-        return res.render("productAdd", {title: err});
-      } else { next(); }
-    });
+  uploadFile: (req,res,next) => {
+    upload(req,res, (error) => { error ? res.render("products/productAdd",{mensaje: error, newId: productsController.getNewId()}) : next() });
   }
 }
 
