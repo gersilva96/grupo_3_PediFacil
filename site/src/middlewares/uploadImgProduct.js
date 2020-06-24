@@ -28,7 +28,7 @@ var upload = multer({
 
 let uploadFile = {
   uploadFile: (req,res,next) => {
-    upload(req,res, (error) => { error ? res.render("products/productAdd",{mensaje: error, newId: productsController.getNewId()}) : next() });
+    upload(req,res, (error) => { error != undefined ? res.render("products/productAdd",{mensaje: error, newId: productsController.getNewId()}) : next() });
   }
 }
 

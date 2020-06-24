@@ -50,12 +50,17 @@ let usersController = {
     },
     processLogin: (req,res) => {
         let errors = validationResult(req);
-        const user = usersController.searchByEmail(req.body.email);
         if (errors.isEmpty()) {
+            const user = usersController.searchByEmail(req.body.email);
+            req.session.userLogged = user;
             res.redirect(`/users/${user.id}/profile`);
         } else {
             res.render("users/login", {errors: errors.errors});
         }
+    },
+    logout: (req,res) => {
+        req.session.userLogged = undefined;
+        res.redirect("/users/login");
     },
     register: (req,res) => {
         res.render("users/register");
@@ -85,6 +90,7 @@ let usersController = {
             const users = usersController.readJSONFile();
             users.push(newUser);
             usersController.saveJSONFile(users);
+            req.session.userLogged = newUser;
             res.redirect(`/users/${newUser.id}/profile`);
         } else {
             res.render("users/register", {errors: errors.errors})

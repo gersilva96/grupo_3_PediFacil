@@ -36,7 +36,7 @@ a:hover {
     .banner {
 
         .d-block{
-            height: 70vh;
+            height: 50vh;
             padding: 3vh 0;
         }
     }
@@ -491,6 +491,13 @@ a:hover {
 
             img {
                 width: 100%;
+            }
+        }
+
+        .user_data {
+
+            .admin-link {
+                margin-bottom: 20px;
             }
         }
 

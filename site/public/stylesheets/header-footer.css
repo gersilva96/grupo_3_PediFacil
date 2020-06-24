@@ -129,13 +129,10 @@ footer i{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: start;
 }
 
 .pf-inc span{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
     font-size: 0.8rem;
 }
 

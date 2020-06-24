@@ -20,7 +20,7 @@ a:hover {
 }
 
 .body-section .banner .d-block {
-  height: 70vh;
+  height: 50vh;
   padding: 3vh 0;
 }
 
@@ -543,6 +543,10 @@ a:hover {
 
 .body-section .user .user_avatar img {
   width: 100%;
+}
+
+.body-section .user .user_data .admin-link {
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {

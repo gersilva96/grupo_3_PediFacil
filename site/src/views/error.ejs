@@ -13,8 +13,14 @@
         <div class="container">
             <div class="error">
                 <p><i class="fas fa-exclamation-triangle"></i></p>
-                <p><%= error.status %></p>
-                <span>Ups! Error trying to access to: <b><%= path %></b></span>
+                <% if (typeof(error) != "undefined") { %>
+                    <p><%= error.status %></p>
+                    <span>Ups! Error trying to access to: <b><%= path %></b></span>
+                <% } %>
+                <% if (typeof(accessDenied) != "undefined") { %>
+                    <span><b><%= accessDenied %></b></span>
+                    <span>No tenés los permismos para ingresar a esta sección</span>
+                <% } %>
             </div>
         </div>
     </div>

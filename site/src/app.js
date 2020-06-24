@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
+const session = require("express-session");
 
 //Llamo a las rutas
 const mainRouter = require("./routes/main");
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(methodOverride('_method'));
+app.use(session({secret: "pedifacil", resave: true, saveUninitialized: true}));
 
 //Rutas
 app.use("/", mainRouter);
@@ -34,7 +36,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-/*app.use(function(err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.path = req.path;
@@ -43,6 +45,6 @@ app.use(function(req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});*/
+});
 
 module.exports = app;
