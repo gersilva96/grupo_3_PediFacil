@@ -30,7 +30,7 @@
                     </div>
                     <form>
                         <input type="number" class="form-control product-detail_quantity" id="product" name="product"
-                            value="1">
+                            value="1" min="1" max="<%= product.stock %>">
                         <button type="submit" class="btn btn-primary product-detail_button"><i
                                 class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                     </form>
