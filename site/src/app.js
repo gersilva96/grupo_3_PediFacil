@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require("express-session");
+const remember = require("./middlewares/remember");
 
 //Llamo a las rutas
 const mainRouter = require("./routes/main");
@@ -24,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret: "pedifacil", resave: true, saveUninitialized: true}));
+app.use(remember);
 
 //Rutas
 app.use("/", mainRouter);
