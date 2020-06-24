@@ -34,6 +34,9 @@
                 <div class="form-group">
                     <label for="business_name">Nombre de tu negocio:</label>
                     <input type="text" class="form-control" id="business_name" name="business_name" required>
+                    <small class="form-text text-muted">
+                        Al menos 2 caracteres
+                    </small>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -51,11 +54,14 @@
                 </div>
                 <div class="form-row">
                     <div class="col-12 col-md-6 mb-3">
-                        <label for="password">Contraseña</label>
+                        <label for="password">Contraseña:</label>
                         <input type="password" class="form-control" id="password" name="password" required>
+                        <small class="form-text text-muted">
+                            Al menos 6 caracteres
+                        </small>
                     </div>
                     <div class="col-12 col-md-6 mb-3">
-                        <label for="password_repeat">Confirmar</label>
+                        <label for="password_repeat">Confirmar:</label>
                         <input type="password" class="form-control" id="password_repeat" name="password_repeat" required>
                     </div>
                 </div>
@@ -63,8 +69,11 @@
                     <label for="avatar">Avatar:</label>
                     <input type="file" class="form-control-file" id="avatar" name="avatar" accept=".png, .jpg, .jpeg" required>
                 </div>
+                <p class="text-danger">
+                    Todos los campos son obligatorios
+                </p>
                 <div class="form-group">
-                    <div class="admin-product_buttons">
+                    <div class="admin-product_buttons d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">Registrarme</button>
                     </div>
                 </div>
