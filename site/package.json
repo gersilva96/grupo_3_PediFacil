@@ -1,6 +1,6 @@
 {
   "name": "pedifacil",
-  "version": "0.0.0",
+  "version": "0.4.10",
   "private": true,
   "scripts": {
     "start": "node ./src/bin/www",
