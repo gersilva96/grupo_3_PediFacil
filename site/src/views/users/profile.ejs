@@ -19,8 +19,11 @@
                     <h1><%= user.first_name %> <%= user.last_name %></h1>
                     <h3><%= user.business_name %></h3>
                     <p><%= user.email %></p>
+                    <% if (!user.admin) { %>
+                        <a href="/products/order-history"><button class="btn btn-success profile-link">Historial de compra</button></a>
+                    <% } %>
                     <% if (user.admin) { %>
-                        <a href="/products"><button class="btn btn-primary admin-link">Administrar productos</button></a>
+                        <a href="/products"><button class="btn btn-primary profile-link">Administrar productos</button></a>
                     <% } %>
                     <form action="/users/logout" method="POST">
                         <button class="btn btn-danger" type="submit">Cerrar sesión</button>
