@@ -5,9 +5,12 @@ const {check, validationResult, body} = require("express-validator");
 
 let usersController = {
     //Funciones
-    usersFile: path.join(__dirname,"..","data","users.json"),   //Directorio del archivo de usuarios
-    readJSONFile: () => JSON.parse(fs.readFileSync(usersController.usersFile, "utf-8")),     //Leo el archivo userDataBase.json y lo parseo
-    saveJSONFile: elem => fs.writeFileSync(usersController.usersFile, JSON.stringify(elem)),     //Sobreescribo el archivo userDataBase.json
+    usersFile: path.join(__dirname,"..","data","users.json"),   //Directorio del JSON de usuarios
+
+    readJSONFile: () => JSON.parse(fs.readFileSync(usersController.usersFile, "utf-8")),     //Leo el JSON y lo parseo
+
+    saveJSONFile: elem => fs.writeFileSync(usersController.usersFile, JSON.stringify(elem)),     //Sobreescribo el JSON
+
     searchByEmail: email => {       //Busco y retorno un usuario por su email
         let archivoJson = usersController.readJSONFile();
         let userFound = null;
@@ -18,6 +21,7 @@ let usersController = {
         });
         return userFound;
     },
+
     searchById: id => {       //Busco y retorno un usuario por su id
         let archivoJson = usersController.readJSONFile();
         let userFound = null;
@@ -28,6 +32,7 @@ let usersController = {
         });
         return userFound;
     },
+
     getNewId: () => {   //Obtengo el id que le corresponde al nuevo usuario
         const users = usersController.readJSONFile();
         let lastId = 0;
@@ -36,18 +41,20 @@ let usersController = {
                 lastId = user.id;
             }
         });
-        return lastId+=1;   //Retorna el id que le corresponde al nuevo usuario
+        return lastId+=1;   //Retorno el id que le corresponde al nuevo usuario
     },
 
-    //Métodos
-    profile: (req,res) => {
+    //Métodos para el router
+    profile: (req,res) => {         //Muestra el perfil de un usuario
         const user = usersController.searchById(req.params.id);
         res.render("users/profile", {user});
     },
-    login: (req,res) => {
+
+    login: (req,res) => {           //Muestra el formulario de Login
         res.render("users/login");
     },
-    processLogin: (req,res) => {
+
+    processLogin: (req,res) => {    //Loguea a un usuario
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             const user = usersController.searchByEmail(req.body.email);
@@ -60,15 +67,18 @@ let usersController = {
             res.render("users/login", {errors: errors.errors});
         }
     },
-    logout: (req,res) => {
+
+    logout: (req,res) => {          //Cierra la sesión del usuario logueado
         req.session.userLogged = undefined;
         res.cookie("userLogged", undefined);
         res.redirect("/users/login");
     },
-    register: (req,res) => {
+
+    register: (req,res) => {        //Muestra el formulario de Registro
         res.render("users/register");
     },
-    create: (req,res) => {
+
+    create: (req,res) => {          //Registra a un nuevo usuario
         let errors = validationResult(req);
         if (typeof req.file === "undefined") {
             let newError = {

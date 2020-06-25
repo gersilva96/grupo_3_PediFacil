@@ -1,4 +1,4 @@
-const notLoggedUser = (req,res,next) => {
+const notLoggedUser = (req,res,next) => {   //Valida que no exista un usuario logueado en la sesión
     if (req.session.userLogged == undefined) {
         next();
     } else {

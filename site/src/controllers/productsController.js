@@ -8,9 +8,12 @@ const formatPrice = (price,discount) => toThousand((price*(1-(discount/100))).to
 
 let productsController = {
     //Funciones
-    productsFile: path.join(__dirname,"..","data","products.json"),     //Directorio del archivo productDataBase.json
-    readJSONFile: () => JSON.parse(fs.readFileSync(productsController.productsFile, "utf-8")),   //Leo el archivo prducts.json y lo parseo
-    saveJSONFile: elem => fs.writeFileSync(productsController.productsFile, JSON.stringify(elem)),   //Sobreescribo el archivo productDataBase.json
+    productsFile: path.join(__dirname,"..","data","products.json"),     //Directorio del JSON de productos
+
+    readJSONFile: () => JSON.parse(fs.readFileSync(productsController.productsFile, "utf-8")),   //Leo el JSON y lo parseo
+
+    saveJSONFile: elem => fs.writeFileSync(productsController.productsFile, JSON.stringify(elem)),   //Sobreescribo el JSON
+
     searchProduct: id => {  //Busco y retorno un producto por su id
         let productos = productsController.readJSONFile();
         let productoEncontrado = null;
@@ -21,6 +24,7 @@ let productsController = {
         });
         return productoEncontrado; // Si no lo encuentro devuelvo null
     },
+
     getNewId: () => {   //Obtengo el id que le corresponde al nuevo producto
         const prods = productsController.readJSONFile();
         let lastId = 0;
@@ -32,8 +36,8 @@ let productsController = {
         return lastId+=1;   //Retorno el id que le corresponde al nuevo producto
     },
 
-    //Muestra los resultados de búsqueda
-    search: (req,res) => {
+    //Métodos para el router
+    search: (req,res) => {      //Muestra los resultados de búsqueda
         const products = productsController.readJSONFile();
         let results = [];
 		products.forEach(product => {
@@ -44,47 +48,39 @@ let productsController = {
 		res.render("products/results", {results, toThousand, formatPrice, search: req.query.keywords});
     },
 
-    //Muestra todos los productos
-    root: (req,res) => {
+    root: (req,res) => {        //Muestra todos los productos
         const products = productsController.readJSONFile();
         res.render("products/products", {products, formatPrice, toThousand});
     },
 
-    //Muestra el detalle de un producto
-    detail: (req,res) => {
+    detail: (req,res) => {      //Muestra el detalle de un producto
         const product = productsController.searchProduct(req.params.id);
         res.render("products/productDetail", {product, formatPrice});
     },
 
-    //Muestra el carrito
-    cart: (req,res) => {
+    cart: (req,res) => {        //Muestra el carrito
         res.render("products/productCart");
     },
 
-    //Historial de compra
-    orderHistory: (req,res) => {
+    orderHistory: (req,res) => {    //Historial de compra
         res.render("products/productOrderHistory");
     },
 
-    //Detalle de historial de compra
-    orderHistoryDetail: (req,res) => {
+    orderHistoryDetail: (req,res) => {      //Detalle de historial de compra
         res.render("products/productOrderHistoryDetail");
     },
 
-    //Lista todos los productos
-    list: (req,res) => {
+    list: (req,res) => {        //Lista todos los productos
         const products = productsController.readJSONFile();
         res.render("products/productList", {products});
     },
 
-    //Formulario de carga de un producto
-    create: (req,res) => {
+    create: (req,res) => {      //Formulario de carga de un producto
         const newId = productsController.getNewId();
         res.render("products/productAdd", {newId});
     },
 
-    //Agrega un producto al JSON
-    store: (req,res) => {
+    store: (req,res) => {       //Agrega un producto al JSON
         let errors = validationResult(req);
         if (typeof req.file === 'undefined') {
             let newError = {
@@ -115,14 +111,12 @@ let productsController = {
         }
     },
 
-    //Formulario de edición de un producto
-    edit: (req,res) => {
+    edit: (req,res) => {        //Formulario de edición de un producto
         const product = productsController.searchProduct(req.params.id);
         res.render("products/productEdit", {product});
     },
 
-    //Edita un producto del JSON
-    update: (req,res) => {
+    update: (req,res) => {      //Actualiza un producto del JSON
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             let products = productsController.readJSONFile();
@@ -150,8 +144,7 @@ let productsController = {
         }
     },
 
-    //Elimina un producto del JSON
-    delete: (req,res) => {
+    delete: (req,res) => {      //Elimina un producto del JSON
         const products = productsController.readJSONFile();
         const newProducts = products.filter(prod => prod.id != req.params.id);
         productsController.saveJSONFile(newProducts);

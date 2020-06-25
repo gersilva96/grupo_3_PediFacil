@@ -1,4 +1,4 @@
-const isAdmin = (req,res,next) => {
+const isAdmin = (req,res,next) => {     //Valida que el usuario logueado sea administrador
     if (req.session.userLogged.admin) {
         next();
     } else {
