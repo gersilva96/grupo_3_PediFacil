@@ -239,6 +239,7 @@ a:hover {
 
 .body-section .product-section_foot .add-product_button {
   width: 100%;
+  height: 50px;
 }
 
 @media (min-width: 768px) {
@@ -284,7 +285,7 @@ a:hover {
 }
 
 .body-section .admin-product .text-danger {
-  margin: 35px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 .body-section .admin-product .admin-product_buttons {
@@ -302,6 +303,16 @@ a:hover {
 
 .body-section .admin-product .admin-product_buttons a .btn-link {
   padding: 0;
+}
+
+.body-section .admin-product .login-register_buttons {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .body-section .social {
