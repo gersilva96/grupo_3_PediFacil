@@ -10,7 +10,7 @@ const isAdmin = require("../middlewares/isAdmin");      //Valida que el usuario 
 
 const usersController = require("../controllers/usersController");
 
-router.get("/:id/profile", loggedUser, usersController.profile);    //GET - Muestra el perfil de un usuario - Debe haber un usuario logueado
+router.get("/profile", loggedUser, usersController.profile);    //GET - Muestra el perfil de un usuario - Debe haber un usuario logueado
 
 router.get("/login", notLoggedUser, usersController.login);     //GET - Muestra el formulario de Login - No debe haber un usuario logueado
 router.post("/login", usersValidations.loginUser, usersController.processLogin);     //POST - Loguea a un usuario

@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const {check, validationResult, body} = require("express-validator");
+const { render } = require("ejs");
 
 let usersController = {
     //Funciones
@@ -46,7 +47,7 @@ let usersController = {
 
     //Métodos para el router
     profile: (req,res) => {         //Muestra el perfil de un usuario
-        const user = usersController.searchById(req.params.id);
+        const user = req.session.userLogged;
         res.render("users/profile", {user});
     },
 
@@ -62,7 +63,7 @@ let usersController = {
             if (req.body.remember != undefined) {
                 res.cookie("userLogged", user.email, {maxAge: 60000});
             }
-            res.redirect(`/users/${user.id}/profile`);
+            res.redirect("/users/profile");
         } else {
             res.render("users/login", {errors: errors.errors});
         }
@@ -105,7 +106,7 @@ let usersController = {
             usersController.saveJSONFile(users);
             req.session.userLogged = newUser;
             res.cookie("userLogged", newUser.email, {maxAge: 60000});
-            res.redirect(`/users/${newUser.id}/profile`);
+            res.redirect("/users/profile");
         } else {
             res.render("users/register", {errors: errors.errors})
         }

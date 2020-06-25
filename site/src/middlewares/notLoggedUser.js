@@ -2,7 +2,7 @@ const notLoggedUser = (req,res,next) => {   //Valida que no exista un usuario lo
     if (req.session.userLogged == undefined) {
         next();
     } else {
-        res.redirect(`/users/${req.session.userLogged.id}/profile`);
+        res.redirect("/users/profile");
     }
 };
 
