@@ -105,7 +105,6 @@ let usersController = {
             users.push(newUser);
             usersController.saveJSONFile(users);
             req.session.userLogged = newUser;
-            res.cookie("userLogged", newUser.email, {maxAge: 60000});
             res.redirect("/users/profile");
         } else {
             res.render("users/register", {errors: errors.errors})
