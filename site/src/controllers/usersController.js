@@ -61,7 +61,7 @@ let usersController = {
             const user = usersController.searchByEmail(req.body.email);
             req.session.userLogged = user;
             if (req.body.remember != undefined) {
-                res.cookie("userLogged", user.email, {maxAge: 60000});
+                res.cookie("userLogged", user.id, {maxAge: Date.now()});
             }
             res.redirect("/users/profile");
         } else {
