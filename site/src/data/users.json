@@ -46,7 +46,7 @@
         "first_name": "Carolina",
         "last_name": "Cia",
         "password": "$2b$10$IqLy8zP4mAxBNjnVXnkaqO0pIVOWZD9xOuCbGiKPWo6Md4FJoKmpW",
-        "admin": false,
+        "admin": true,
         "image": "avatar-5.jpg"
     },
     {
@@ -56,7 +56,7 @@
         "first_name": "Jesús",
         "last_name": "Arce",
         "password": "$2b$10$IqLy8zP4mAxBNjnVXnkaqO0pIVOWZD9xOuCbGiKPWo6Md4FJoKmpW",
-        "admin": false,
+        "admin": true,
         "image": "avatar-6.jpg"
     }
 ]
