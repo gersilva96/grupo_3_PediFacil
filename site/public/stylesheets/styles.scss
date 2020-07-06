@@ -146,6 +146,7 @@ body.no-scroll {
 
             @media ($desktop) {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
 
@@ -155,16 +156,22 @@ body.no-scroll {
                     transition: $transition;
                 }
 
+                span {
+                    font-size: 13px;
+                    transition: $transition;
+                }
+
                 &:hover {
 
-                    i {
+                    i, span {
                         transition: none;
                         color: $light-blue;
                     }
                 }
 
                 &:not(:hover) {
-                    i {
+
+                    i, span {
                         transition: none;
                     }
                 }
@@ -341,12 +348,12 @@ body.no-scroll {
 
                 a {
                     color: $gray;
-                    font-size: 18px;
+                    font-size: 15px;
                     margin: 0;
                     transition: $transition;
 
                     i {
-                        font-size: 25px;
+                        font-size: 20px;
                     }
 
                     .darkmode-text {
@@ -379,6 +386,17 @@ body.no-scroll {
 
                 &.hidden {
                     display: flex;
+                }
+            }
+
+            @media ($desktop-large) {
+
+                a {
+                    font-size: 16px;
+
+                    i {
+                        font-size: 22px;
+                    }
                 }
             }
         }
@@ -530,9 +548,19 @@ body.no-scroll {
                     transition: $transition;
                 }
 
+                span {
+                    color: $white-blue;
+                    transition: $transition;
+                }
+
                 &:hover {
 
                     i {
+                        transition: none;
+                        color: $light-blue;
+                    }
+
+                    span {
                         transition: none;
                         color: $light-blue;
                     }
@@ -540,7 +568,7 @@ body.no-scroll {
 
                 &:not(:hover) {
 
-                    i {
+                    i, span {
                         transition: none;
                     }
                 }

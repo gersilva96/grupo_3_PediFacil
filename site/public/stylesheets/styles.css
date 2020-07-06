@@ -144,6 +144,10 @@ body.no-scroll {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -157,12 +161,17 @@ body.no-scroll {
     -webkit-transition: all 400ms;
     transition: all 400ms;
   }
-  .header .row .products-link:hover i {
+  .header .row .products-link span {
+    font-size: 13px;
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+  }
+  .header .row .products-link:hover i, .header .row .products-link:hover span {
     -webkit-transition: none;
     transition: none;
     color: #4285F4;
   }
-  .header .row .products-link:not(:hover) i {
+  .header .row .products-link:not(:hover) i, .header .row .products-link:not(:hover) span {
     -webkit-transition: none;
     transition: none;
   }
@@ -378,13 +387,13 @@ body.no-scroll {
   }
   .header .row .main-nav a {
     color: #313A46;
-    font-size: 18px;
+    font-size: 15px;
     margin: 0;
     -webkit-transition: all 400ms;
     transition: all 400ms;
   }
   .header .row .main-nav a i {
-    font-size: 25px;
+    font-size: 20px;
   }
   .header .row .main-nav a .darkmode-text {
     display: none;
@@ -418,6 +427,15 @@ body.no-scroll {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .row .main-nav a {
+    font-size: 16px;
+  }
+  .header .row .main-nav a i {
+    font-size: 22px;
   }
 }
 
@@ -567,13 +585,25 @@ body.no-scroll {
   transition: all 400ms;
 }
 
+.dark .header .row .products-link span {
+  color: #F9FBFE;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
 .dark .header .row .products-link:hover i {
   -webkit-transition: none;
   transition: none;
   color: #4285F4;
 }
 
-.dark .header .row .products-link:not(:hover) i {
+.dark .header .row .products-link:hover span {
+  -webkit-transition: none;
+  transition: none;
+  color: #4285F4;
+}
+
+.dark .header .row .products-link:not(:hover) i, .dark .header .row .products-link:not(:hover) span {
   -webkit-transition: none;
   transition: none;
 }
