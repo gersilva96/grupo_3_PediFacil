@@ -46,7 +46,11 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  let user = undefined;
+  if (req.session.userLogged != undefined) {
+    user = req.session.userLogged;
+  }
+  res.render('error', {user});
 });
 
 module.exports = app;
