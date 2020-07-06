@@ -1,57 +1,42 @@
-<header>
+<header class="header">
     <div class="container">
         <div class="row">
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 logo-header">
-                <a href="/">
-                    <img id="logoHeader" src="/images/logo/logoColorH.svg" alt="logo pedi facil">
-                </a>
+            <button class="menu col-3 col-md-1" aria-label="Main Menu">
+                <svg width="50" height="50" viewBox="0 0 100 100">
+                    <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                    <path class="line line2" d="M 20,50 H 80" />
+                    <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                </svg>
+            </button>
+            <a href="/" class="logo col-6 col-md-4 col-lg-3"><img id="logo" src="/images/logo/logoColorH.svg" alt="Logo pedí fácil" class="logo_img" id="logo_img"></a>
+            <div class="header-icons-right col-3 col-md-1">
+                <button class="search-toggle btn"><i class="fas fa-search"></i></button>
+                <a href="/products/cart" class="cart"><i class="fas fa-shopping-cart"></i></a>
             </div>
-            <div class="col-3 col-sm-3 col-md-1 col-lg-2 product-grid-header">
-                <a href="/products/all-products">
-                    <i class="fas fa-th"></i>
-                </a>
+            <div class="col-lg-1">
+                <a href="/products/all-products" class="products-link"><i class="fas fa-th"></i></i></a>
             </div>
-            <div class="col-3 col-sm-3 menu-button-header">
-                <i onclick="on()" class="fas fa-bars"></i>
-                <div id="overlay">
-                    <div class="col-12 col-sm-12 close-overlay">
-                        <button type="button" class="btn btn-danger" onclick="off()">x</button>
-                    </div>
-                    <div id="overlay-menu">
-                        <ul>
-                            <li><a href="/users/login">Usuario <i class="fas fa-user-circle"></i></a></li>
-                            <li><a href="/products/cart">Carrito de compras <i class="fas fa-shopping-cart"></i></a>
-                            </li>
-                            <li onclick="darkMode(), off()">Dark Mode <i class="fas fa-adjust"></i></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <form class="col-12 col-sm-12 col-md-4 col-lg-4 search-bar-header" action="/products/search" method="GET">
+            <form class="search-bar col-12 col-lg-3 closed" action="/products/search" method="GET">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="¿Qué estás buscando?"
-                        aria-label="Recipient's username" aria-describedby="basic-addon2" name="keywords">
+                    <input type="text" class="form-control" placeholder="¿Qué estás buscando?" aria-label="Buscador" name="keywords" id="search-bar_input">
                     <div class="input-group-append">
-                        <button type="submit" class="input-group-text search-button" id="basic-addon2"><i class="fas fa-search"></i></button>
+                        <button type="submit" class="input-group-text search-button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </form>
-            <div class="col-md-2 col-lg-1 dark-mode-switch-header">
-                <div class="custom-control custom-switch">
-                    <input onclick="darkMode()" type="checkbox" class="custom-control-input" id="customSwitch1">
-                    <label class="custom-control-label" for="customSwitch1"><i class="fas fa-adjust"></i></label>
+            <nav class="main-nav hidden col-lg-5" id="main-nav">
+                <div class="custom-control custom-switch darkmode-switch">
+                    <input type="checkbox" class="custom-control-input" id="darkmode-switch">
+                    <label class="custom-control-label" for="darkmode-switch"><i class="fas fa-adjust"></i></label>
                 </div>
-            </div>
-            <div class="col-md-1 cl-lg-1 user-header">
-                <a href="/users/login">
-                    <i class="fas fa-user-circle"></i>
-                </a>
-            </div>
-            <div class="col-md-1 col-lg-1 cart-header">
-                <a href="/products/cart">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-            </div>
+                <% if (typeof(user) != "undefined") { %>
+                    <a href="/users/login"><i class="fas fa-user-circle"></i><span class="user-account-text">Mi cuenta</span></a>
+                <% } else { %>
+                    <a href="/users/profile"><i class="fas fa-sign-in-alt"></i></i><span class="login-text">Ingresar</span></a>
+                <% } %>
+                <a href="/products/cart"><i class="fas fa-shopping-cart"></i><span class="shopping-text">Mi compra</span></a>
+                <a id="darkmode-btn"><i class="fas fa-adjust"></i><span class="darkmode-text">Dark mode</span></a>
+            </nav>
         </div>
     </div>
 </header>
