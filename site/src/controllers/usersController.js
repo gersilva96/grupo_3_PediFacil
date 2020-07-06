@@ -46,16 +46,16 @@ let usersController = {
     },
 
     //Métodos para el router
-    profile: (req,res) => {         //Muestra el perfil de un usuario
+    profile: (req,res) => {         //GET - Muestra el perfil de un usuario
         const user = req.session.userLogged;
         res.render("users/profile", {user});
     },
 
-    login: (req,res) => {           //Muestra el formulario de Login
+    login: (req,res) => {           //GET - Muestra el formulario de Login
         res.render("users/login");
     },
 
-    processLogin: (req,res) => {    //Loguea a un usuario
+    processLogin: (req,res) => {    //POST - Loguea a un usuario
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             const user = usersController.searchByEmail(req.body.email);
@@ -69,17 +69,17 @@ let usersController = {
         }
     },
 
-    logout: (req,res) => {          //Cierra la sesión del usuario logueado
+    logout: (req,res) => {          //POST - Cierra la sesión del usuario logueado
         req.session.userLogged = undefined;
         res.cookie("userLogged", undefined);
         res.redirect("/users/login");
     },
 
-    register: (req,res) => {        //Muestra el formulario de Registro
+    register: (req,res) => {        //GET - Muestra el formulario de Registro
         res.render("users/register");
     },
 
-    create: (req,res) => {          //Registra a un nuevo usuario
+    create: (req,res) => {          //POST - Registra a un nuevo usuario
         let errors = validationResult(req);
         if (typeof req.file === "undefined") {
             let newError = {

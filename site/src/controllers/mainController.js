@@ -4,7 +4,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const formatPrice = (price,discount) => toThousand((price*(1-(discount/100))).toFixed(2));
 
 let mainController = {
-    home: (req,res) => {    //Muestro todos los productos en oferta
+    home: (req,res) => {    //GET - Muestro todos los productos en oferta
         const productsTotal = productsController.readJSONFile();
         let products = [];
         productsTotal.forEach(prod => {
@@ -12,7 +12,11 @@ let mainController = {
                 products.push(prod);
             }
         });
-        res.render("index", {products, formatPrice});
+        let user = undefined;
+        if (req.session.userLogged != undefined) {
+            user = req.session.userLogged;
+        }
+        res.render("index", {products, formatPrice, user});
     }
 }
 
