@@ -2,7 +2,7 @@ const isAdmin = (req,res,next) => {     //Valida que el usuario logueado sea adm
     if (req.session.userLogged.admin) {
         next();
     } else {
-        res.render("error", {accessDenied: "Acceso denegado"});
+        res.render("error", {accessDenied: "Acceso denegado", user: req.session.userLogged});
     }
 };
 
