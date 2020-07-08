@@ -30,11 +30,15 @@
                     <label class="custom-control-label" for="darkmode-switch"><i class="fas fa-adjust"></i></label>
                 </div>
                 <% if (typeof(user) != "undefined") { %>
-                    <a href="/users/login"><i class="fas fa-user-circle"></i><span class="user-account-text">Mi cuenta</span></a>
+                    <a href="/users/profile"><i class="fas fa-user-circle"></i><span class="user-account-text">Mi cuenta</span></a>
+                    <% if (user.admin) { %>
+                        <a href="/products"><i class="fas fa-user-cog"></i><span class="admin-products-text">Productos</span></a>
+                    <% } else { %>
+                        <a href="/products/cart"><i class="fas fa-shopping-cart"></i><span class="shopping-text">Mi compra</span></a>
+                    <% } %>
                 <% } else { %>
-                    <a href="/users/profile"><i class="fas fa-sign-in-alt"></i></i><span class="login-text">Ingresar</span></a>
+                    <a href="/users/login"><i class="fas fa-sign-in-alt"></i></i><span class="login-text">Ingresar</span></a>
                 <% } %>
-                <a href="/products/cart"><i class="fas fa-shopping-cart"></i><span class="shopping-text">Mi compra</span></a>
                 <a id="darkmode-btn"><i class="fas fa-adjust"></i><span class="darkmode-text">Dark mode</span></a>
             </nav>
         </div>
