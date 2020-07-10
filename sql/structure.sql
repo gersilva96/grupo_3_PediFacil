@@ -1,71 +1,187 @@
-CREATE TABLE `Categories` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`));
-  
-CREATE TABLE `Orders` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `date_order` datetime DEFAULT NULL,
-  `total_cost` decimal(8,2) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `Users_Orders_user_id(FK)_idx` (`user_id`),
-  CONSTRAINT `Users_Orders_user_id(FK)` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`));
-  
-CREATE TABLE `product_order` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `cost` decimal(8,2) DEFAULT NULL,
-  `quantity` int DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `order_id` int DEFAULT NULL,
-  `product_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `product_order_order_order_id(FK)_idx` (`order_id`),
-  KEY `product_order_Products_product_id(FK)_idx` (`product_id`),
-  CONSTRAINT `product_order_order_order_id(FK)` FOREIGN KEY (`order_id`) REFERENCES `Orders` (`id`),
-  CONSTRAINT `product_order_Products_product_id(FK)` FOREIGN KEY (`product_id`) REFERENCES `Products` (`id`));
+-- -----------------------------------------------------
+-- Schema pedifacil
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `pedifacil` DEFAULT CHARACTER SET utf8 ;
+USE `pedifacil` ;
 
-CREATE TABLE `Products` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `description` varchar(500) DEFAULT NULL,
-  `price` decimal(8,2) NOT NULL,
-  `discount` int DEFAULT NULL,
-  `stock` int DEFAULT NULL,
-  `image` varchar(50) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `category_id` int DEFAULT NULL,
+-- -----------------------------------------------------
+-- Table `pedifacil`.`roles`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`roles` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pedifacil`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`users` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `business_name` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `first_name` VARCHAR(50) NOT NULL,
+  `last_name` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `image` VARCHAR(50) NOT NULL,
+  `role_id` INT UNSIGNED NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `Products_Categories_category_id(FK)_idx` (`category_id`),
-  CONSTRAINT `Products_Categories_category_id(FK)` FOREIGN KEY (`category_id`) REFERENCES `Categories` (`id`));
-  
-CREATE TABLE `Types` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `admin` tinyint NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`));
-  
-CREATE TABLE `Users` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `business_name` varchar(100) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `image` varchar(50) DEFAULT NULL,
-  `street_name` varchar(60) DEFAULT NULL,
-  `street_number` varchar(60) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `type_id` int NOT NULL,
+  INDEX `role_id_idx` (`role_id` ASC) VISIBLE,
+  CONSTRAINT `role-user`
+    FOREIGN KEY (`role_id`)
+    REFERENCES `pedifacil`.`roles` (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pedifacil`.`adresses`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`adresses` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `first_line` VARCHAR(50) NOT NULL,
+  `second_line` VARCHAR(50) NULL DEFAULT NULL,
+  `between_streets` VARCHAR(100) NULL DEFAULT NULL,
+  `city` VARCHAR(50) NOT NULL,
+  `phone` BIGINT UNSIGNED NOT NULL,
+  `user_id` INT UNSIGNED NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  KEY `fk_Users_1_idx` (`type_id`),
-  CONSTRAINT `fk_Users_1` FOREIGN KEY (`type_id`) REFERENCES `Types` (`id`))
+  INDEX `user-adress_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `user-adress`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `pedifacil`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pedifacil`.`categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`categories` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pedifacil`.`products`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`products` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `code` BIGINT UNSIGNED NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `description` VARCHAR(300) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  `discount` TINYINT UNSIGNED NOT NULL,
+  `stock` INT UNSIGNED NOT NULL,
+  `image` VARCHAR(45) NOT NULL,
+  `user_id` INT UNSIGNED NOT NULL,
+  `category_id` INT UNSIGNED NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `category_id_idx` (`category_id` ASC) VISIBLE,
+  INDEX `user_id_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `category-product`
+    FOREIGN KEY (`category_id`)
+    REFERENCES `pedifacil`.`categories` (`id`),
+  CONSTRAINT `user-product`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `pedifacil`.`users` (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pedifacil`.`cart_items`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`cart_items` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` INT UNSIGNED NOT NULL,
+  `product_id` INT UNSIGNED NOT NULL,
+  `quantity` INT UNSIGNED NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `user-cart_items_idx` (`user_id` ASC) VISIBLE,
+  INDEX `product-cart_items_idx` (`product_id` ASC) VISIBLE,
+  CONSTRAINT `product-cart_items`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `pedifacil`.`products` (`id`),
+  CONSTRAINT `user-cart_items`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `pedifacil`.`users` (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pedifacil`.`statuses`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`statuses` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pedifacil`.`orders`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`orders` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `order_date` DATETIME NOT NULL,
+  `order_total` DECIMAL(10,2) NOT NULL,
+  `user_id` INT UNSIGNED NOT NULL,
+  `address_id` INT UNSIGNED NOT NULL,
+  `status_id` INT UNSIGNED NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `user_id_idx` (`user_id` ASC) VISIBLE,
+  INDEX `adress_id_idx` (`address_id` ASC) VISIBLE,
+  INDEX `status_id_idx` (`status_id` ASC) VISIBLE,
+  CONSTRAINT `adress-order`
+    FOREIGN KEY (`address_id`)
+    REFERENCES `pedifacil`.`adresses` (`id`),
+  CONSTRAINT `status-order`
+    FOREIGN KEY (`status_id`)
+    REFERENCES `pedifacil`.`statuses` (`id`),
+  CONSTRAINT `user-order`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `pedifacil`.`users` (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `pedifacil`.`product_order`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pedifacil`.`product_order` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `total_cost` DECIMAL(10,2) NOT NULL,
+  `unit_cost` DECIMAL(10,2) NOT NULL,
+  `quantity` INT UNSIGNED NOT NULL,
+  `product_id` INT UNSIGNED NOT NULL,
+  `order_id` INT UNSIGNED NOT NULL,
+  `created_at` TIMESTAMP NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `product_id_idx` (`product_id` ASC) VISIBLE,
+  INDEX `oder_id_idx` (`order_id` ASC) VISIBLE,
+  CONSTRAINT `order-product_order`
+    FOREIGN KEY (`order_id`)
+    REFERENCES `pedifacil`.`orders` (`id`),
+  CONSTRAINT `product-product_order`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `pedifacil`.`products` (`id`))
+ENGINE = InnoDB;

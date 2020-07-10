@@ -22,11 +22,14 @@
                     <div class="price">
                         <% if (product.discount != 0) { %>
                             <div class="price_old">
-                                <span class="price_old_mount">$<%= product.price.toFixed(2) %></span>/
+                                <span class="price_old_mount"><%= formatPrice(product.price) %></span>/
                                 <span class="price_old_discount"><%= product.discount %>% OFF</span>
                             </div>
                         <% } %>
-                        <span class="price_final">$<%= formatPrice(product.price,product.discount) %></span>
+                        <span class="price_final"><%= formatPrice(product.price,product.discount) %></span>
+                    </div>
+                    <div class="seller">
+                        <p>Vendedor: <strong>Vendedor</strong></p>
                     </div>
                     <form>
                         <input type="number" class="form-control product-detail_quantity" id="product" name="product"

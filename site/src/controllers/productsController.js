@@ -4,7 +4,18 @@ const glob = require("glob");
 const {check, validationResult, body} = require("express-validator");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const formatPrice = (price,discount) => toThousand((price*(1-(discount/100))).toFixed(2));
+const formatPrice = (price,discount) => {
+    let priceDot;
+    if (discount == undefined) {
+        priceDot = toThousand(price.toFixed(2));
+    } else {
+        priceDot = toThousand((price*(1-(discount/100))).toFixed(2));
+    }
+    let first = priceDot.slice(0,-3);
+    let last = priceDot.slice(-3);
+    let lastReplaced = last.replace(".", ",");
+    return `$ ${first}${lastReplaced}`;
+};
 
 let productsController = {
     //Funciones
@@ -71,7 +82,8 @@ let productsController = {
     },
 
     cart: (req,res) => {        //GET - Muestra el carrito
-        res.render("products/productCart", {user: req.session.userLogged});
+        let products = productsController.readJSONFile();
+        res.render("products/productCart", {user: req.session.userLogged, products, toThousand, formatPrice});
     },
 
     orderHistory: (req,res) => {    //GET - Historial de compra
