@@ -58,7 +58,7 @@ body.no-scroll {
 
 .header .row .header-icons-right .cart {
   padding: 0;
-  margin: 0 15px;
+  margin-right: 15px;
 }
 
 .header .row .header-icons-right .cart i {
@@ -77,12 +77,13 @@ body.no-scroll {
 
 @media (min-width: 768px) {
   .header .row .header-icons-right .cart {
-    margin-left: 50px;
+    margin-left: 35px;
   }
 }
 
 .header .row .header-icons-right .search-toggle {
   padding: 0;
+  margin-right: 15px;
 }
 
 .header .row .header-icons-right .search-toggle i {

@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container">
         <div class="row">
-            <button class="menu col-3 col-md-1" aria-label="Main Menu">
+            <button class="menu col-3" aria-label="Main Menu">
                 <svg width="50" height="50" viewBox="0 0 100 100">
                     <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
                     <path class="line line2" d="M 20,50 H 80" />
@@ -9,9 +9,11 @@
                 </svg>
             </button>
             <a href="/" class="logo col-6 col-md-4 col-lg-3"><img id="logo" src="/images/logo/logoColorH.svg" alt="Logo pedí fácil" class="logo_img" id="logo_img"></a>
-            <div class="header-icons-right col-3 col-md-1">
+            <div class="header-icons-right col-3">
                 <button class="search-toggle btn"><i class="fas fa-search"></i></button>
-                <a href="/products/cart" class="cart"><i class="fas fa-shopping-cart"></i></a>
+                <% if (typeof(user) != "undefined" && !user.admin) { %>
+                    <a href="/products/cart" class="cart"><i class="fas fa-shopping-cart"></i></a>
+                <% } %>
             </div>
             <div class="col-lg-2">
                 <a href="/products/all-products" class="products-link"><i class="fas fa-th"></i><span>Todos los productos</span></a>
