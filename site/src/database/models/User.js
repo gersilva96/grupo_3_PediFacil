@@ -1,82 +1,75 @@
-module.exports = function(sequelize,dataTypes){
+module.exports = (sequelize,dataTypes) => {
 
-    let alias = "User";
+    const alias = "Users";
 
-    let cols = {
-        id:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            primaryKey:true,
+    const cols = {
+        id: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            primaryKey: true,
             allowNull: false,
-            autoIncrement:true
+            autoIncrement: true
         },
-        business_name:{
-            type:dataTypes.STRING(50),
+        business_name: {
+            type: dataTypes.STRING(50),
             allowNull: false,
         },
-        email:{
-            type:dataTypes.STRING(50),
+        email: {
+            type: dataTypes.STRING(50),
             allowNull: false,
             unique: true
         },
-        first_name:{
-            type:dataTypes.STRING(50),
+        first_name: {
+            type: dataTypes.STRING(50),
             allowNull: false
         },
-        last_name:{
-            type:dataTypes.STRING(50),
+        last_name: {
+            type: dataTypes.STRING(50),
             allowNull: false
         },
-        password:{
-            type:dataTypes.STRING(100),
+        password: {
+            type: dataTypes.STRING(100),
             allowNull: false
         },
-        image:{
-            type:dataTypes.STRING(50),
+        image: {
+            type: dataTypes.STRING(50),
             allowNull: false
         },
-        role:{
-            type:dataTypes.INTEGER.UNSIGNED,
+        role_id: {
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
-        },
-        created_at:{
-            type:dataTypes.DATE
-        },
-        updated_at:{
-            type:dataTypes.DATE
-        },
+        }
     };
 
-    let config = {
-        tablename: "users",
-        timestamps: true
+    const config = {
+        tableName: "users"
     };
 
-    const User = sequelize.define(alias,cols,config);
+    const User = sequelize.define(alias, cols, config);
 
     //RELACIONES
-    User.associate=function(models){
-        User.belongsTo(models.Role,{
-            as:"roles",
+    User.associate = (models) => {
+        User.belongsTo(models.Roles, {
+            as: "roles",
             foreignKey: "role_id"
-        }),
+        });
 
-        User.hasMany(models.Order,{
+        User.hasMany(models.Orders, {
             as: "orders",
             foreignKey: "user_id"
-        }),
+        });
 
-        User.hasMany(models.Product,{
+        User.hasMany(models.Products, {
             as: "products",
             foreignKey: "user_id"
-        }),
+        });
 
-        User.hasMany(models.CartItem,{
+        User.hasMany(models.Cart_items, {
             as: "cart_items",
             foreignKey: "user_id"
-        }),
+        });
 
-        User.hasMany(models.Order,{
-            as: "orders",
+        User.hasMany(models.Addresses, {
+            as: "addresses",
             foreignKey: "user_id"
         })
     };

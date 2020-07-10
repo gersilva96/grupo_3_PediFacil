@@ -1,67 +1,56 @@
-module.exports = function(sequelize,dataTypes){
+module.exports = (sequelize,dataTypes) => {
 
-    let alias = "productOrder";
+    const alias = "Product_order";
 
-    let cols = {
-        id:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            primaryKey:true,
+    const cols = {
+        id: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            primaryKey: true,
             allowNull: false,
-            autoIncrement:true
+            autoIncrement: true
         },
-        total_cost:{
-            type:dataTypes.DECIMAL(10,2),
+        total_cost: {
+            type: dataTypes.DECIMAL(10,2),
             allowNull: false
         },
-        unit_cost:{
-            type:dataTypes.DECIMAL(10,2),
+        unit_cost: {
+            type: dataTypes.DECIMAL(10,2),
             allowNull: false
         },
-        quantity:{
-            type:dataTypes.INTEGER.UNSIGNED,
+        quantity: {
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        product_id:{
-            type:dataTypes.INTEGER.UNSIGNED,
+        product_id: {
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        order_id:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        created_at:{
-            type:dataTypes.DATE,
-            allowNull: false
-        },
-        updated_at:{
-            type:dataTypes.DATE,
+        order_id: {
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         }
     };
 
-    let config = {
-        tablename: "product_order",
-        timestamps: true
+    const config = {
+        tableName: "product_order"
     };
 
-    const ProductOrder = sequelize.define(alias,cols,config);
+    const ProductOrder = sequelize.define(alias, cols, config);
 
-    ProductOrder.associate=function(models){
-        Order.belongsToMany(models.Product,{
+    ProductOrder.associate = (models) => {
+        /*Order.belongsToMany(models.Products, {
             as: "products",
             through: "product_order",
             foreignKey: "order_id",
-            otherKey: "product_id",
-            timestamps: true
-        }),
+            otherKey: "product_id"
+        });
 
-        Product.belongsToMany(models.Order,{
+        Product.belongsToMany(models.Orders, {
             as: "orders",
             through: "product_order",
             foreignKey: "product_id",
-            otherKey: "order_id",
-            timestamps: true
-        })
+            otherKey: "order_id"
+        });*/
     };
 
     return ProductOrder;

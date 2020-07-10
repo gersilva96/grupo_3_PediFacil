@@ -1,41 +1,32 @@
-module.exports = function(sequelize,dataTypes){
+module.exports = (sequelize,dataTypes) => {
 
-    let alias = "Role";
+    const alias = "Roles";
 
-    let cols = {
-        id:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            primaryKey:true,
+    const cols = {
+        id: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            primaryKey: true,
             allowNull: false,
-            autoIncrement:true
+            autoIncrement: true
         },
-        name:{
-            type:dataTypes.STRING(45),
-            allowNull: false
-        },
-        created_at:{
-            type:dataTypes.DATE,
-            allowNull: false
-        },
-        updated_at:{
-            type:dataTypes.DATE,
+        name: {
+            type: dataTypes.STRING(45),
             allowNull: false
         }
     };
 
-    let config = {
-        tablename: "roles",
-        timestamps: true
+    const config = {
+        tableName: "roles"
     };
 
-    const Role = sequelize.define(alias,cols,config);
+    const Role = sequelize.define(alias, cols, config);
 
     //RELACIONES
-    Role.associate=function(models){
-        Role.hasMany(models.User,{
+    Role.associate = (models) => {
+        Role.hasMany(models.Users, {
             as: "users",
             foreignKey: "role_id"
-        })
+        });
     };
 
     return Role;

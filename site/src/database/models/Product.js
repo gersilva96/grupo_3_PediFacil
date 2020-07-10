@@ -1,90 +1,80 @@
-module.exports = function(sequelize,dataTypes){
+module.exports = (sequelize,dataTypes) => {
 
-    let alias = "Product";
+    const alias = "Products";
 
-    let cols = {
-        id:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            primaryKey:true,
+    const cols = {
+        id: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            primaryKey: true,
             allowNull: false,
-            autoIncrement:true
+            autoIncrement: true
         },
-        code:{
-            type:dataTypes.BIGINT.UNSIGNED,
-            allowNull: false,
-        },
-        name:{
-            type:dataTypes.STRING(100),
+        code: {
+            type: dataTypes.BIGINT.UNSIGNED,
             allowNull: false,
         },
-        description:{
-            type:dataTypes.STRING(300),
-            allowNull: false
-        },
-        price:{
-            type:dataTypes.DECIMAL(10,2),
+        name: {
+            type: dataTypes.STRING(100),
             allowNull: false,
         },
-        discount:{
-            type:dataTypes.INTEGER.UNSIGNED,
+        description: {
+            type: dataTypes.STRING(300),
             allowNull: false
         },
-        stock:{
-            type:dataTypes.INTEGER.UNSIGNED,
+        price: {
+            type: dataTypes.DECIMAL(10,2),
+            allowNull: false,
+        },
+        discount: {
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        image:{
-            type:dataTypes.STRING(45),
+        stock: {
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        user_id:{
-            type:dataTypes.INTEGER.UNSIGNED,
+        image: {
+            type: dataTypes.STRING(45),
             allowNull: false
         },
-        category_id:{
-            type:dataTypes.INTEGER.UNSIGNED,
+        user_id: {
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        created_at:{
-            type:dataTypes.DATE,
+        category_id: {
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
-        },
-        updated_at:{
-            type:dataTypes.DATE,
-            allowNull: false
-        },
+        }
     };
 
-    let config = {
-        tablename: "products",
-        timestamps: true
+    const config = {
+        tableName: "products"
     };
 
-    const Product = sequelize.define(alias,cols,config);
+    const Product = sequelize.define(alias, cols, config);
 
-    Product.associate=function(models){
-        Product.belongsTo(models.Category,{
-            as: "categories",
+    Product.associate = (models) => {
+        Product.belongsTo(models.Categories, {
+            as: "category",
             foreignKey: "category_id"
-        }),
+        });
 
-        Product.belongsTo(models.User,{
-            as: "users",
+        Product.belongsTo(models.Users, {
+            as: "user",
             foreignKey: "user_id"
-        }),
+        });
 
-        Product.hasMany(models.CartItem,{
+        Product.hasMany(models.Cart_items, {
             as: "cart_items",
             foreignKey: "product_id"
-        }),
+        });
 
-        Product.belongsToMany(models.Order,{
+        Product.belongsToMany(models.Orders, {
             as: "orders",
             through: "product_order",
             foreignKey: "product_id",
-            otherKey: "order_id",
-            timestamps: true
-        })
+            otherKey: "order_id"
+        });
     };
 
     return Product;

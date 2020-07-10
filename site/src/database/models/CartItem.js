@@ -1,52 +1,43 @@
-module.exports = function(sequelize,dataTypes){
+module.exports = (sequelize,dataTypes) => {
 
-    let alias = "CartItem";
+    const alias = "Cart_items";
 
-    let cols = {
-        id:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            primaryKey:true,
+    const cols = {
+        id: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            primaryKey: true,
             allowNull: false,
-            autoIncrement:true
+            autoIncrement: true
         },
-        user_id:{
+        user_id: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: false
+        },
+        product_id: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: false
+        },
+        quantity: {
             type:dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        product_id:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        quantity:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        created_at:{
-            type:dataTypes.DATE,
-            allowNull: false
-        },
-        updated_at:{
-            type:dataTypes.DATE,
             allowNull: false
         }
     };
 
-    let config = {
-        tablename: "cart_items",
-        timestamps: true
+    const config = {
+        tableName: "cart_items"
     };
 
-    const CartItem = sequelize.define(alias,cols,config);
+    const CartItem = sequelize.define(alias, cols, config);
 
     //RELACIONES
-    CartItem.associate=function(models){
-        CartItem.belogsTo(models.User,{
-            as: "users",
+    CartItem.associate = (models) => {
+        CartItem.belongsTo(models.Users, {
+            as: "user",
             foreignKey: "user_id"
         }),
 
-        CartItem.belogsTo(models.Product,{
-            as: "products",
+        CartItem.belongsTo(models.Products, {
+            as: "product",
             foreignKey: "product_id"
         })
     };
