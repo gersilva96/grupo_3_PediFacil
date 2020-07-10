@@ -1,6 +1,6 @@
 module.exports = function(sequelize,dataTypes){
 
-    let alias = "Product";
+    let alias = "productOrder";
 
     let cols = {
         id:{
@@ -9,39 +9,23 @@ module.exports = function(sequelize,dataTypes){
             allowNull: false,
             autoIncrement:true
         },
-        code:{
-            type:dataTypes.BIGINT.UNSIGNED,
-            allowNull: false,
-        },
-        name:{
-            type:dataTypes.STRING(100),
-            allowNull: false,
-        },
-        description:{
-            type:dataTypes.STRING(300),
-            allowNull: false
-        },
-        price:{
+        total_cost:{
             type:dataTypes.DECIMAL(10,2),
-            allowNull: false,
+            allowNull: false
         },
-        discount:{
+        unit_cost:{
+            type:dataTypes.DECIMAL(10,2),
+            allowNull: false
+        },
+        quantity:{
             type:dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        stock:{
+        product_id:{
             type:dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        image:{
-            type:dataTypes.STRING(45),
-            allowNull: false
-        },
-        user_id:{
-            type:dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        category_id:{
+        order_id:{
             type:dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
@@ -52,30 +36,23 @@ module.exports = function(sequelize,dataTypes){
         updated_at:{
             type:dataTypes.DATE,
             allowNull: false
-        },
+        }
     };
 
     let config = {
-        tablename: "products",
+        tablename: "product_order",
         timestamps: true
     };
 
-    const Product = sequelize.define(alias,cols,config);
+    const ProductOrder = sequelize.define(alias,cols,config);
 
-    Product.associate=function(models){
-        Product.belongsTo(models.Category,{
-            as: "categories",
-            foreignKey: "category_id"
-        }),
-
-        Product.belongsTo(models.User,{
-            as: "users",
-            foreignKey: "user_id"
-        }),
-
-        Product.hasMany(models.CartItem,{
-            as: "cart_items",
-            foreignKey: "product_id"
+    ProductOrder.associate=function(models){
+        Order.belongsToMany(models.Product,{
+            as: "products",
+            through: "product_order",
+            foreignKey: "order_id",
+            otherKey: "product_id",
+            timestamps: true
         }),
 
         Product.belongsToMany(models.Order,{
@@ -87,5 +64,5 @@ module.exports = function(sequelize,dataTypes){
         })
     };
 
-    return Product;
+    return ProductOrder;
 }

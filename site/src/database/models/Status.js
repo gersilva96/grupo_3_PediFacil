@@ -1,6 +1,6 @@
 module.exports = function(sequelize,dataTypes){
 
-    let alias = "Category";
+    let alias = "Status";
 
     let cols = {
         id:{
@@ -10,7 +10,7 @@ module.exports = function(sequelize,dataTypes){
             autoIncrement:true
         },
         name:{
-            type:dataTypes.STRING(45),
+            type:dataTypes.STRING(50),
             allowNull: false
         },
         created_at:{
@@ -24,19 +24,19 @@ module.exports = function(sequelize,dataTypes){
     };
 
     let config = {
-        tablename: "categories",
+        tablename: "statuses",
         timestamps: true
     };
 
-    const Category = sequelize.define(alias,cols,config);
+    const Status = sequelize.define(alias,cols,config);
 
     //RELACIONES
-    Category.associate=function(models){
-        Category.hasMany(models.Product,{
-            as: "products",
-            foreignKey: "category_id"
+    Status.associate=function(models){
+        Status.hasMany(models.Order,{
+            as: "orders",
+            foreignKey: "status_id"
         })
     };
 
-    return Category;
+    return Status;
 }

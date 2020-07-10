@@ -1,42 +1,42 @@
 module.exports = function(sequelize,dataTypes){
 
-    let alias = "Users";
+    let alias = "User";
 
     let cols = {
         id:{
-            type:dataTypes.INTEGER,
+            type:dataTypes.INTEGER.UNSIGNED,
             primaryKey:true,
             allowNull: false,
             autoIncrement:true
         },
         business_name:{
-            type:dataTypes.STRING,
+            type:dataTypes.STRING(50),
+            allowNull: false,
         },
         email:{
-            type:dataTypes.STRING,
+            type:dataTypes.STRING(50),
             allowNull: false,
             unique: true
         },
         first_name:{
-            type:dataTypes.STRING,
-            allowNull: false,
+            type:dataTypes.STRING(50),
+            allowNull: false
         },
         last_name:{
-            type:dataTypes.STRING,
-            allowNull: false,
+            type:dataTypes.STRING(50),
+            allowNull: false
         },
         password:{
-            type:dataTypes.STRING,
-            allowNull: false,
+            type:dataTypes.STRING(100),
+            allowNull: false
         },
         image:{
-            type:dataTypes.STRING
+            type:dataTypes.STRING(50),
+            allowNull: false
         },
-        street_name:{
-            type:dataTypes.STRING
-        },
-        street_number:{
-            type:dataTypes.STRING
+        role:{
+            type:dataTypes.INTEGER.UNSIGNED,
+            allowNull: false
         },
         created_at:{
             type:dataTypes.DATE
@@ -44,14 +44,10 @@ module.exports = function(sequelize,dataTypes){
         updated_at:{
             type:dataTypes.DATE
         },
-        type_id:{
-            type:dataTypes.INTEGER,
-            allowNull: false,
-        }
     };
 
     let config = {
-        tablename: "Users",
+        tablename: "users",
         timestamps: true
     };
 
@@ -59,13 +55,28 @@ module.exports = function(sequelize,dataTypes){
 
     //RELACIONES
     User.associate=function(models){
-        User.belongsTo(models.Types,{ //alias
-            as:"types",
-            foreignKey: "type_id"
+        User.belongsTo(models.Role,{
+            as:"roles",
+            foreignKey: "role_id"
         }),
 
-        User.hasMany(models.Orders,{ //alias
-            as:"orders",
+        User.hasMany(models.Order,{
+            as: "orders",
+            foreignKey: "user_id"
+        }),
+
+        User.hasMany(models.Product,{
+            as: "products",
+            foreignKey: "user_id"
+        }),
+
+        User.hasMany(models.CartItem,{
+            as: "cart_items",
+            foreignKey: "user_id"
+        }),
+
+        User.hasMany(models.Order,{
+            as: "orders",
             foreignKey: "user_id"
         })
     };
