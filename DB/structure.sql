@@ -1,13 +1,14 @@
 -- -----------------------------------------------------
 -- Schema pedifacil
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `pedifacil` DEFAULT CHARACTER SET utf8 ;
+DROP SCHEMA IF EXISTS `pedifacil`;
+CREATE SCHEMA `pedifacil` DEFAULT CHARACTER SET utf8 ;
 USE `pedifacil` ;
 
 -- -----------------------------------------------------
 -- Table `pedifacil`.`roles`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`roles` (
+CREATE TABLE `pedifacil`.`roles` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `createdAt` TIMESTAMP NOT NULL,
@@ -19,7 +20,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `pedifacil`.`users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`users` (
+CREATE TABLE `pedifacil`.`users` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `business_name` VARCHAR(50) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
@@ -43,7 +44,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `pedifacil`.`addresses`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`addresses` (
+CREATE TABLE `pedifacil`.`addresses` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `first_line` VARCHAR(50) NOT NULL,
   `second_line` VARCHAR(50) NULL DEFAULT NULL,
@@ -66,7 +67,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `pedifacil`.`categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`categories` (
+CREATE TABLE `pedifacil`.`categories` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `createdAt` TIMESTAMP NOT NULL,
@@ -78,7 +79,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `pedifacil`.`products`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`products` (
+CREATE TABLE `pedifacil`.`products` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `code` BIGINT UNSIGNED NOT NULL,
   `name` VARCHAR(100) NOT NULL,
@@ -106,7 +107,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `pedifacil`.`cart_items`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`cart_items` (
+CREATE TABLE `pedifacil`.`cart_items` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_id` INT UNSIGNED NOT NULL,
   `product_id` INT UNSIGNED NOT NULL,
@@ -128,7 +129,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `pedifacil`.`statuses`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`statuses` (
+CREATE TABLE `pedifacil`.`statuses` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL,
   `createdAt` TIMESTAMP NOT NULL,
@@ -140,7 +141,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `pedifacil`.`orders`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`orders` (
+CREATE TABLE `pedifacil`.`orders` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `order_date` DATETIME NOT NULL,
   `order_total` DECIMAL(10,2) NOT NULL,
@@ -168,7 +169,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `pedifacil`.`product_order`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pedifacil`.`product_order` (
+CREATE TABLE `pedifacil`.`product_order` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `total_cost` DECIMAL(10,2) NOT NULL,
   `unit_cost` DECIMAL(10,2) NOT NULL,
