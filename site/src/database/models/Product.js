@@ -1,4 +1,4 @@
-module.exports = (sequelize,dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
 
     const alias = "Products";
 
@@ -12,10 +12,11 @@ module.exports = (sequelize,dataTypes) => {
         code: {
             type: dataTypes.BIGINT.UNSIGNED,
             allowNull: false,
+            unique: true
         },
         name: {
             type: dataTypes.STRING(100),
-            allowNull: false,
+            allowNull: false
         },
         description: {
             type: dataTypes.STRING(300),
@@ -23,7 +24,7 @@ module.exports = (sequelize,dataTypes) => {
         },
         price: {
             type: dataTypes.DECIMAL(10,2),
-            allowNull: false,
+            allowNull: false
         },
         discount: {
             type: dataTypes.INTEGER.UNSIGNED,
@@ -54,21 +55,18 @@ module.exports = (sequelize,dataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = (models) => {
-        Product.belongsTo(models.Categories, {
-            as: "category",
-            foreignKey: "category_id"
-        });
-
         Product.belongsTo(models.Users, {
             as: "user",
             foreignKey: "user_id"
         });
-
         Product.hasMany(models.Cart_items, {
             as: "cart_items",
             foreignKey: "product_id"
         });
-
+        Product.belongsTo(models.Categories, {
+            as: "category",
+            foreignKey: "category_id"
+        });
         Product.belongsToMany(models.Orders, {
             as: "orders",
             through: "product_order",

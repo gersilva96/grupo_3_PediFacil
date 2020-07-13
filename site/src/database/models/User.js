@@ -1,4 +1,4 @@
-module.exports = (sequelize,dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
 
     const alias = "Users";
 
@@ -49,29 +49,25 @@ module.exports = (sequelize,dataTypes) => {
     //RELACIONES
     User.associate = (models) => {
         User.belongsTo(models.Roles, {
-            as: "roles",
+            as: "role",
             foreignKey: "role_id"
         });
-
-        User.hasMany(models.Orders, {
-            as: "orders",
-            foreignKey: "user_id"
-        });
-
-        User.hasMany(models.Products, {
-            as: "products",
-            foreignKey: "user_id"
-        });
-
         User.hasMany(models.Cart_items, {
             as: "cart_items",
             foreignKey: "user_id"
         });
-
+        User.hasMany(models.Products, {
+            as: "products",
+            foreignKey: "user_id"
+        });
+        User.hasMany(models.Orders, {
+            as: "orders",
+            foreignKey: "user_id"
+        });
         User.hasMany(models.Addresses, {
             as: "addresses",
             foreignKey: "user_id"
-        })
+        });
     };
 
     return User;

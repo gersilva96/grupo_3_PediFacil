@@ -1,4 +1,4 @@
-module.exports = (sequelize,dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
 
     const alias = "Orders";
 
@@ -8,6 +8,11 @@ module.exports = (sequelize,dataTypes) => {
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
+        },
+        order_number: {
+            type: dataTypes.INTEGER.UNSIGNED.ZEROFILL,
+            allowNull: false,
+            unique: true
         },
         order_date: {
             type: dataTypes.DATE,
@@ -42,17 +47,14 @@ module.exports = (sequelize,dataTypes) => {
             as: "address",
             foreignKey: "address_id"
         });
-
         Order.belongsTo(models.Users, {
             as: "user",
             foreignKey: "user_id"
         });
-
         Order.belongsTo(models.Statuses, {
             as: "status",
             foreignKey: "status_id"
         });
-
         Order.belongsToMany(models.Products, {
             as: "products",
             through: "product_order",

@@ -1,6 +1,6 @@
-module.exports = (sequelize,dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
 
-    const alias = "Product_order";
+    const alias = "Product_orders";
 
     const cols = {
         id: {
@@ -38,19 +38,14 @@ module.exports = (sequelize,dataTypes) => {
     const ProductOrder = sequelize.define(alias, cols, config);
 
     ProductOrder.associate = (models) => {
-        /*Order.belongsToMany(models.Products, {
-            as: "products",
-            through: "product_order",
-            foreignKey: "order_id",
-            otherKey: "product_id"
+        ProductOrder.belongsTo(models.Orders, {
+            as: "order",
+            foreignKey: "order_id"
         });
-
-        Product.belongsToMany(models.Orders, {
-            as: "orders",
-            through: "product_order",
-            foreignKey: "product_id",
-            otherKey: "order_id"
-        });*/
+        ProductOrder.belongsTo(models.Products, {
+            as: "product",
+            foreignKey: "product_id"
+        });
     };
 
     return ProductOrder;

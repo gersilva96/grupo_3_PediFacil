@@ -1,4 +1,4 @@
-module.exports = (sequelize,dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
 
     const alias = "Cart_items";
 
@@ -34,12 +34,11 @@ module.exports = (sequelize,dataTypes) => {
         CartItem.belongsTo(models.Users, {
             as: "user",
             foreignKey: "user_id"
-        }),
-
+        });
         CartItem.belongsTo(models.Products, {
             as: "product",
             foreignKey: "product_id"
-        })
+        });
     };
 
     return CartItem;

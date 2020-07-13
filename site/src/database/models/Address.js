@@ -1,4 +1,4 @@
-module.exports = (sequelize,dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
 
     const alias = "Addresses";
 
@@ -45,7 +45,6 @@ module.exports = (sequelize,dataTypes) => {
             as: "user",
             foreignKey: "user_id"
         });
-
         Address.hasMany(models.Orders, {
             as: "orders",
             foreignKey: "address_id"
