@@ -31,19 +31,24 @@
 
             <form class="admin-product" action="/products" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="id">Id:</label>
-                    <input type="number" class="form-control" id="id" name="id" value="<%= newId %>" disabled required>
-                </div>
-                <div class="form-group">
                     <label for="name">Nombre:</label>
                     <input type="text" class="form-control" id="name" name="name" required>
                     <small class="form-text text-muted">
-                        Al menos 10 caracteres, 99 como máximo
+                        Al menos 10 caracteres, 100 como máximo
                     </small>
                 </div>
                 <div class="form-group">
+                    <label for="code">Código:</label>
+                    <input type="number" class="form-control" id="code" name="code" required>
+                </div>
+                <div class="form-group">
                     <label for="category">Categoría:</label>
-                    <input type="text" class="form-control" id="category" name="category" required>
+                    <select class="form-control custom-select" name="category" id="category" required>
+                        <option selected disabled value="">Seleccionar categoría</option>
+                        <% categories.forEach(category => { %>
+                            <option value="<%= category.id %>"><%= category.name %></option>
+                        <% }) %>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="price">Precio:</label>
@@ -63,7 +68,7 @@
                         </div>
                     </div>
                     <small class="form-text text-muted fix-form-text">
-                        Mínimo 0, máximo 100
+                        Mínimo 0, máximo 99
                     </small>
                 </div>
                 <div class="form-group">
@@ -74,7 +79,7 @@
                     <label for="description">Descripción:</label>
                     <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
                     <small class="form-text text-muted">
-                        Mínimo 10 caracteres
+                        Mínimo 10 caracteres, máximo 300
                     </small>
                 </div>
                 <div class="form-group">

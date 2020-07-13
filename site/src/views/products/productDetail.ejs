@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <%- include("../partials/head", {title: "Detalle de producto"}) %>
+    <%- include("../partials/head", {title: product.name}) %>
 </head>
 
 <body>
@@ -11,6 +11,22 @@
 
     <section class="body-section">
         <div class="container">
+            <% if (typeof(mensaje) != "undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <li><%= mensaje %></li>
+                    </ul>
+                </div>
+            <% } %>
+            <% if (typeof(errors) != "undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <% errors.forEach(errores => { %>
+                            <li><%= errores.msg %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
             <h2 class="product-detail_h2">Detalle del producto: <%= product.name %></h2>
             <section class="product-detail_section">
                 <figure class="left">
@@ -29,10 +45,10 @@
                         <span class="price_final"><%= formatPrice(product.price,product.discount) %></span>
                     </div>
                     <div class="seller">
-                        <p>Vendedor: <strong>Vendedor</strong></p>
+                        <p>Vendedor: <strong><%= product.user.business_name %></strong></p>
                     </div>
-                    <form>
-                        <input type="number" class="form-control product-detail_quantity" id="product" name="product"
+                    <form action="/cart/add/<%= product.id %>" method="POST">
+                        <input type="number" class="form-control product-detail_quantity" id="quantity" name="quantity"
                             value="1" min="1" max="<%= product.stock %>">
                         <button type="submit" class="btn btn-primary product-detail_button"><i
                                 class="fas fa-shopping-cart"></i> Añadir al carrito</button>

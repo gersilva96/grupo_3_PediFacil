@@ -27,9 +27,17 @@
                     </ul>
                 </div>
             <% } %>
-            <form class="admin-product" method="POST" action="/users/register" enctype="multipart/form-data">
+            <form class="admin-product" method="POST" action="/users/register">
                 <div class="form-group">
-                    <h1 class="form-title">Registrate</h1>
+                    <h1 class="form-title">Registrarse</h1>
+                </div>
+                <div class="form-group">
+                    <label for="category">Voy a usar Pedí Fácil para:</label>
+                    <select class="form-control" name="role" id="role" required>
+                        <option selected disabled value="">Seleccionar opción</option>
+                        <option value="3">Comprar</option>
+                        <option value="2">Vender</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="business_name">Nombre de tu negocio:</label>
@@ -65,30 +73,12 @@
                         <input type="password" class="form-control" id="password_repeat" name="password_repeat" required>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="avatar">Avatar:</label>
-                    <input type="file" class="form-control-file" id="avatar" name="avatar" accept=".png, .jpg, .jpeg" required>
-                </div>
                 <p class="text-danger">
                     Todos los campos son obligatorios
                 </p>
                 <div class="form-group">
                     <div class="login-register_buttons">
                         <button type="submit" class="btn btn-primary">Registrarme</button>
-                    </div>
-                </div>
-                <div class="social">
-                    <div class="form-group">
-                        <a href="#" class="social-login facebook">
-                            <i class="fab fa-facebook-f"></i>
-                            <span>Iniciar con Facebook</span>
-                        </a>
-                    </div>
-                    <div class="form-group">
-                        <a href="#" class="social-login google">
-                            <img src="/images/google_logo.svg" alt="google login">
-                            <span>Iniciar con Google</span>
-                        </a>
                     </div>
                 </div>
             </form>

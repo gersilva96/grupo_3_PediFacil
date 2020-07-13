@@ -18,8 +18,12 @@
                     <span>Ups! Error al tratar de ingresar a: <b><%= path %></b></span>
                 <% } %>
                 <% if (typeof(accessDenied) != "undefined") { %>
-                    <span><b><%= accessDenied %></b></span>
-                    <span>No tenés los permismos para ingresar a esta sección</span>
+                    <span><b>Acceso denegado</b></span>
+                    <span><%= accessDenied %></span>
+                <% } %>
+                <% if (typeof(message) != "undefined") { %>
+                    <span>ERROR</span>
+                    <span><b><%= message %></b></span>
                 <% } %>
             </div>
         </div>

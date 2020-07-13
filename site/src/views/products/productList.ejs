@@ -12,6 +12,13 @@
     <section class="body-section">
         <div class="container">
             <h1 class="product-section_title"><i class="fas fa-user-cog"></i> Administrar productos</h1>
+            <% if (typeof(mensaje) != "undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <li><%= mensaje %></li>
+                    </ul>
+                </div>
+            <% } %>
             <div class="table-responsive">
                 <table class="table">
                     <thead class="thead-dark">
