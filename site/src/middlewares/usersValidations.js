@@ -1,33 +1,39 @@
 const {check, validationResult, body} = require("express-validator");
-const usersController = require("../controllers/usersController");
-const bcrypt = require("bcrypt");
 
 const usersValidations = {
     registerUser: [
+        check("role")
+            .exists().withMessage("Error de seguridad")
+            .trim()
+            .isInt({no_symbols: true}).withMessage("Error al seleccionar el rol")
+            .notEmpty().withMessage("Debe seleccionar un rol"),
         check("business_name")
             .exists().withMessage("Error de seguridad")
             .trim()
             .notEmpty().withMessage("Debe ingresar el nombre del negocio")
-            .isLength({min: 2}).withMessage("El nombre del negocio debe tener al menos 2 caracteres"),
+            .isLength({min: 2, max: 50}).withMessage("El nombre del negocio debe tener al menos 2 caracteres, 50 como máximo"),
         check("email")
             .exists().withMessage("Error de seguridad")
             .trim()
             .notEmpty().withMessage("Debe ingresar un email")
             .isEmail().withMessage("Debe ingresar un email válido")
-            .normalizeEmail(),
+            .normalizeEmail()
+            .isLength({max: 50}).withMessage("El email no puede tener más de 50 caracteres"),
         check("first_name")
             .exists().withMessage("Error de seguridad")
             .trim()
-            .notEmpty().withMessage("Debe ingresar su nombre"),
+            .notEmpty().withMessage("Debe ingresar su nombre")
+            .isLength({max: 50}).withMessage("Tu nombre no puede tener más de 50 caracteres"),
         check("last_name")
             .exists().withMessage("Error de seguridad")
             .trim()
-            .notEmpty().withMessage("Debe ingresar su apellido"),
+            .notEmpty().withMessage("Debe ingresar su apellido")
+            .isLength({max: 50}).withMessage("Tu apellido no puede tener más de 50 caracteres"),
         check("password")
             .exists().withMessage("Error de seguridad")
             .trim()
             .notEmpty().withMessage("Debe ingresar una contraseña")
-            .isLength({min: 6}).withMessage("La contraseña debe tener al menos 6 caracteres"),
+            .isLength({min: 6, max: 100}).withMessage("La contraseña debe tener al menos 6 caracteres, 100 como máximo"),
         check("password_repeat")
             .exists().withMessage("Error de seguridad")
             .trim()
@@ -39,15 +45,7 @@ const usersValidations = {
             } else {
                 return false;
             }
-        }).withMessage("Las contraseñas no coinciden"),
-        body("email").custom(email => {     //Chequeamos que no haya otro usuario registrado con el mismo email
-            const exists = usersController.searchByEmail(email);
-            if (exists == null) {
-                return true;
-            } else {
-                return false;
-            }
-        }).withMessage("Ya existe un usuario con el email ingresado")
+        }).withMessage("Las contraseñas no coinciden")
     ],
     loginUser: [
         check("email")
@@ -59,22 +57,31 @@ const usersValidations = {
         check("password")
             .exists().withMessage("Error de seguridad")
             .trim()
-            .notEmpty().withMessage("Debe ingresar una contraseña"),
-        body("email").custom(email => {
-            if (usersController.searchByEmail(email)) {
-                return true;
-            } else {
-                return false;
-            }
-        }).withMessage("No se encuentra un usuario con ese mail"),
-        body().custom(req => {
-            const user = usersController.searchByEmail(req.email);
-            if (user != null && bcrypt.compareSync(req.password, user.password)) {
-                return true;
-            } else {
-                return false;
-            }
-        }).withMessage("La contraseña ingresada no es correcta")
+            .notEmpty().withMessage("Debe ingresar una contraseña")
+    ],
+    updateUser: [
+        check("business_name")
+            .exists().withMessage("Error de seguridad")
+            .trim()
+            .notEmpty().withMessage("Debe ingresar el nombre del negocio")
+            .isLength({min: 2, max: 50}).withMessage("El nombre del negocio debe tener al menos 2 caracteres, 50 como máximo"),
+        check("email")
+            .exists().withMessage("Error de seguridad")
+            .trim()
+            .notEmpty().withMessage("Debe ingresar un email")
+            .isEmail().withMessage("Debe ingresar un email válido")
+            .normalizeEmail()
+            .isLength({max: 50}).withMessage("El email no puede tener más de 50 caracteres"),
+        check("first_name")
+            .exists().withMessage("Error de seguridad")
+            .trim()
+            .notEmpty().withMessage("Debe ingresar su nombre")
+            .isLength({max: 50}).withMessage("Tu nombre no puede tener más de 50 caracteres"),
+        check("last_name")
+            .exists().withMessage("Error de seguridad")
+            .trim()
+            .notEmpty().withMessage("Debe ingresar su apellido")
+            .isLength({max: 50}).withMessage("Tu apellido no puede tener más de 50 caracteres"),
     ]
 };
 

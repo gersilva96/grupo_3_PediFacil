@@ -1,4 +1,4 @@
-const loggedUser = (req,res,next) => {      //Valida que exista un usuario logueado en la sesión
+const loggedUser = (req, res, next) => {      //Valida que exista un usuario logueado en la sesión
     if (req.session.userLogged != undefined) {
         next();
     } else {
