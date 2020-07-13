@@ -1,115 +1,172 @@
-const fs = require("fs");
-const path = require("path");
 const bcrypt = require("bcrypt");
 const {check, validationResult, body} = require("express-validator");
-const { render } = require("ejs");
+const db = require("../database/models");
 
 let usersController = {
-    //Funciones
-    usersFile: path.join(__dirname,"..","data","users.json"),   //Directorio del JSON de usuarios
-
-    readJSONFile: () => JSON.parse(fs.readFileSync(usersController.usersFile, "utf-8")),     //Leo el JSON y lo parseo
-
-    saveJSONFile: elem => fs.writeFileSync(usersController.usersFile, JSON.stringify(elem)),     //Sobreescribo el JSON
-
-    searchByEmail: email => {       //Busco y retorno un usuario por su email
-        let archivoJson = usersController.readJSONFile();
-        let userFound = null;
-        archivoJson.forEach(elem => {
-            if (elem["email"] == email) {
-                userFound = elem;
-            }
-        });
-        return userFound;
-    },
-
-    searchById: id => {       //Busco y retorno un usuario por su id
-        let archivoJson = usersController.readJSONFile();
-        let userFound = null;
-        archivoJson.forEach(user => {
-            if (user["id"] == id) {
-                userFound = user;
-            }
-        });
-        return userFound;
-    },
-
-    getNewId: () => {   //Obtengo el id que le corresponde al nuevo usuario
-        const users = usersController.readJSONFile();
-        let lastId = 0;
-        users.forEach(user => {
-            if(user.id > lastId) {
-                lastId = user.id;
-            }
-        });
-        return lastId+=1;   //Retorno el id que le corresponde al nuevo usuario
-    },
-
-    //Métodos para el router
-    profile: (req,res) => {         //GET - Muestra el perfil de un usuario
-        const user = req.session.userLogged;
-        res.render("users/profile", {user});
-    },
-
-    login: (req,res) => {           //GET - Muestra el formulario de Login
-        res.render("users/login");
-    },
-
-    processLogin: (req,res) => {    //POST - Loguea a un usuario
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            const user = usersController.searchByEmail(req.body.email);
-            req.session.userLogged = user;
-            if (req.body.remember != undefined) {
-                res.cookie("userLogged", user.id, {maxAge: Date.now()});
-            }
-            res.redirect("/users/profile");
-        } else {
-            res.render("users/login", {errors: errors.errors});
+    profile: async (req, res) => {         //GET - Muestra el perfil de un usuario - Debe haber un usuario logueado
+        try {
+            res.render("users/profile", {user: req.session.userLogged});
+        } catch (error) {
+            res.render("error", {message: error, user: req.session.userLogged});
         }
     },
-
-    logout: (req,res) => {          //POST - Cierra la sesión del usuario logueado
-        req.session.userLogged = undefined;
-        res.cookie("userLogged", undefined);
-        res.redirect("/users/login");
+    edit: async (req, res) => {             //GET - Muestra el formulario de edición de datos de un usuario - Debe haber un usuario logueado
+        try {
+            res.render("users/editProfile", {user: req.session.userLogged});
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
     },
-
-    register: (req,res) => {        //GET - Muestra el formulario de Registro
-        res.render("users/register");
-    },
-
-    create: (req,res) => {          //POST - Registra a un nuevo usuario
-        let errors = validationResult(req);
-        if (typeof req.file === "undefined") {
-            let newError = {
-               value: '',
-               msg: 'Debe cargar una imagen de avatar',
-               param: 'avatar',
-               location: 'files'
+    update: async (req, res) => {           //PUT - Actualiza la información de un usuario - Debe haber un usuario logueado
+        try {
+            let errors = validationResult(req);
+            if (errors.isEmpty()) {
+                if (typeof(req.file) === "undefined") {
+                    await db.Users.update({
+                        business_name: req.body.business_name,
+                        first_name: req.body.first_name,
+                        last_name: req.body.last_name
+                    }, {
+                        where: {
+                            id: req.session.userLogged.id
+                        }
+                    });
+                    req.session.userLogged = await db.Users.findOne({
+                        where: {
+                            id: req.params.id
+                        }
+                    });
+                    res.redirect("/users/profile");
+                } else {
+                    await db.Users.update({
+                        business_name: req.body.business_name,
+                        first_name: req.body.first_name,
+                        last_name: req.body.last_name,
+                        image: req.file.filename
+                    }, {
+                        where: {
+                            id: req.session.userLogged.id
+                        }
+                    });
+                    req.session.userLogged = await db.Users.findOne({
+                        where: {
+                            id: req.params.id
+                        }
+                    });
+                    res.redirect("/users/profile");
+                }
+            } else {
+                res.render("users/editProfile", {errors: errors.errors, user: req.session.userLogged});
             }
-            errors.errors.push(newError);
-        };
-        if (errors.isEmpty()) {
-            const newUser = {
-                id: usersController.getNewId(),
-                business_name: req.body.business_name.trim(),
-                email: req.body.email.trim(),
-                first_name: req.body.first_name.trim(),
-                last_name: req.body.last_name.trim(),
-                password: bcrypt.hashSync(req.body.password,10),
-                admin: false,
-                image: req.file.filename
-            };
-            const users = usersController.readJSONFile();
-            users.push(newUser);
-            usersController.saveJSONFile(users);
-            req.session.userLogged = newUser;
-            res.redirect("/users/profile");
-        } else {
-            res.render("users/register", {errors: errors.errors})
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    login: async (req, res) => {           //GET - Muestra el formulario de Login - No debe haber un usuario logueado
+        try {
+            res.render("users/login", {user: req.session.userLogged});
+        } catch (error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    processLogin: async (req, res) => {    //POST - Loguea a un usuario
+        try {
+            let errors = validationResult(req);
+            const user = await db.Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            });
+            if (user == null) {
+                let newError = {
+                    value: '',
+                    msg: 'No existe ningún usuario con el email ingresado',
+                    param: 'email',
+                    location: 'body'
+                };
+                errors.errors.push(newError);
+            } else {
+                const correctPassword = await bcrypt.compare(req.body.password, user.password);
+                if (!correctPassword) {
+                    let newError = {
+                        value: '',
+                        msg: 'La contraseña ingresada no es correcta',
+                        param: '',
+                        location: 'body'
+                    };
+                    errors.errors.push(newError);
+                }
+            }
+            if (errors.isEmpty()) {
+                req.session.userLogged = user;
+                if (req.body.remember != undefined) {
+                    res.cookie("userLogged", user.id, {maxAge: Date.now()});
+                }
+                res.redirect("/users/profile");
+            } else {
+                res.render("users/login", {errors: errors.errors, user: req.session.userLogged});
+            }
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    logout: async (req, res) => {          //POST - Cierra la sesión del usuario logueado - Debe haber un usuario logueado
+        try {
+            req.session.userLogged = undefined;
+            res.cookie("userLogged", undefined);
+            res.redirect("/users/login");
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    register: async (req, res) => {        //GET - Muestra el formulario de Registro - No debe haber un usuario logueado
+        try {
+            res.render("users/register", {user: req.session.userLogged});
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    create: async (req, res) => {          //POST - Registra a un nuevo usuario
+        try {
+            let errors = validationResult(req);
+            const userExisting = await db.Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            });
+            if (userExisting != null) {
+                let newError = {
+                    value: '',
+                    msg: 'Ya existe un usuario con el email ingresado',
+                    param: 'email',
+                    location: 'body'
+                };
+                errors.errors.push(newError);
+            }
+            if (errors.isEmpty()) {
+                await db.Users.create({
+                    business_name: req.body.business_name,
+                    email: req.body.email,
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    password: await bcrypt.hash(req.body.password, 10),
+                    image: "avatar-default.png",
+                    role_id: parseInt(req.body.role)
+                });
+                const newUser = await db.Users.findOne({
+                    where: {
+                        email: req.body.email
+                    }
+                });
+                req.session.userLogged = newUser;
+                res.redirect("/users/profile");
+            } else {
+                res.render("users/register", {errors: errors.errors, user: req.session.userLogged});
+            }
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
         }
     }
-}
+};
 
 module.exports = usersController;

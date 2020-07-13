@@ -1,4 +1,5 @@
-const productsController = require("./productsController");
+const db = require("../database/models");
+const {Op} = require("sequelize");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const formatPrice = (price,discount) => {
@@ -14,20 +15,25 @@ const formatPrice = (price,discount) => {
     return `$ ${first}${lastReplaced}`;
 };
 
-let mainController = {
-    home: (req,res) => {    //GET - Muestro todos los productos en oferta
-        const productsTotal = productsController.readJSONFile();
-        let products = [];
-        productsTotal.forEach(prod => {
-            if (prod.discount > 0) {
-                products.push(prod);
-            }
-        });
-        let user = undefined;
-        if (req.session.userLogged != undefined) {
-            user = req.session.userLogged;
+const mainController = {
+    home: async (req, res) => {    //GET - Muestra todos los productos en oferta
+        try {
+            const products = await db.Products.findAll({
+                where: {
+                    discount: {
+                        [Op.gt]: 0
+                    }
+                }
+            });
+
+            const exists = await db.Products.findOne({where: {code: 000123153}});
+            console.log(exists);
+
+
+            return res.render("index", {products, formatPrice, user: req.session.userLogged});
+        } catch(error) {
+            return res.render("error", {message: error, user: req.session.userLogged})
         }
-        res.render("index", {products, formatPrice, user});
     }
 }
 
