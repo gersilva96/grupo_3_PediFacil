@@ -5,12 +5,17 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require("express-session");
+const sassMiddleware = require("node-sass-middleware");
+
+//Middlewares propios
 const remember = require("./middlewares/remember");
+const getUser = require("./middlewares/getUser");
 
 //Llamo a las rutas
 const mainRouter = require("./routes/main");
 const usersRouter = require("./routes/users");
 const productsRouter = require("./routes/products");
+const cartRouter = require("./routes/cart");
 
 const app = express();
 
@@ -22,15 +27,23 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(sassMiddleware({
+  src: path.join(__dirname, '..', 'public'),
+  dest: path.join(__dirname, '..', 'public'),
+  indentedSyntax: false, // true = .sass and false = .scss
+  sourceMap: true
+}));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret: "pedifacil", resave: true, saveUninitialized: true}));
 app.use(remember);
+app.use(getUser);
 
 //Rutas
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.use("/cart", cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
