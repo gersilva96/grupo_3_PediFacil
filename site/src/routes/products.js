@@ -7,6 +7,8 @@ const productsValidations = require("../middlewares/productsValidations");      
 const loggedUser = require("../middlewares/loggedUser");    //Valida que exista un usuario logueado en la sesión
 const notLoggedUser = require("../middlewares/notLoggedUser");  //Valida que no exista un usuario logueado en la sesión
 const isAdmin = require("../middlewares/isAdmin");      //Valida que el usuario logueado sea administrador
+const isSeller = require("../middlewares/isSeller");    //Valida que el usuario logueado sea vendedor
+const isBuyer = require("../middlewares/isBuyer");    //Valida que el usuario logueado sea comprador
 
 const productsController = require("../controllers/productsController");
 
@@ -16,19 +18,17 @@ router.get("/all-products", productsController.root);   //GET - Muestra todos lo
 
 router.get("/detail/:id", productsController.detail);   //GET - Muestra el detalle de un producto
 
-router.get("/cart", loggedUser, productsController.cart);   //GET - Muestra el carrito - Debe haber un usuario logueado
+router.get("/order-history", loggedUser, isBuyer, productsController.orderHistory);  //GET - Historial de compra - Debe haber un usuario logueado - Debe tener rol de comprador
+router.get("/order-history-detail", loggedUser, isBuyer, productsController.orderHistoryDetail); //GET - Detalle de historial de compra - Debe haber un usuario logueado - Debe tener rol de comprador
 
-router.get("/order-history", loggedUser, productsController.orderHistory);  //GET - Historial de compra - Debe haber un usuario logueado
-router.get("/order-history-detail", loggedUser, productsController.orderHistoryDetail); //GET - Detalle de historial de compra - Debe haber un usuario logueado
+router.get("/", loggedUser, isSeller, productsController.list);   //GET - Lista todos los productos - Debe haber un usuario logueado - Debe tener rol de vendedor
 
-router.get("/", loggedUser, isAdmin, productsController.list);   //GET - Lista todos los productos - Debe haber un usuario logueado y debe ser admin
+router.get("/create", loggedUser, isSeller, productsController.create);  //GET - Formulario de carga de un producto - Debe haber un usuario logueado - Debe tener rol de vendedor
+router.post("/", loggedUser, isSeller, uploadImgProduct.uploadFile, productsValidations, productsController.store);    //POST - Agrega un producto - Debe haber un usuario logueado - Debe tener rol de vendedor
 
-router.get("/create", loggedUser, isAdmin, productsController.create);  //GET - Formulario de carga de un producto - Debe haber un usuario logueado y debe ser admin
-router.post("/", loggedUser, isAdmin, uploadImgProduct.uploadFile, productsValidations, productsController.store)    //POST - Agrega un producto al JSON - Debe haber un usuario logueado y debe ser admin
+router.get("/:id/edit", loggedUser, isSeller, productsController.edit);   //GET - Formulario de edición de un producto - Debe haber un usuario logueado - Debe tener rol de vendedor
+router.put("/:id", loggedUser, isSeller, productsValidations, productsController.update);  //PUT - Actualiza un producto - Debe haber un usuario logueado - Debe tener rol de vendedor
 
-router.get("/:id/edit", loggedUser, isAdmin, productsController.edit);   //GET - Formulario de edición de un producto - Debe haber un usuario logueado y debe ser admin
-router.put("/:id", loggedUser, isAdmin, productsValidations, productsController.update);  //PUT - Actualiza un producto del JSON - Debe haber un usuario logueado y debe ser admin
-
-router.delete("/:id", loggedUser, isAdmin, productsController.delete);   //DELETE - Elimina un producto del JSON - Debe haber un usuario logueado y debe ser admin
+router.delete("/:id", loggedUser, isSeller, productsController.delete);   //DELETE - Elimina un producto - Debe haber un usuario logueado - Debe tener rol de vendedor
 
 module.exports = router;
