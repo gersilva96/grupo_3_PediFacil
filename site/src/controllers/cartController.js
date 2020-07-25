@@ -27,7 +27,7 @@ const cartController = {
             });
             if (items.length == 0) {
                 const products = [];
-                res.render("cart", {products, user: req.session.userLogged});
+                res.render("cart/cart", {products, user: req.session.userLogged});
             } else {
                 let productsInCart = [];
                 items.forEach(item => {
@@ -59,7 +59,7 @@ const cartController = {
                 });
                 const discount = discountArray.reduce((acum,act) => acum + act);
                 const total = subTotal - discount;
-                res.render("cart", {user: req.session.userLogged, products: productsInCart, formatPrice, subTotal, discount, total});
+                res.render("cart/cart", {user: req.session.userLogged, products: productsInCart, formatPrice, subTotal, discount, total});
             }
         } catch(error) {
             res.render("error", {message: error, user: req.session.userLogged})
@@ -162,6 +162,80 @@ const cartController = {
                     user_id: req.session.userLogged.id
                 }
             });
+            res.redirect("/cart");
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    select: async (req, res) => {       //GET - Muestra las direcciones usadas anteriormente y un botón para agregar una nueva - Debe haber un usuario logueado - Debe tener rol de comprador - Debe tener al menos una dirección cargada con anterioridad
+        try {
+            const addresses = await db.Addresses.findAll({
+                where: {
+                    user_id: req.session.userLogged.id
+                }
+            });
+            res.render("cart/selectAddress", {addresses, user: req.session.userLogged});
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    address: async (req, res) => {      //GET - Muestra el formulario de agregar dirección para la compra - Debe haber un usuario logueado - Debe tener rol de comprador
+        try {
+            res.render("cart/addAddress", {user: req.session.userLogged});
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    purchase: async (req, res) => {     //POST - Ejecuta la compra - Debe haber un usuario logueado - Debe tener rol de comprador
+        try {
+            const items = await db.Cart_items.findAll({
+                where: {user_id: req.session.userLogged.id},
+                include: [{association: "product"}]
+            });
+            let orderNumber;
+            const lastOrder = await db.Orders.findOne({
+                order: [["createdAt", "DESC"]]
+            });
+            if (lastOrder.length == 0) {
+                orderNumber = 1;
+            } else {
+                orderNumber = lastOrder.order_number + 1;
+            }
+            await db.Orders.create({
+                order_number: orderNumber,
+                order_date: new Date(),
+                user_id: req.session.userLogged.id,
+                address_id: req.session.selectedAddressId,
+                status_id: 1
+            });
+            const order = await db.Orders.findOne({
+                where: { user_id: req.session.userLogged.id },
+                order: [["createdAt", "DESC"]]
+            });
+            let total = 0;
+            await items.forEach(item => {
+                db.Product_orders.create({
+                    total_cost: (parseFloat(item.product.price) * (1 - (item.product.discount / 100))) * item.quantity,
+                    unit_cost: parseFloat(item.product.price) * (1 - (item.product.discount / 100)),
+                    quantity: item.quantity,
+                    product_id: item.product_id,
+                    order_id: order.id
+                });
+                total += (parseFloat(item.product.price) * (1 - (item.product.discount / 100))) * item.quantity;
+            });
+            await db.Orders.update({
+                order_total: total,
+            }, {
+                where: {
+                    id: order.id
+                }
+            });
+            await db.Cart_items.destroy({
+                where: {
+                    user_id: req.session.userLogged.id
+                }
+            });
+            req.session.selectedAddressId = undefined;
             res.redirect("/cart");
         } catch(error) {
             res.render("error", {message: error, user: req.session.userLogged});

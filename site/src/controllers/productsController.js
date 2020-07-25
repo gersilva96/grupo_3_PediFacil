@@ -174,17 +174,12 @@ const productsController = {
                     id: req.params.id
                 }
             });
-            let otherSellerProduct = false;
             if (productToEdit.user_id != req.session.userLogged.id) {
-                otherSellerProduct = true;
-            }
-            if (otherSellerProduct) {
-                const products = await db.Products.findAll({
-                    where: {
-                        user_id: req.session.userLogged.id
-                    }
-                });
-                res.render("products/productList", {mensaje: "No podés editar un producto de otro vendedor", products, user: req.session.userLogged});
+                let newError = {
+                    value: '',
+                    msg: 'No podés editar un producto de otro vendedor'
+                };
+                errors.errors.push(newError);
             }
             if (errors.isEmpty() && !otherSellerProduct) {
                 await db.Products.update({

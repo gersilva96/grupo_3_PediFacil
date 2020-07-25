@@ -20,6 +20,14 @@ let usersController = {
     update: async (req, res) => {           //PUT - Actualiza la información de un usuario - Debe haber un usuario logueado
         try {
             let errors = validationResult(req);
+            const userToEdit = await db.Users.findByPk(req.params.id);
+            if (userToEdit.id != req.session.userLogged.id) {
+                let newError = {
+                    value: '',
+                    msg: 'No podés editar los datos de otro usuario'
+                };
+                errors.errors.push(newError);
+            }
             if (errors.isEmpty()) {
                 if (typeof(req.file) === "undefined") {
                     await db.Users.update({
