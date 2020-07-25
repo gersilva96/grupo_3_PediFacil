@@ -760,7 +760,7 @@ body.no-scroll {
           font-size: 23px; }
       .body-section .cart .cart-right .cart-right_finish {
         width: 100%; }
-        .body-section .cart .cart-right .cart-right_finish .cart-right_finish_form button {
+        .body-section .cart .cart-right .cart-right_finish .cart-right_finish_link button {
           width: 100%;
           padding: 20px;
           font-weight: 500;

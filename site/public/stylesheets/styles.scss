@@ -12,6 +12,7 @@ $shadow: 0 0 10px #00000050;
 $transition: all 400ms;
 $transition-short: all 100ms;
 
+$mobile: "min-width: 576px";
 $tablet: "min-width: 768px";
 $desktop: "min-width: 992px";
 $desktop-large: "min-width: 1200px";
@@ -1343,7 +1344,7 @@ body.no-scroll {
 
                 width: 100%;
 
-                .cart-right_finish_form {
+                .cart-right_finish_link {
 
                     button {
                         width: 100%;
