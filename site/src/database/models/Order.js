@@ -19,8 +19,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         order_total: {
-            type: dataTypes.DECIMAL(10,2),
-            allowNull: false
+            type: dataTypes.DECIMAL(10,2)
         },
         user_id: {
             type: dataTypes.INTEGER.UNSIGNED,
