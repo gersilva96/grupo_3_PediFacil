@@ -146,7 +146,7 @@ CREATE TABLE `pedifacil`.`orders` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `order_number` INT UNSIGNED ZEROFILL NOT NULL,
   `order_date` DATETIME NOT NULL,
-  `order_total` DECIMAL(10,2) NOT NULL,
+  `order_total` DECIMAL(10,2),
   `user_id` INT UNSIGNED NOT NULL,
   `address_id` INT UNSIGNED NOT NULL,
   `status_id` INT UNSIGNED NOT NULL,
