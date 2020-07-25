@@ -2,12 +2,12 @@
 <html lang="es">
 
 <head>
-    <%- include("partials/head", {title: "Carrito"}) %>
+    <%- include("../partials/head", {title: "Carrito"}) %>
 </head>
 
 <body>
     <!-- HEADER -->
-    <%- include("partials/header", {user}) %>
+    <%- include("../partials/header", {user}) %>
 
     <section class="body-section">
         <div class="container">
@@ -58,7 +58,7 @@
                                     <div class="cart-item_quantity">
                                         <form class="cart-item_quantity_select" action="/cart/add/<%= product.id %>?_method=PUT" method="POST">
                                             <input class="form-control form-control-sm" type="number" name="quantity" value="<%= product.quantity %>" max="<%= product.stock %>" min="0">
-                                            <button class="btn btn-sm btn-outline-info" type="submit">Aplicar cantidad</button>
+                                            <button class="btn btn-sm btn-outline-info" type="submit">Aplicar</button>
                                         </form>
                                         <div class="cart-item_quantity_subtotal">
                                             <p><span>Subtotal: </span><strong><%= formatPrice(product.subtotal) %></strong></p>
@@ -85,9 +85,9 @@
                             <p class="cart-right-summary_list cart-right-summary_total"><span>Total:</span><strong><%= formatPrice(total) %></strong></p>
                         </div>
                         <div class="cart-right_finish">
-                            <form class="cart-right_finish_form" action="">
+                            <a class="cart-right_finish_link" href="/cart/select-address">
                                 <button type="submit" class="btn btn-primary">Finalizar compra</button>
-                            </form>
+                            </a>
                         </div>
                     </div>
                 <% } %>
@@ -96,10 +96,10 @@
     </section>
 
     <!-- FOOTER -->
-    <%- include("partials/footer") %>
+    <%- include("../partials/footer") %>
 
     <!-- SCRIPTS -->
-    <%- include("partials/scripts") %>
+    <%- include("../partials/scripts") %>
 </body>
 
 </html>
