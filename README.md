@@ -51,8 +51,6 @@
 
 - Simplemente traemos orden al caos.
 
-- **En primera instancia, como beta funcional, simplificamos la plataforma para transformarla en un e-commerce tradicional simulando un único proveedor, pero siempre permitiendo la escalabilidad del proyecto para completar las funcionalidades planificadas desde el principio.**
-
 ![Solución Pedí Fácil](design/images/README_process.png)
 
 # Inspiración
@@ -105,17 +103,7 @@
 - Futuro Full Stack Web Developer<br>
 - Estudiante de Lic. en Ciencias de la Computación<br>
 <h6></h6>
-<img align="left" width="70" height="70" src="design/images/README_team2.png">
-> Rodrigo Espinosa<br>
-- Futuro Full Stack Developer<br>
-- Desarrollador activo<br>
-<h6></h6>
 <img align="left" width="70" height="70" src="design/images/README_team3.png">
 > Guillermo Gonzales<br>
 - Futuro Web Developer<br>
 - Linux enthusiast<br>
-<h6></h6>
-<img align="left" width="70" height="70" src="design/images/README_team4.png">
-> Eduardo Andreu<br>
-- Lic. en Administración de Empresas<br>
-- 10 años de experiencia en la industria gastronómica<br>
