@@ -3,7 +3,7 @@
 ## Keep doing
 
 - Usar branchs de git para agregar funcionalidades
-- Buena comunicación en el grupo
+- Buena comunicación entre los integrantes del grupo
 
 ## More of
 

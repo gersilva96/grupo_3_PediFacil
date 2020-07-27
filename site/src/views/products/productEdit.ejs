@@ -22,17 +22,20 @@
                         </ul>
                     </div>
                 <% } %>
-                <form class="admin-product" action="/products/<%= product.id %>?_method=PUT" method="POST">
+                <form id="product_form" class="admin-product" action="/products/<%= product.id %>?_method=PUT" method="POST">
                     <div class="form-group">
                         <label for="name">Nombre:</label>
-                        <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>" required>
-                        <small class="form-text text-muted">
+                        <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">
+                        <div class="invalid-feedback">
                             Al menos 10 caracteres, 100 como máximo
-                        </small>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="code">Código:</label>
-                        <input type="number" class="form-control" id="code" name="code" value="<%= product.code %>" required>
+                        <input type="number" class="form-control" id="code" name="code" value="<%= product.code %>">
+                        <div class="invalid-feedback">
+                            El código solo puede contener números
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="category">Categoría:</label>
@@ -42,6 +45,9 @@
                             <option value="<%= category.id %>" <% if (category.id == product.category_id) { %> selected <% } %>><%= category.name %></option>
                             <% }) %>
                         </select>
+                        <div class="invalid-feedback">
+                            Debe seleccionar una categoría
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="price">Precio:</label>
@@ -49,32 +55,38 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">$</span>
                             </div>
-                            <input type="number" id="price" name="price" class="form-control" value="<%= product.price %>" required>
+                            <input type="number" id="price" name="price" class="form-control" value="<%= product.price %>">
+                        </div>
+                        <div class="invalid-feedback fix-form-text">
+                            El precio no puede contener símbolos
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="discount">Descuento:</label>
                         <div class="input-group mb-3">
-                            <input type="number" id="discount" name="discount" class="form-control" value="<%= product.discount %>" required>
+                            <input type="number" id="discount" name="discount" class="form-control" value="<%= product.discount %>">
                             <div class="input-group-append">
                                 <span class="input-group-text">%</span>
                             </div>
                         </div>
-                        <small class="form-text text-muted fix-form-text">
+                        <div class="invalid-feedback fix-form-text">
                             Mínimo 0, máximo 99
-                        </small>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="stock">Stock:</label>
-                        <input type="number" class="form-control" id="stock" name="stock" value="<%= product.stock %>" required>
+                        <input type="number" class="form-control" id="stock" name="stock" value="<%= product.stock %>">
+                        <div class="invalid-feedback">
+                            El stock no puede contener símbolos
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="description">Descripción:</label>
                         <textarea class="form-control" id="description" name="description"
-                            rows="3" required><%= product.description %></textarea>
-                        <small class="form-text text-muted">
-                            Mínimo 10 caracteres, máximo 300
-                        </small>
+                            rows="3"><%= product.description %></textarea>
+                            <div class="invalid-feedback">
+                                Al menos 10 caracteres, 300 como máximo
+                            </div>
                     </div>
                     <p class="text-danger">
                         Todos los campos son obligatorios
@@ -97,6 +109,7 @@
 
     <!-- SCRIPTS -->
     <%- include("../partials/scripts") %>
+    <script src="/javascripts/form-validator/productEdit.js"></script>
 </body>
 
 </html>

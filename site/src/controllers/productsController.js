@@ -91,33 +91,30 @@ const productsController = {
                 }
                 errors.errors.push(newError);
             }
-            const existsCode = await db.Products.findOne({
-                where: {
-                    code: parseInt(req.body.code)
-                }
-            });
-            if (existsCode != null) {
-                let newError = {
-                    value: '',
-                    msg: 'Ya existe un producto con el código ingresado',
-                    param: 'code',
-                    location: 'body'
-                };
-                errors.errors.push(newError);
-            }
             if (errors.isEmpty()) {
-                await db.Products.create({
-                    code: req.body.code,
-                    name: req.body.name,
-                    description: req.body.description,
-                    price: parseFloat(req.body.price),
-                    discount: parseFloat(req.body.discount),
-                    stock: parseFloat(req.body.stock),
-                    image: req.file.filename,
-                    user_id: req.session.userLogged.id,
-                    category_id: parseInt(req.body.category)
+                const existsCode = await db.Products.findOne({
+                    where: {
+                        code: parseInt(req.body.code)
+                    }
                 });
-                res.redirect("/products");
+                if (existsCode != null) {
+                    const mensaje = "Ya existe un producto con el código ingresado";
+                    const categories = await db.Categories.findAll();
+                res.render("products/productAdd", {categories, mensaje, user: req.session.userLogged});
+                } else {
+                    await db.Products.create({
+                        code: req.body.code,
+                        name: req.body.name,
+                        description: req.body.description,
+                        price: parseFloat(req.body.price),
+                        discount: parseFloat(req.body.discount),
+                        stock: parseFloat(req.body.stock),
+                        image: req.file.filename,
+                        user_id: req.session.userLogged.id,
+                        category_id: parseInt(req.body.category)
+                    });
+                    res.redirect("/products");
+                }
             } else {
                 const categories = await db.Categories.findAll();
                 res.render("products/productAdd", {categories, errors: errors.errors, user: req.session.userLogged});
@@ -186,7 +183,7 @@ const productsController = {
                     errors.errors.push(newError);
                 }
             }
-            if (errors.isEmpty() && !otherSellerProduct) {
+            if (errors.isEmpty()) {
                 await db.Products.update({
                     code: parseInt(req.body.code),
                     name: req.body.name,

@@ -21,29 +21,44 @@
                         </ul>
                     </div>
                 <% } %>
-                <form class="admin-product" method="POST" action="/cart/add-new-address">
+                <form id="add-address_form" class="admin-product" method="POST" action="/cart/add-new-address">
                     <div class="form-group">
                         <h1 class="form-title">Agregar dirección</h1>
                     </div>
                     <div class="form-group">
                         <label for="first_line"><b>*</b> Primera línea:</label>
-                        <input type="text" class="form-control" id="first_line" name="first_line" required>
+                        <input type="text" class="form-control" id="first_line" name="first_line">
+                        <div class="invalid-feedback">
+                            Mínimo 5 caracteres, máximo 50
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="second_line">Segunda línea:</label>
                         <input type="text" class="form-control" id="second_line" name="second_line">
+                        <div class="invalid-feedback">
+                            No puede tener más de 50 caracteres
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="between_streets">Entre calles:</label>
                         <input type="text" class="form-control" id="between_streets" name="between_streets">
+                        <div class="invalid-feedback">
+                            No puede tener más de 100 caracteres
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="city"><b>*</b> Ciudad:</label>
-                        <input type="text" class="form-control" id="city" name="city" required>
+                        <input type="text" class="form-control" id="city" name="city">
+                        <div class="invalid-feedback">
+                            Mínimo 5 caracteres, máximo 50
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="phone"><b>*</b> Número de teléfono:</label>
-                        <input type="number" class="form-control" id="phone" name="phone" required>
+                        <input type="number" class="form-control" id="phone" name="phone">
+                        <div class="invalid-feedback">
+                            Número de teléfono inválido
+                        </div>
                     </div>
                     <p class="text-danger">
                         * Obligatorio
@@ -61,6 +76,7 @@
 
     <!-- SCRIPTS -->
     <%- include("../partials/scripts") %>
+    <script src="/javascripts/form-validator/addAddress.js"></script>
 </body>
 
 </html>
