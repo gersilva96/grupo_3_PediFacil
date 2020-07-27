@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "ger",
-    "password": "Desarrollo1!",
+    "username": "root",
+    "password": "Raspberrypi3!",
     "database": "pedifacil",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
