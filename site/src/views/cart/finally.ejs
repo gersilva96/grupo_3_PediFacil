@@ -21,7 +21,7 @@
                         </ul>
                     </div>
                 <% } %>
-                <form class ="admin-product" method="POST" action="/cart/purchase">
+                <form id="order-description_form" class ="admin-product" method="POST" action="/cart/purchase">
                     <div class="form-group">
                         <h4 class="form-title">¡Todo listo!</h1>
                     </div>
@@ -31,6 +31,9 @@
                     <div class="form-group">
                         <label for="order_description">Descripción:</label>
                         <input type="text" name="order_description" id="order_description" class="form-control">
+                        <div class="invalid-feedback">
+                            No puede contener más de 50 caracteres
+                        </div>
                     </div>
                     <div class="form-group mt-4">
                         <button type="submit" class="btn btn-success btn-block">Finalizar compra</button>
@@ -45,6 +48,7 @@
 
     <!-- SCRIPTS -->
     <%- include("../partials/scripts") %>
+    <script src="/javascripts/form-validator/orderDescription.js"></script>
 </body>
 
 </html>

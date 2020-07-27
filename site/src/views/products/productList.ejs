@@ -54,7 +54,7 @@
                                 <td><a href="/products/detail/<%= product.id %>"><%= product.name %></a></td>
                                 <td class="product-actions">
                                     <a href="/products/<%= product.id %>/edit"><i class="fas fa-edit"></i></a>
-                                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                                    <form class="product-actions_delete" action="/products/<%= product.id %>?_method=DELETE" method="POST">
                                         <button type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
@@ -72,6 +72,7 @@
 
     <!-- SCRIPTS -->
     <%- include("../partials/scripts") %>
+    <script src="/javascripts/adminItemDelete.js"></script>
 </body>
 
 </html>
