@@ -2,6 +2,20 @@ const bcrypt = require("bcrypt");
 const {check, validationResult, body} = require("express-validator");
 const db = require("../database/models");
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const formatPrice = (price,discount) => {
+    let priceDot;
+    if (discount == undefined) {
+        priceDot = toThousand(price.toFixed(2));
+    } else {
+        priceDot = toThousand((price*(1-(discount/100))).toFixed(2));
+    }
+    let first = priceDot.slice(0,-3);
+    let last = priceDot.slice(-3);
+    let lastReplaced = last.replace(".", ",");
+    return `$ ${first}${lastReplaced}`;
+};
+
 let usersController = {
     profile: async (req, res) => {         //GET - Muestra el perfil de un usuario - Debe haber un usuario logueado
         try {
@@ -170,6 +184,43 @@ let usersController = {
                 res.redirect("/users/profile");
             } else {
                 res.render("users/register", {errors: errors.errors, user: req.session.userLogged});
+            }
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    purchaseHistory: async (req, res) => {    //GET - Historial de compra - Debe haber un usuario logueado - Debe tener rol de comprador
+        try {
+            const orders = await db.Orders.findAll({
+                where: {
+                    user_id: req.session.userLogged.id
+                }
+            });
+            res.render("users/purchaseHistory", {orders, formatPrice, user: req.session.userLogged});
+        } catch(error) {
+            res.render("error", {message: error, user: req.session.userLogged});
+        }
+    },
+    purchaseHistoryDetail: async (req, res) => {      //GET - Detalle de historial de compra - Debe haber un usuario logueado - Debe tener rol de comprador
+        try {
+            const order = await db.Orders.findOne({
+                where: {order_number: req.params.number},
+                include: [{association: "address"}]
+            });
+            if (order == undefined) {
+                const orders = await db.Orders.findAll({where: {user_id: req.session.userLogged.id}});
+                res.render("users/purchaseHistory", {mensaje: "No se encontró la orden", orders, user: req.session.userLogged});
+            } else {
+                if (order.user_id != req.session.userLogged.id) {
+                    const orders = await db.Orders.findAll({where: {user_id: req.session.userLogged.id}});
+                    res.render("users/purchaseHistory", {mensaje: "No se encontró la orden", orders, user: req.session.userLogged});
+                } else {
+                    const orderProducts = await db.Product_orders.findAll({
+                        where: {order_id: order.id},
+                        include: [{association: "product"}]
+                    });
+                    res.render("users/purchaseHistoryDetail", {order, orderProducts, formatPrice, user: req.session.userLogged});
+                }
             }
         } catch(error) {
             res.render("error", {message: error, user: req.session.userLogged});
