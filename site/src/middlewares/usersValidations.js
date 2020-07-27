@@ -6,6 +6,7 @@ const usersValidations = {
             .exists().withMessage("Error de seguridad")
             .trim()
             .isInt({no_symbols: true}).withMessage("Error al seleccionar el rol")
+            .isInt({min: 2, max: 3}).withMessage("Error al seleccionar el rol")
             .notEmpty().withMessage("Debe seleccionar un rol"),
         check("business_name")
             .exists().withMessage("Error de seguridad")
