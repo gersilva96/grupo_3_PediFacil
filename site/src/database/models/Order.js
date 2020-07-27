@@ -21,6 +21,9 @@ module.exports = (sequelize, dataTypes) => {
         order_total: {
             type: dataTypes.DECIMAL(10,2)
         },
+        order_description: {
+            type: dataTypes.STRING(100)
+        },
         user_id: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
