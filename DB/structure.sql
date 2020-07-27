@@ -2,8 +2,8 @@
 -- Schema pedifacil
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `pedifacil`;
-CREATE SCHEMA `pedifacil` DEFAULT CHARACTER SET utf8 ;
-USE `pedifacil` ;
+CREATE SCHEMA `pedifacil` DEFAULT CHARACTER SET utf8mb4;
+USE `pedifacil`;
 
 -- -----------------------------------------------------
 -- Table `pedifacil`.`roles`
@@ -147,6 +147,7 @@ CREATE TABLE `pedifacil`.`orders` (
   `order_number` INT UNSIGNED ZEROFILL NOT NULL,
   `order_date` DATETIME NOT NULL,
   `order_total` DECIMAL(10,2),
+  `order_description` VARCHAR(100),
   `user_id` INT UNSIGNED NOT NULL,
   `address_id` INT UNSIGNED NOT NULL,
   `status_id` INT UNSIGNED NOT NULL,
