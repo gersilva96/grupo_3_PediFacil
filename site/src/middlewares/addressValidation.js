@@ -31,6 +31,7 @@ const addressValidation = {
             .exists().withMessage("Error de seguridad")
             .trim()
             .isInt({no_symbols: true}).withMessage("Id de dirección inválido")
+            .isInt({min: 1}).withMessage("El id de la dirección no puede ser menor a 1")
             .notEmpty().withMessage("El id de la dirección debe existir")
     ]
 };
