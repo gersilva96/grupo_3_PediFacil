@@ -24,6 +24,10 @@ $desktop-large: "min-width: 1200px";
     text-decoration: none;
 }
 
+body {
+    background-color: white;
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -68,6 +72,7 @@ body.no-scroll {
             .cart {
                 padding: 0;
                 margin-right: 15px;
+                position: relative;
 
                 i {
                     color: $gray;
@@ -83,6 +88,12 @@ body.no-scroll {
                     i {
                         color: $light-blue;
                     }
+                }
+
+                .badge {
+                    position: absolute;
+                    bottom: 0;
+                    right: -0.65em;
                 }
 
                 @media ($tablet) {
@@ -367,6 +378,27 @@ body.no-scroll {
     background-color: $gray;
     padding: 20px 0;
     transition: $transition;
+    height: 109px;
+
+    @media (min-width: 475px) {
+        height: 113px;
+    }
+
+    @media (min-width: 425px) {
+        height: 120px;
+    }
+
+    @media ($mobile) {
+        height: 132px
+    }
+
+    @media ($tablet) {
+        height: 80px;
+    }
+
+    @media ($desktop) {
+        height: 98px;
+    }
 
     .row {
         display: flex;
@@ -552,10 +584,36 @@ body.no-scroll {
 }
 
 //Estilos de las demás secciones
+#sticky-footer {
+    min-height: 100vh;
+    margin-bottom: -109px;
+
+    @media (min-width: 475px) {
+        margin-bottom: -113px;
+    }
+
+    @media (min-width: 425px) {
+        margin-bottom: -120px;
+    }
+
+    @media ($mobile) {
+        margin-bottom: -132px;
+    }
+
+    @media ($tablet) {
+        margin-bottom: -80px;
+    }
+
+    @media ($desktop) {
+        margin-bottom: -98px;
+    }
+}
 
 .body-section {
     padding-top: 40px;
     padding-bottom: 40px;
+    background-color: white;
+    margin-bottom: 60px;
 
     .banner {
 
@@ -577,7 +635,7 @@ body.no-scroll {
 
     .products-wrapper {
         margin-top: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
 
         .products-title {
             font-size: 1.8em;
@@ -664,12 +722,13 @@ body.no-scroll {
     }
 
     .product-section_title {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
         color: $dark-blue;
         font-size: 30px;
     }
 
     .table-responsive {
+        margin-bottom: 40px;
 
         .table {
 
@@ -686,6 +745,33 @@ body.no-scroll {
                 tr {
 
                     td {
+
+                        &#order_date {
+                            max-width: 90px;
+
+                            @media ($mobile) {
+                                max-width: 50px;
+                            }
+
+                            @media ($tablet) {
+                                max-width: 90px;
+                            }
+                        }
+
+                        &#order_desc {
+                            max-width: 5px;
+                            overflow: hidden;
+
+                            a {
+                                display: block;
+                                max-height: 24px;
+                                overflow: hidden;
+                            }
+
+                            @media ($tablet) {
+                                max-width: 10%;
+                            }
+                        }
 
                         .imagen {
                             background-color: gray;
@@ -782,16 +868,23 @@ body.no-scroll {
         .btn {
             font-weight: 600;
             min-width: 200px;
-            padding: 0;
         }
 
         .back {
             width: 66px;
             margin-bottom: 20px;
+            order: 1;
 
             .btn-link {
                 min-width: auto;
+                padding: 0;
             }
+        }
+
+        .repeat {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
         }
 
         .add-product_button {
@@ -799,8 +892,9 @@ body.no-scroll {
             height: 50px;
         }
 
-        @media (min-width: 768px) {
+        @media ($tablet) {
             flex-direction: row;
+            justify-content: space-between;
             align-items: center;
             margin-top: 30px;
 
@@ -815,13 +909,23 @@ body.no-scroll {
                 max-width: 300px;
             }
 
-            .purchase, .add-product, .repeat {
+            .purchase, .add-product {
                 margin-left: auto;
             }
 
             .back {
                 width: auto;
                 margin: 0;
+                order: 0;
+                justify-content: flex-start;
+            }
+
+            .repeat {
+                margin: 0;
+            }
+
+            form.first {
+                margin-left: auto;
             }
         }
     }
@@ -862,43 +966,6 @@ body.no-scroll {
         }
     }
 
-    .social {
-        margin-top: 40px;
-
-        .social-login {
-            display: block;
-            width: 100%;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            border-radius: 5px;
-
-            i {
-                margin-left: 25px;
-            }
-
-            img {
-                margin-left: 20px;
-                height: 16px;
-            }
-
-            span {
-                margin-left: 20px;
-            }
-        }
-
-        .facebook {
-            background-color: #1A538A;
-            color: white;
-        }
-
-        .google {
-            background-color: white;
-            color: $gray;
-            border: 1px solid $gray;
-        }
-    }
-
     .form-foot {
         text-align: center;
         margin-top: 20px;
@@ -907,7 +974,7 @@ body.no-scroll {
     .product-detail_h2 {
         display: none;
 
-        @media (min-width: 768px) {
+        @media ($tablet) {
             display: block;
             color: #aaa;
             font-size: 20px;
@@ -932,7 +999,7 @@ body.no-scroll {
                 max-width: 100%;
             }
 
-            @media (min-width: 768px) {
+            @media ($tablet) {
                 width: 50%;
                 margin-bottom: 0;
             }
@@ -950,7 +1017,7 @@ body.no-scroll {
             p {
                 margin-bottom: 60px;
 
-                @media (min-width: 768px) and (max-width: 991px) {
+                @media ($tablet) and (max-width: 991px) {
                     margin-bottom: 35px;
                 }
             }
@@ -982,7 +1049,7 @@ body.no-scroll {
                     font-size: 2.6em;
                 }
 
-                @media (min-width: 768px) and (max-width: 991px) {
+                @media ($tablet) and (max-width: 991px) {
                     margin-bottom: 20px;
                 }
             }
@@ -1003,39 +1070,44 @@ body.no-scroll {
                     width: calc(100% - 90px);
                     font-weight: 600;
 
-                    @media (min-width: 768px) {
+                    @media ($tablet) {
                         max-width: 300px;
                     }
                 }
 
-                @media (min-width: 768px) {
+                @media ($tablet) {
                     margin-bottom: 0;
                 }
             }
 
-            @media (min-width: 768px) {
+            @media ($tablet) {
                 width: 50%;
             }
 
-            @media (min-width: 992px) {
+            @media ($desktop) {
                 padding-top: 50px;
                 padding-left: 25px;
                 padding-right: 25px;
             }
         }
 
-        @media (min-width: 768px) {
+        @media ($tablet) {
             flex-direction: row;
         }
 
-        @media (min-width: 992px) {
+        @media ($desktop) {
             min-height: 450px;
+        }
+
+        @media ($desktop-large) {
+            min-height: 500px;
         }
     }
 
     .user {
         display: flex;
         flex-flow: column wrap;
+        margin: 40px 0;
 
         .user_avatar {
             width: 50%;
@@ -1053,10 +1125,10 @@ body.no-scroll {
             }
         }
 
-        @media (min-width: 768px) {
+        @media ($tablet) {
             flex-flow: row wrap;
             align-items: center;
-            margin: 80px 0;
+            margin-top: 60px;
 
             .user_avatar {
                 width: 35%;
@@ -1067,7 +1139,7 @@ body.no-scroll {
             }
         }
 
-        @media (min-width: 992px) {
+        @media ($desktop) {
 
             .user_avatar {
                 width: 25%;
@@ -1131,10 +1203,11 @@ body.no-scroll {
     .cart {
         display: flex;
         flex-direction: column;
+        margin-bottom: 30px;
 
         .cart-empty {
+            margin: 0 auto;
             color: $light-blue;
-            margin: 5vh auto 36.7vh auto;
         }
 
         .cart-left {
@@ -1244,6 +1317,9 @@ body.no-scroll {
 
             .cart-left_foot {
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-self: flex-end;
 
                 .cart_clear {
                     margin-bottom: 20px;
@@ -1278,6 +1354,12 @@ body.no-scroll {
                             margin-left: 10px;
                         }
                     }
+                }
+
+                @media ($desktop) {
+                    flex-flow: row-reverse nowrap;
+                    justify-content: flex-end;
+                    width: auto;
                 }
 
             }
