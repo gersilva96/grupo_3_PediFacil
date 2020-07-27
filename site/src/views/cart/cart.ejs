@@ -6,94 +6,101 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <%- include("../partials/header", {user}) %>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header", {user}) %>
 
-    <section class="body-section">
-        <div class="container">
-            <div class="cart_title">
-                <h1><i class="fas fa-shopping-cart"></i> Carrito</h1>
-                <% if (products.length != 0) { %>
-                    <span class="badge badge-secondary"><%=  products.length %> productos</span>
-                <% } %>
-            </div>
-
-            <div class="cart">
-                <% if (products.length == 0) { %>
-                    <div class="cart-empty">
-                        <h2>Tu carrito de compras está vacío</h2>
+        <section class="body-section">
+            <div class="container">
+                <% if (typeof(mensaje) != "undefined") { %>
+                    <div class="alert alert-danger d-flex justify-content-center" role="alert">
+                        <p><%= mensaje %></p>
                     </div>
-                <% } else { %>
-                    <div class="cart-left">
-                        <div class="cart-left_products">
-                            <div class="cart-left_products_head">
-                                <span class="cart-left_products_head_product">Producto</span>
-                                <span class="cart-left_products_head_price">Precio</span>
-                                <span class="cart-left_products_head_quantity">Cantidad</span>
-                                <span class="cart-left_products_head_subtotal">Subtotal</span>
-                            </div>
-                            <% products.forEach(product => { %>
-                                <div class="cart-item">
-                                    <form class="cart-item_delete" action="/cart/delete/<%= product.id %>?_method=DELETE" method="POST"><button type="submit"><i class="fas fa-times"></i></button></form>
-                                    <div class="cart-item_content">
-                                        <img src="/images/products/<%= product.image %>" alt="imagen de producto">
-                                        <div class="cart-item_content_detail">
-                                            <a href="/products/detail/<%= product.id %>" class="cart-item_content_detail_name"><strong><%= product.name %></strong></a>
-                                            <span class="cart-item_content_detail_seller"><span>Vendedor: </span><strong><%= product.seller %></strong></span>
-                                            <span class="cart-item_content_detail_price">
-                                                <span>Precio final: </span>
+                <% } %>
+                <div class="cart_title">
+                    <h1><i class="fas fa-shopping-cart"></i> Carrito</h1>
+                    <span class="badge badge-secondary"><%=  products.length %> productos</span>
+                </div>
+                <div class="cart">
+                    <% if (products.length == 0) { %>
+                        <div class="cart-empty">
+                            <h2 class="mb-5">Tu carrito de compras está vacío</h2>
+                            <a href="/products/all-products" class="mt-5">
+                                <button class="btn btn-info btn-block" style="height: 70px;"><i class="fas fa-chevron-left"></i><span> Agregar productos</span></button>
+                            </a>
+                        </div>
+                    <% } else { %>
+                        <div class="cart-left">
+                            <div class="cart-left_products">
+                                <div class="cart-left_products_head">
+                                    <span class="cart-left_products_head_product">Producto</span>
+                                    <span class="cart-left_products_head_price">Precio</span>
+                                    <span class="cart-left_products_head_quantity">Cantidad</span>
+                                    <span class="cart-left_products_head_subtotal">Subtotal</span>
+                                </div>
+                                <% products.forEach(product => { %>
+                                    <div class="cart-item">
+                                        <form class="cart-item_delete" action="/cart/delete/<%= product.id %>?_method=DELETE" method="POST"><button type="submit"><i class="fas fa-times"></i></button></form>
+                                        <div class="cart-item_content">
+                                            <img src="/images/products/<%= product.image %>" alt="imagen de producto">
+                                            <div class="cart-item_content_detail">
+                                                <a href="/products/detail/<%= product.id %>" class="cart-item_content_detail_name"><strong><%= product.name %></strong></a>
+                                                <span class="cart-item_content_detail_seller"><span>Vendedor: </span><strong><%= product.seller %></strong></span>
+                                                <span class="cart-item_content_detail_price">
+                                                    <span>Precio final: </span>
+                                                    <% if (product.discount > 0) { %>
+                                                        <span class="cart-item_content_detail_price_old"><%= formatPrice(product.price) %></span>
+                                                    <% } %>
+                                                    <strong><%= formatPrice(product.price, product.discount) %></strong>
+                                                </span>
+                                            </div>
+                                            <span class="cart-item_content_detail_price_desktop">
                                                 <% if (product.discount > 0) { %>
                                                     <span class="cart-item_content_detail_price_old"><%= formatPrice(product.price) %></span>
                                                 <% } %>
                                                 <strong><%= formatPrice(product.price, product.discount) %></strong>
                                             </span>
                                         </div>
-                                        <span class="cart-item_content_detail_price_desktop">
-                                            <% if (product.discount > 0) { %>
-                                                <span class="cart-item_content_detail_price_old"><%= formatPrice(product.price) %></span>
-                                            <% } %>
-                                            <strong><%= formatPrice(product.price, product.discount) %></strong>
-                                        </span>
-                                    </div>
-                                    <div class="cart-item_quantity">
-                                        <form class="cart-item_quantity_select" action="/cart/add/<%= product.id %>?_method=PUT" method="POST">
-                                            <input class="form-control form-control-sm" type="number" name="quantity" value="<%= product.quantity %>" max="<%= product.stock %>" min="0">
-                                            <button class="btn btn-sm btn-outline-info" type="submit">Aplicar</button>
-                                        </form>
-                                        <div class="cart-item_quantity_subtotal">
-                                            <p><span>Subtotal: </span><strong><%= formatPrice(product.subtotal) %></strong></p>
+                                        <div class="cart-item_quantity">
+                                            <form class="cart-item_quantity_select" action="/cart/add/<%= product.id %>?_method=PUT" method="POST">
+                                                <input class="form-control form-control-sm" type="number" name="quantity" value="<%= product.quantity %>" max="<%= product.stock %>" min="0">
+                                                <button class="btn btn-sm btn-outline-info" type="submit">Aplicar</button>
+                                            </form>
+                                            <div class="cart-item_quantity_subtotal">
+                                                <p><span>Subtotal: </span><strong><%= formatPrice(product.subtotal) %></strong></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            <% }); %>
-                        </div>
-                        <div class="cart-left_foot">
-                            <div class="cart_clear">
-                                <form class="cart_clear_form" action="/cart/clean?_method=DELETE" method="POST"><button type="submit" title="Eliminar producto"><i class="fas fa-trash"></i> Vaciar carrito</button></form>
+                                <% }); %>
                             </div>
-                            <a href="/products/all-products" class="cart_add_more_products">
-                                <button class="btn btn-info"><i class="fas fa-chevron-left"></i><span>Agregar más productos</span></button>
-                            </a>
+                            <div class="cart-left_foot">
+                                <a href="/products/all-products" class="cart_add_more_products">
+                                    <button class="btn btn-info"><i class="fas fa-chevron-left"></i><span> Agregar más productos</span></button>
+                                </a>
+                                <div class="cart_clear">
+                                    <form class="cart_clear_form" action="/cart/clean?_method=DELETE" method="POST"><button type="submit" title="Eliminar producto"><i class="fas fa-trash"></i> Vaciar carrito</button></form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cart-right">
-                        <div class="cart-right-summary">
-                            <h5><strong>Resumen de tu pedido:</strong></h5>
-                            <p class="cart-right-summary_list cart-right-summary_items_added"><span>Agregaste al carrito:</span><span class="badge badge-secondary"><%= products.length %> productos</span></p>
-                            <p class="cart-right-summary_list cart-right-summary_subtotal"><span>Subtotal:</span><strong><%= formatPrice(subTotal) %></strong></p>
-                            <p class="cart-right-summary_list cart-right-summary_discount"><span>Descuento:</span><strong><%= formatPrice(discount) %></strong></p>
-                            <p class="cart-right-summary_list cart-right-summary_total"><span>Total:</span><strong><%= formatPrice(total) %></strong></p>
+                        <div class="cart-right">
+                            <div class="cart-right-summary">
+                                <h5><strong>Resumen de tu pedido:</strong></h5>
+                                <p class="cart-right-summary_list cart-right-summary_items_added"><span>Agregaste al carrito:</span><span class="badge badge-secondary"><%= products.length %> productos</span></p>
+                                <p class="cart-right-summary_list cart-right-summary_subtotal"><span>Subtotal:</span><strong><%= formatPrice(subTotal) %></strong></p>
+                                <p class="cart-right-summary_list cart-right-summary_discount"><span>Descuento:</span><strong><%= formatPrice(discount) %></strong></p>
+                                <p class="cart-right-summary_list cart-right-summary_total"><span>Total:</span><strong><%= formatPrice(total) %></strong></p>
+                            </div>
+                            <div class="cart-right_finish">
+                                <a class="cart-right_finish_link" href="/cart/select-address">
+                                    <button type="submit" class="btn btn-success">Finalizar compra</button>
+                                </a>
+                            </div>
                         </div>
-                        <div class="cart-right_finish">
-                            <a class="cart-right_finish_link" href="/cart/select-address">
-                                <button type="submit" class="btn btn-primary">Finalizar compra</button>
-                            </a>
-                        </div>
-                    </div>
-                <% } %>
+                    <% } %>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- FOOTER -->
     <%- include("../partials/footer") %>

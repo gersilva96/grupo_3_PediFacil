@@ -6,25 +6,27 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <%- include("partials/header", {user}) %>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("partials/header", {user}) %>
 
-    <div class="body-section">
-        <div class="container">
-            <div class="error">
-                <p><i class="fas fa-exclamation-triangle"></i></p>
-                <% if (typeof(error) != "undefined") { %>
-                    <p><%= error.status %></p>
-                    <span>Ups! Error al tratar de ingresar a: <b><%= path %></b></span>
-                <% } %>
-                <% if (typeof(accessDenied) != "undefined") { %>
-                    <span><b>Acceso denegado</b></span>
-                    <span><%= accessDenied %></span>
-                <% } %>
-                <% if (typeof(message) != "undefined") { %>
-                    <span>ERROR</span>
-                    <span><b><%= message %></b></span>
-                <% } %>
+        <div class="body-section">
+            <div class="container">
+                <div class="error">
+                    <p><i class="fas fa-exclamation-triangle"></i></p>
+                    <% if (typeof(error) != "undefined") { %>
+                        <p><%= error.status %></p>
+                        <span>Ups! Error al tratar de ingresar a: <b><%= path %></b></span>
+                    <% } %>
+                    <% if (typeof(accessDenied) != "undefined") { %>
+                        <span><b>Acceso denegado</b></span>
+                        <span><%= accessDenied %></span>
+                    <% } %>
+                    <% if (typeof(message) != "undefined") { %>
+                        <span>ERROR</span>
+                        <span><b><%= message %></b></span>
+                    <% } %>
+                </div>
             </div>
         </div>
     </div>

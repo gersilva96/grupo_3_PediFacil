@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("../partials/head", {title: "Historial de pedidos"}) %>
+</head>
+
+<body>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header", {user}) %>
+
+        <section class="body-section">
+            <div class="container">
+                <h1 class="product-section_title"><i class="fas fa-history"></i> Historial de compras</h1>
+                <% if (typeof(mensaje) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <li><%= mensaje %></li>
+                        </ul>
+                    </div>
+                <% } %>
+                <% if (orders.length == 0) { %>
+                    <h2 class="text-info mx-auto">Tu historial de compras está vacío</h2>
+                <% } else { %>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% orders.forEach(order => { %>
+                                    <tr>
+                                        <td id="order_date"><% if (order.order_date.getUTCDate() < 10) { %><%= `0${order.order_date.getUTCDate()}` %><% } else { %><%= order.order_date.getUTCDate() %><% } %>/<% if (order.order_date.getUTCMonth()+1 < 10) { %><%= `0${order.order_date.getUTCMonth()+1}` %><% } else { %><%= order.order_date.getUTCMonth()+1 %><% } %>/<%= order.order_date.getUTCFullYear() %></td>
+                                        <td id="order_desc"><a href="/users/purchase-history-detail/<%= order.order_number %>"><% if (order.order_description == undefined || (order.order_description != undefined && order.order_description.length == 0)) { %><b>-</b><% } else { %><b><%= order.order_description %></b><% } %></a></td>
+                                        <td><%= formatPrice(parseFloat(order.order_total)) %></td>
+                                        <td><a href="/users/purchase-history-detail/<%= order.order_number %>"><i class="fas fa-redo-alt"></i></a></td>
+                                    </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                <% } %>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer") %>
+
+    <!-- SCRIPTS -->
+    <%- include("../partials/scripts") %>
+</body>
+
+</html>

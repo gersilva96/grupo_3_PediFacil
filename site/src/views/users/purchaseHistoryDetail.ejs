@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("../partials/head", {title: "Historial de pedidos"}) %>
+</head>
+
+<body>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header", {user}) %>
+
+        <section class="body-section">
+            <div class="container">
+                <h1 class="product-section_title"><i class="fas fa-history"></i> Historial de pedidos</h1>
+                <p>Descripición: <strong><% if (order.order_description == undefined) { %>-<% } else { %><%= order.order_description %><% } %></strong></p>
+                <p>Fecha: <strong><% if (order.order_date.getUTCDate() < 10) { %><%= `0${order.order_date.getUTCDate()}` %><% } else { %><%= order.order_date.getUTCDate() %><% } %>/<% if (order.order_date.getUTCMonth()+1 < 10) { %><%= `0${order.order_date.getUTCMonth()+1}` %><% } else { %><%= order.order_date.getUTCMonth()+1 %><% } %>/<%= order.order_date.getUTCFullYear() %></strong></p>
+                <p>Dirección: <strong><%= `${order.address.first_line}, ${order.address.city}` %></strong></p>
+                <p>Productos:</p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% orderProducts.forEach(product => { %>
+                                <tr>
+                                    <td><div class="imagen"><img src="/images/products/<%= product.product.image %>" alt="producto"></div></td>
+                                    <td style="min-width: 200px;"><a href="/products/detail/<%= product.product.id %>"><%= product.product.name %></a></td>
+                                    <td>$<%= product.product.price %></td>
+                                    <td><%= product.quantity %> u.</td>
+                                    <td style="min-width: 150px;"><%= formatPrice((product.quantity * parseFloat(product.unit_cost))) %> </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="product-section_foot">
+                    <a href="/users/purchase-history" class="back">
+                        <button type="button" class="btn btn-link"><i class="fas fa-angle-left"></i> Volver</button>
+                    </a>
+                    <form action="/cart/repeat-purchase/<%= order.id %>" method="POST">
+                        <button type="submit" class="btn btn-success repeat">Repetir compra</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer") %>
+
+    <!-- SCRIPTS -->
+    <%- include("../partials/scripts") %>
+</body>
+
+</html>

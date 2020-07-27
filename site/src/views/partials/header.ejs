@@ -11,8 +11,8 @@
             <a href="/" class="logo col-6 col-md-4 col-lg-3"><img id="logo" src="/images/logo/logoColorH.svg" alt="Logo pedí fácil" class="logo_img" id="logo_img"></a>
             <div class="header-icons-right col-3">
                 <button class="search-toggle btn"><i class="fas fa-search"></i></button>
-                <% if (typeof(user) != "undefined" && user.role_id == 3) { %>
-                    <a href="/cart" class="cart"><i class="fas fa-shopping-cart"></i></a>
+                <% if (typeof(user) != "undefined" && (user.role_id == 3 || user.role_id == 1)) { %>
+                    <a href="/cart" class="cart"><i class="fas fa-shopping-cart"></i><!--<span class="badge badge-pill badge-info">1</span>--></a>
                 <% } %>
             </div>
             <div class="col-lg-2">
@@ -41,7 +41,8 @@
                 <% } else { %>
                     <a href="/users/login"><i class="fas fa-sign-in-alt"></i></i><span class="login-text">Ingresar</span></a>
                 <% } %>
-                <a id="darkmode-btn"><i class="fas fa-adjust"></i><span class="darkmode-text">Dark mode</span></a>
+                <a class="d-lg-none" href="/products/all-products"><i class="fas fa-th"></i><span class="admin-products-text">Todos los productos</span></a>
+                <a id="darkmode-btn"><i class="fas fa-adjust"></i><span class="darkmode-text">Modo oscuro</span></a>
             </nav>
         </div>
     </div>

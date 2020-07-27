@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("../partials/head", {title: "Último paso"}) %>
+</head>
+
+<body>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header") %>
+
+        <section class="body-section">
+            <div class="container">
+                <% if (typeof(errors) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <% errors.forEach(errores => { %>
+                                <li><%= errores.msg %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                <% } %>
+                <form class ="admin-product" method="POST" action="/cart/purchase">
+                    <div class="form-group">
+                        <h4 class="form-title">¡Todo listo!</h1>
+                    </div>
+                    <div class="form-group mb-4">
+                        <p>Si querés podés agregar una descripción a tu compra para identificarla mejor</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="order_description">Descripción:</label>
+                        <input type="text" name="order_description" id="order_description" class="form-control">
+                    </div>
+                    <div class="form-group mt-4">
+                        <button type="submit" class="btn btn-success btn-block">Finalizar compra</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer") %>
+
+    <!-- SCRIPTS -->
+    <%- include("../partials/scripts") %>
+</body>
+
+</html>

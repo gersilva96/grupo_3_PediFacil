@@ -6,57 +6,59 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <%- include("../partials/header", {user}) %>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header", {user}) %>
 
-    <section class="body-section">
-        <div class="container">
-            <% if (typeof(mensaje) != "undefined") { %>
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        <li><%= mensaje %></li>
-                    </ul>
-                </div>
-            <% } %>
-            <% if (typeof(errors) != "undefined") { %>
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        <% errors.forEach(errores => { %>
-                            <li><%= errores.msg %></li>
-                        <% }) %>
-                    </ul>
-                </div>
-            <% } %>
-            <h2 class="product-detail_h2">Detalle del producto: <%= product.name %></h2>
-            <section class="product-detail_section">
-                <figure class="left">
-                    <img src="/images/products/<%= product.image %>" alt="imagen de producto">
-                </figure>
-                <article class="right">
-                    <h1><%= product.name %></h1>
-                    <p><%= product.description %> </p>
-                    <div class="price">
-                        <% if (product.discount != 0) { %>
-                            <div class="price_old">
-                                <span class="price_old_mount"><%= formatPrice(product.price) %></span>/
-                                <span class="price_old_discount"><%= product.discount %>% OFF</span>
-                            </div>
-                        <% } %>
-                        <span class="price_final"><%= formatPrice(product.price,product.discount) %></span>
+        <section class="body-section">
+            <div class="container">
+                <% if (typeof(mensaje) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <li><%= mensaje %></li>
+                        </ul>
                     </div>
-                    <div class="seller">
-                        <p>Vendedor: <strong><%= product.user.business_name %></strong></p>
+                <% } %>
+                <% if (typeof(errors) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <% errors.forEach(errores => { %>
+                                <li><%= errores.msg %></li>
+                            <% }) %>
+                        </ul>
                     </div>
-                    <form action="/cart/add/<%= product.id %>" method="POST">
-                        <input type="number" class="form-control product-detail_quantity" id="quantity" name="quantity"
-                            value="1" min="1" max="<%= product.stock %>">
-                        <button type="submit" class="btn btn-primary product-detail_button"><i
-                                class="fas fa-shopping-cart"></i> Añadir al carrito</button>
-                    </form>
-                </article>
-            </section>
-        </div>
-    </section>
+                <% } %>
+                <h2 class="product-detail_h2">Detalle del producto: <%= product.name %></h2>
+                <section class="product-detail_section">
+                    <figure class="left">
+                        <img src="/images/products/<%= product.image %>" alt="imagen de producto">
+                    </figure>
+                    <article class="right">
+                        <h1><%= product.name %></h1>
+                        <p><%= product.description %> </p>
+                        <div class="price">
+                            <% if (product.discount != 0) { %>
+                                <div class="price_old">
+                                    <span class="price_old_mount"><%= formatPrice(product.price) %></span>/
+                                    <span class="price_old_discount"><%= product.discount %>% OFF</span>
+                                </div>
+                            <% } %>
+                            <span class="price_final"><%= formatPrice(product.price,product.discount) %></span>
+                        </div>
+                        <div class="seller">
+                            <p>Vendedor: <strong><%= product.user.business_name %></strong></p>
+                        </div>
+                        <form action="/cart/add/<%= product.id %>" method="POST">
+                            <input type="number" class="form-control product-detail_quantity" id="quantity" name="quantity"
+                                value="1" min="1" max="<%= product.stock %>">
+                            <button type="submit" class="btn btn-primary product-detail_button"><i
+                                    class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                        </form>
+                    </article>
+                </section>
+            </div>
+        </section>
+    </div>
 
     <!-- FOOTER -->
     <%- include("../partials/footer") %>

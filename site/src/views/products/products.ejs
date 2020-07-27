@@ -6,38 +6,45 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <%- include("../partials/header", {user}) %>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header", {user}) %>
 
-	<div class="body-section">
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Todos los productos</h2>
-				</div>
-				<% products.forEach(product => { %>
-                    <% if (product.stock != 0) { %>
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 productbox">
-                            <a href="/products/detail/<%= product.id %>">
-                                <div class="productbox_effect">
-                                    <div class="card">
-                                        <img src="/images/products/<%= product.image %>" class="card-img-top" alt="imagen de producto">
-                                        <div class="card-body">
-                                            <div class="productbox_price">
-                                                <h5 class="card-title"><%= formatPrice(product.price,product.discount) %></h5>
-                                                <span class="productbox_price_discount"><% if (product.discount != 0) { %><%= product.discount %>% OFF<% } %></span>
+        <div class="body-section">
+            <div class="container products-wrapper">
+                <% if (typeof(success) != "undefined") { %>
+                    <div class="alert alert-success d-flex justify-content-center" role="alert">
+                        <p><%= success %></p>
+                    </div>
+                <% } %>
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="products-title">Todos los productos</h2>
+                    </div>
+                    <% products.forEach(product => { %>
+                        <% if (product.stock != 0) { %>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 productbox">
+                                <a href="/products/detail/<%= product.id %>">
+                                    <div class="productbox_effect">
+                                        <div class="card">
+                                            <img src="/images/products/<%= product.image %>" class="card-img-top" alt="imagen de producto">
+                                            <div class="card-body">
+                                                <div class="productbox_price">
+                                                    <h5 class="card-title"><%= formatPrice(product.price,product.discount) %></h5>
+                                                    <span class="productbox_price_discount"><% if (product.discount != 0) { %><%= product.discount %>% OFF<% } %></span>
+                                                </div>
+                                                <p class="card-text"><%= product.name %></p>
                                             </div>
-                                            <p class="card-text"><%= product.name %></p>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                    <% } %>
-                <% }); %>
-			</div>
-		</div>
-	</div>
+                                </a>
+                            </div>
+                        <% } %>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <%- include("../partials/footer") %>

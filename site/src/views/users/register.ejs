@@ -6,85 +6,87 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <%- include("../partials/header") %>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header") %>
 
-    <section class="body-section">
-        <div class="container">
-            <% if (typeof(mensaje) != "undefined") { %>
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        <li><%= mensaje %></li>
-                    </ul>
-                </div>
-            <% } %>
-            <% if (typeof(errors) != "undefined") { %>
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        <% errors.forEach(errores => { %>
-                            <li><%= errores.msg %></li>
-                        <% }) %>
-                    </ul>
-                </div>
-            <% } %>
-            <form class="admin-product" method="POST" action="/users/register">
-                <div class="form-group">
-                    <h1 class="form-title">Registrarse</h1>
-                </div>
-                <div class="form-group">
-                    <label for="category">Voy a usar Pedí Fácil para:</label>
-                    <select class="form-control" name="role" id="role" required>
-                        <option selected disabled value="">Seleccionar opción</option>
-                        <option value="3">Comprar</option>
-                        <option value="2">Vender</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="business_name">Nombre de tu negocio:</label>
-                    <input type="text" class="form-control" id="business_name" name="business_name" required>
-                    <small class="form-text text-muted">
-                        Al menos 2 caracteres
-                    </small>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-row">
-                    <div class="col-12 col-md-6 mb-3">
-                        <label for="first_name">Tu nombre:</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+        <section class="body-section">
+            <div class="container">
+                <% if (typeof(mensaje) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <li><%= mensaje %></li>
+                        </ul>
                     </div>
-                    <div class="col-12 col-md-6 mb-3">
-                        <label for="last_name">Tu apellido:</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                <% } %>
+                <% if (typeof(errors) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <% errors.forEach(errores => { %>
+                                <li><%= errores.msg %></li>
+                            <% }) %>
+                        </ul>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-12 col-md-6 mb-3">
-                        <label for="password">Contraseña:</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                <% } %>
+                <form class="admin-product" method="POST" action="/users/register">
+                    <div class="form-group">
+                        <h1 class="form-title">Registrarse</h1>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Voy a usar Pedí Fácil para:</label>
+                        <select class="form-control" name="role" id="role" required>
+                            <option selected disabled value="">Seleccionar opción</option>
+                            <option value="3">Comprar</option>
+                            <option value="2">Vender</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="business_name">Nombre de tu negocio:</label>
+                        <input type="text" class="form-control" id="business_name" name="business_name" required>
                         <small class="form-text text-muted">
-                            Al menos 6 caracteres
+                            Al menos 2 caracteres
                         </small>
                     </div>
-                    <div class="col-12 col-md-6 mb-3">
-                        <label for="password_repeat">Confirmar:</label>
-                        <input type="password" class="form-control" id="password_repeat" name="password_repeat" required>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
-                </div>
-                <p class="text-danger">
-                    Todos los campos son obligatorios
-                </p>
-                <div class="form-group">
-                    <div class="login-register_buttons">
-                        <button type="submit" class="btn btn-primary">Registrarme</button>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="first_name">Tu nombre:</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="last_name">Tu apellido:</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <p class="form-foot">¿Ya tenés cuenta? <a href="/users/login"><strong>Ingresá acá</strong></a></p>
-        </div>
-    </section>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="password">Contraseña:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                            <small class="form-text text-muted">
+                                Al menos 6 caracteres
+                            </small>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="password_repeat">Confirmar:</label>
+                            <input type="password" class="form-control" id="password_repeat" name="password_repeat" required>
+                        </div>
+                    </div>
+                    <p class="text-danger">
+                        Todos los campos son obligatorios
+                    </p>
+                    <div class="form-group">
+                        <div class="login-register_buttons">
+                            <button type="submit" class="btn btn-primary">Registrarme</button>
+                        </div>
+                    </div>
+                </form>
+                <p class="form-foot">¿Ya tenés cuenta? <a href="/users/login"><strong>Ingresá acá</strong></a></p>
+            </div>
+        </section>
+    </div>
 
     <!-- FOOTER -->
     <%- include("../partials/footer") %>

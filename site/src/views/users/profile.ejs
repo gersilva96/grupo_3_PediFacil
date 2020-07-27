@@ -6,33 +6,35 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <%- include("../partials/header", {user}) %>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header", {user}) %>
 
-    <section class="body-section">
-        <div class="container">
-            <div class="user">
-                <figure class="user_avatar">
-                    <img src="/images/users/<%= user.image %>" alt="imagen de usuario">
-                </figure>
-                <div class="user_data">
-                    <h1><%= user.first_name %> <%= user.last_name %></h1>
-                    <h3><%= user.business_name %></h3>
-                    <p><%= user.email %></p>
-                    <a href="/users/profile/edit"><button class="btn btn-info profile-link">Editar datos</button></a>
-                    <% if (user.role_id == 3 || user.role_id == 1) { %>
-                        <a href="/products/order-history"><button class="btn btn-success profile-link">Historial de compra</button></a>
-                    <% } %>
-                    <% if (user.role_id <= 2) { %>
-                        <a href="/products"><button class="btn btn-primary profile-link">Administrar productos</button></a>
-                    <% } %>
-                    <form action="/users/logout" method="POST">
-                        <button class="btn btn-danger" type="submit"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
-                    </form>
+        <section class="body-section">
+            <div class="container">
+                <div class="user">
+                    <figure class="user_avatar">
+                        <img src="/images/users/<%= user.image %>" alt="imagen de usuario">
+                    </figure>
+                    <div class="user_data">
+                        <h1><%= user.first_name %> <%= user.last_name %></h1>
+                        <h3><%= user.business_name %></h3>
+                        <p><%= user.email %></p>
+                        <a href="/users/profile/edit"><button class="btn btn-info profile-link">Editar datos</button></a>
+                        <% if (user.role_id == 3 || user.role_id == 1) { %>
+                            <a href="/users/purchase-history"><button class="btn btn-success profile-link">Historial de compras</button></a>
+                        <% } %>
+                        <% if (user.role_id <= 2) { %>
+                            <a href="/products"><button class="btn btn-primary profile-link">Administrar productos</button></a>
+                        <% } %>
+                        <form action="/users/logout" method="POST">
+                            <button class="btn btn-danger" type="submit"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- FOOTER -->
     <%- include("../partials/footer") %>

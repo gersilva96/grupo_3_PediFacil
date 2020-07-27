@@ -6,64 +6,66 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <%- include("../partials/header") %>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header") %>
 
-    <section class="body-section">
-        <div class="container">
-            <% if (typeof(mensaje) != "undefined") { %>
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        <li><%= mensaje %></li>
-                    </ul>
-                </div>
-            <% } %>
-            <% if (typeof(errors) != "undefined") { %>
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        <% errors.forEach(errores => { %>
-                            <li><%= errores.msg %></li>
-                        <% }) %>
-                    </ul>
-                </div>
-            <% } %>
-            <form class="admin-product" method="POST" action="/users/<%= user.id %>/edit?_method=PUT" enctype="multipart/form-data">
-                <div class="form-group">
-                    <h1 class="form-title">Editar perfil</h1>
-                </div>
-                <div class="form-group">
-                    <label for="business_name">Nombre de tu negocio:</label>
-                    <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.business_name %>" required>
-                    <small class="form-text text-muted">
-                        Al menos 2 caracteres
-                    </small>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" required>
-                </div>
-                <div class="form-row">
-                    <div class="col-12 col-md-6 mb-3">
-                        <label for="first_name">Tu nombre:</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" value="<%= user.first_name %>" required>
+        <section class="body-section">
+            <div class="container">
+                <% if (typeof(mensaje) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <li><%= mensaje %></li>
+                        </ul>
                     </div>
-                    <div class="col-12 col-md-6 mb-3">
-                        <label for="last_name">Tu apellido:</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" value="<%= user.last_name %>" required>
+                <% } %>
+                <% if (typeof(errors) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <% errors.forEach(errores => { %>
+                                <li><%= errores.msg %></li>
+                            <% }) %>
+                        </ul>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="image">Imagen de perfil:</label>
-                    <input type="file" class="form-control-file" id="image" name="image" accept=".png, .jpg, .jpeg">
-                </div>
-                <div class="form-group">
-                    <div class="login-register_buttons">
-                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                <% } %>
+                <form class="admin-product" method="POST" action="/users/<%= user.id %>/edit?_method=PUT" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <h1 class="form-title">Editar perfil</h1>
                     </div>
-                </div>
-            </form>
-        </div>
-    </section>
+                    <div class="form-group">
+                        <label for="business_name">Nombre de tu negocio:</label>
+                        <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.business_name %>" required>
+                        <small class="form-text text-muted">
+                            Al menos 2 caracteres
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="first_name">Tu nombre:</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" value="<%= user.first_name %>" required>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="last_name">Tu apellido:</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" value="<%= user.last_name %>" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Imagen de perfil:</label>
+                        <input type="file" class="form-control-file" id="image" name="image" accept=".png, .jpg, .jpeg">
+                    </div>
+                    <div class="form-group">
+                        <div class="login-register_buttons">
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
 
     <!-- FOOTER -->
     <%- include("../partials/footer") %>

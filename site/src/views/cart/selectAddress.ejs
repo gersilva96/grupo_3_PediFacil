@@ -6,42 +6,44 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <%- include("../partials/header") %>
+    <div id="sticky-footer">
+        <!-- HEADER -->
+        <%- include("../partials/header") %>
 
-    <section class="body-section">
-        <div class="container">
-            <% if (typeof(errors) != "undefined") { %>
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        <% errors.forEach(errores => { %>
-                            <li><%= errores.msg %></li>
-                        <% }) %>
-                    </ul>
+        <section class="body-section">
+            <div class="container">
+                <% if (typeof(errors) != "undefined") { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <% errors.forEach(errores => { %>
+                                <li><%= errores.msg %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                <% } %>
+                <div class="admin-product">
+                    <form method="POST" action="/cart/add-existing-address">
+                        <div class="form-group">
+                            <h4 class="form-title">Usar una dirección anterior</h1>
+                        </div>
+                        <div class="form-group">
+                            <select name="selected_address" id="address" class="form-control" required>
+                                <option disabled selected>Seleccionar una dirección</option>
+                                <% addresses.forEach(address => { %>
+                                    <option value="<%= address.id %>"><%= `${address.first_line}, ${address.city}` %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-success btn-block">Finalizar compra</button>
+                        </div>
+                    </form>
+                        <h5 class="form-title mt-5 mb-0">ó</h5>
+                        <a href="/cart/add-address" class="btn btn-primary btn-block mt-5">Agregar otra dirección</a>
                 </div>
-            <% } %>
-            <div class="admin-product">
-                <form method="POST" action="/cart/purchase-we">
-                    <div class="form-group">
-                        <h4 class="form-title">Usar una dirección anterior</h1>
-                    </div>
-                    <div class="form-group">
-                        <select name="selected_address" id="address" class="form-control">
-                            <option disabled selected>Seleccionar una dirección</option>
-                            <% addresses.forEach(address => { %>
-                                <option value="<%= address.id %>"><%= `${address.first_line}, ${address.city}` %></option>
-                            <% }); %>
-                        </select>
-                    </div>
-                    <div class="form-group mt-4">
-                        <button type="submit" class="btn btn-success btn-block">Finalizar compra</button>
-                    </div>
-                </form>
-                    <h5 class="form-title mt-5 mb-0">ó</h5>
-                    <a href="/cart/add-address" class="btn btn-primary btn-block mt-5">Agregar otra dirección</a>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- FOOTER -->
     <%- include("../partials/footer") %>
