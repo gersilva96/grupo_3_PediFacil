@@ -37,7 +37,12 @@ const productsController = {
     root: async (req, res) => {        //GET - Muestra todos los productos
         try {
             const products = await db.Products.findAll();
-            res.render("products/products", {products, formatPrice, toThousand, user: req.session.userLogged});
+            if (req.query.success != undefined) {
+                const success = "¡Gracias por tu compra!";
+                res.render("products/products", {success, products, formatPrice, toThousand, user: req.session.userLogged});
+            } else {
+                res.render("products/products", {products, formatPrice, toThousand, user: req.session.userLogged});
+            }
         } catch(error) {
             res.render("error", {message: error, user: req.session.userLogged});
         }
@@ -50,20 +55,6 @@ const productsController = {
             });
             product.price = parseFloat(product.price);
             res.render("products/productDetail", {product, formatPrice, user: req.session.userLogged});
-        } catch(error) {
-            res.render("error", {message: error, user: req.session.userLogged});
-        }
-    },
-    orderHistory: async (req, res) => {    //GET - Historial de compra - Debe haber un usuario logueado - Debe tener rol de comprador
-        try {
-            res.render("products/productOrderHistory", {user: req.session.userLogged});
-        } catch(error) {
-            res.render("error", {message: error, user: req.session.userLogged});
-        }
-    },
-    orderHistoryDetail: async (req, res) => {      //GET - Detalle de historial de compra - Debe haber un usuario logueado - Debe tener rol de comprador
-        try {
-            res.render("products/productOrderHistoryDetail", {user: req.session.userLogged});
         } catch(error) {
             res.render("error", {message: error, user: req.session.userLogged});
         }
@@ -143,10 +134,15 @@ const productsController = {
                     id: req.params.id
                 }
             });
-            if (product.user_id == req.session.userLogged.id) {
-                res.render("products/productEdit", {product, categories, user: req.session.userLogged});
+            if (product == undefined || (product != undefined && product.user_id != req.session.userLogged.id)) {
+                const products = await db.Products.findAll({
+                    where: {
+                        user_id: req.session.userLogged.id
+                    }
+                });
+                res.render("products/productList", {products, mensaje: "No podés editar un producto que no te pertenece", user: req.session.userLogged});
             } else {
-                res.render("error", {accessDenied: "No podés editar un producto de otro vendedor", user: req.session.userLogged});
+                res.render("products/productEdit", {product, categories, user: req.session.userLogged});
             }
         } catch(error) {
             res.render("error", {message: error, user: req.session.userLogged});
@@ -174,12 +170,21 @@ const productsController = {
                     id: req.params.id
                 }
             });
-            if (productToEdit.user_id != req.session.userLogged.id) {
-                let newError = {
-                    value: '',
-                    msg: 'No podés editar un producto de otro vendedor'
-                };
-                errors.errors.push(newError);
+            if (productToEdit == undefined) {
+                const products = await db.Products.findAll({
+                    where: {
+                        user_id: req.session.userLogged.id
+                    }
+                });
+                res.render("products/productList", {products, errors: [{msg: "No podés editar un producto que no te pertenece"}], user: req.session.userLogged});
+            } else {
+                if (productToEdit.user_id != req.session.userLogged.id) {
+                    let newError = {
+                        value: '',
+                        msg: 'No podés editar un producto que no te pertenece'
+                    };
+                    errors.errors.push(newError);
+                }
             }
             if (errors.isEmpty() && !otherSellerProduct) {
                 await db.Products.update({
@@ -217,7 +222,7 @@ const productsController = {
                 }
             });
             let otherSellerProduct = false;
-            if (product.user_id != req.session.userLogged.id) {
+            if (product == undefined || (product != undefined && product.user_id != req.session.userLogged.id)) {
                 otherSellerProduct = true;
             }
             if (otherSellerProduct) {
@@ -226,7 +231,7 @@ const productsController = {
                         user_id: req.session.userLogged.id
                     }
                 });
-                res.render("products/productList", {mensaje: "No podés eliminar un producto de otro vendedor", products, user: req.session.userLogged});
+                res.render("products/productList", {mensaje: "No podés eliminar un producto que no te pertenece", products, user: req.session.userLogged});
             } else {
                 const imageFile = glob.sync(path.join(__dirname, "..", "..", "public", "images", "products", `img-prod-code${product.code}.{jpg,jpeg,png}`));
                 imageFile.forEach(file => fs.unlinkSync(file));
