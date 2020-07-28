@@ -217,22 +217,27 @@ body.no-scroll {
   background-color: #313A46;
   padding: 20px 0;
   transition: all 400ms;
-  height: 109px; }
-  @media (min-width: 475px) {
-    .footer {
-      height: 113px; } }
-  @media (min-width: 425px) {
-    .footer {
-      height: 120px; } }
-  @media (min-width: 576px) {
-    .footer {
-      height: 132px; } }
-  @media (min-width: 768px) {
-    .footer {
-      height: 80px; } }
-  @media (min-width: 992px) {
-    .footer {
-      height: 98px; } }
+  /*height: 109px;
+
+    @media (min-width: 475px) {
+        height: 113px;
+    }
+
+    @media (min-width: 425px) {
+        height: 120px;
+    }
+
+    @media ($mobile) {
+        height: 132px
+    }
+
+    @media ($tablet) {
+        height: 80px;
+    }
+
+    @media ($desktop) {
+        height: 98px;
+    }*/ }
   .footer .row {
     display: flex;
     align-items: center; }
@@ -309,30 +314,34 @@ body.no-scroll {
 .dark .footer {
   border-top: 2px solid #F9FBFE; }
 
-#sticky-footer {
-  min-height: 100vh;
-  margin-bottom: -109px; }
-  @media (min-width: 475px) {
-    #sticky-footer {
-      margin-bottom: -113px; } }
-  @media (min-width: 425px) {
-    #sticky-footer {
-      margin-bottom: -120px; } }
-  @media (min-width: 576px) {
-    #sticky-footer {
-      margin-bottom: -132px; } }
-  @media (min-width: 768px) {
-    #sticky-footer {
-      margin-bottom: -80px; } }
-  @media (min-width: 992px) {
-    #sticky-footer {
-      margin-bottom: -98px; } }
+/*#sticky-footer {
+    min-height: 100vh;
+    margin-bottom: -109px;
 
+    @media (min-width: 475px) {
+        margin-bottom: -113px;
+    }
+
+    @media (min-width: 425px) {
+        margin-bottom: -120px;
+    }
+
+    @media ($mobile) {
+        margin-bottom: -132px;
+    }
+
+    @media ($tablet) {
+        margin-bottom: -80px;
+    }
+
+    @media ($desktop) {
+        margin-bottom: -98px;
+    }
+}*/
 .body-section {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: white;
-  margin-bottom: 60px; }
+  background-color: white; }
   .body-section .banner .d-block {
     height: 50vh;
     padding: 3vh 0; }

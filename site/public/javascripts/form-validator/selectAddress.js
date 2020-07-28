@@ -2,7 +2,7 @@ const selectAddressForm = document.getElementById("select-address_form");
 const selectAddressField = selectAddressForm.querySelector(".form-control");
 console.log(selectAddressField)
 
-const selectAddressRegEx = /^[0-9]{1,3}$/;
+const selectAddressRegEx = /^[0-9]{1,6}$/;
 
 let selectAddressInput = false;
 

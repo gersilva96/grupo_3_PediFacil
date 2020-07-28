@@ -378,7 +378,7 @@ body.no-scroll {
     background-color: $gray;
     padding: 20px 0;
     transition: $transition;
-    height: 109px;
+    /*height: 109px;
 
     @media (min-width: 475px) {
         height: 113px;
@@ -398,7 +398,7 @@ body.no-scroll {
 
     @media ($desktop) {
         height: 98px;
-    }
+    }*/
 
     .row {
         display: flex;
@@ -584,7 +584,7 @@ body.no-scroll {
 }
 
 //Estilos de las demás secciones
-#sticky-footer {
+/*#sticky-footer {
     min-height: 100vh;
     margin-bottom: -109px;
 
@@ -607,13 +607,13 @@ body.no-scroll {
     @media ($desktop) {
         margin-bottom: -98px;
     }
-}
+}*/
 
 .body-section {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: white;
-    margin-bottom: 60px;
+    //margin-bottom: 60px;
 
     .banner {
 

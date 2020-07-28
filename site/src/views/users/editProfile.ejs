@@ -28,34 +28,46 @@
                         </ul>
                     </div>
                 <% } %>
-                <form class="admin-product" method="POST" action="/users/<%= user.id %>/edit?_method=PUT" enctype="multipart/form-data">
+                <form id="user-update_form" class="admin-product" method="POST" action="/users/<%= user.id %>/edit?_method=PUT" enctype="multipart/form-data">
                     <div class="form-group">
                         <h1 class="form-title">Editar perfil</h1>
                     </div>
                     <div class="form-group">
                         <label for="business_name">Nombre de tu negocio:</label>
-                        <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.business_name %>" required>
-                        <small class="form-text text-muted">
+                        <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.business_name %>">
+                        <div class="invalid-feedback">
                             Al menos 2 caracteres
-                        </small>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" required>
+                        <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>">
+                        <div class="invalid-feedback">
+                            El email ingresado es inválido
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-12 col-md-6 mb-3">
                             <label for="first_name">Tu nombre:</label>
-                            <input type="text" class="form-control" id="first_name" name="first_name" value="<%= user.first_name %>" required>
+                            <input type="text" class="form-control" id="first_name" name="first_name" value="<%= user.first_name %>">
+                            <div class="invalid-feedback">
+                                Debés ingresar tu nombre
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
                             <label for="last_name">Tu apellido:</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name" value="<%= user.last_name %>" required>
+                            <input type="text" class="form-control" id="last_name" name="last_name" value="<%= user.last_name %>">
+                            <div class="invalid-feedback">
+                                Debés ingresar tu apellido
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="image">Imagen de perfil:</label>
-                        <input type="file" class="form-control-file" id="image" name="image" accept=".png, .jpg, .jpeg">
+                        <input type="file" style="height: calc(1.5em + .75rem + 8px);" class="form-control" id="image" name="image" accept=".png, .jpg, .jpeg">
+                        <div class="invalid-feedback">
+                            Debe seleccionar una imagen válida
+                        </div>
                     </div>
                     <div class="form-group">
                         <div class="login-register_buttons">
@@ -72,6 +84,7 @@
 
     <!-- SCRIPTS -->
     <%- include("../partials/scripts") %>
+    <script src="/javascripts/form-validator/userUpdate.js"></script>
 </body>
 
 </html>

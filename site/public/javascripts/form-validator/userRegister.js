@@ -3,7 +3,7 @@ const registerFields = registerForm.querySelectorAll(".form-control");
 
 const registerRegEx = {
     role: /^[2-3]$/,
-	business_name: /^[a-zA-Z0-9\&\.\_\-\s]{2,50}$/,
+	business_name: /^[a-zA-Z0-9\&\.\_\-\sÀ-ÿ]{2,50}$/,
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     first_name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     last_name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
