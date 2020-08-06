@@ -24,8 +24,15 @@ $desktop-large: "min-width: 1200px";
     text-decoration: none;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -378,27 +385,7 @@ body.no-scroll {
     background-color: $gray;
     padding: 20px 0;
     transition: $transition;
-    /*height: 109px;
-
-    @media (min-width: 475px) {
-        height: 113px;
-    }
-
-    @media (min-width: 425px) {
-        height: 120px;
-    }
-
-    @media ($mobile) {
-        height: 132px
-    }
-
-    @media ($tablet) {
-        height: 80px;
-    }
-
-    @media ($desktop) {
-        height: 98px;
-    }*/
+    flex-shrink: 0;
 
     .row {
         display: flex;
@@ -584,30 +571,9 @@ body.no-scroll {
 }
 
 //Estilos de las demás secciones
-/*#sticky-footer {
-    min-height: 100vh;
-    margin-bottom: -109px;
-
-    @media (min-width: 475px) {
-        margin-bottom: -113px;
-    }
-
-    @media (min-width: 425px) {
-        margin-bottom: -120px;
-    }
-
-    @media ($mobile) {
-        margin-bottom: -132px;
-    }
-
-    @media ($tablet) {
-        margin-bottom: -80px;
-    }
-
-    @media ($desktop) {
-        margin-bottom: -98px;
-    }
-}*/
+#sticky-footer {
+    flex: 1 0 auto;
+}
 
 .body-section {
     padding-top: 40px;
