@@ -25,11 +25,6 @@ const mainController = {
                     }
                 }
             });
-
-            const exists = await db.Products.findOne({where: {code: 000123153}});
-            console.log(exists);
-
-
             return res.render("index", {products, formatPrice, user: req.session.userLogged});
         } catch(error) {
             return res.render("error", {message: error, user: req.session.userLogged})
