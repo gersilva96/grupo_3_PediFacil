@@ -4,19 +4,41 @@ const deleteAllItems = document.querySelector(".cart_clear_form");
 if (deleteOneItem.length != 0) {
     deleteOneItem.forEach(item => {
         item.addEventListener("submit", (e) => {
-            let confirma = confirm("¿Seguro querés eliminar este producto?");
-            if (!confirma) {
-                e.preventDefault();
-            }
+            e.preventDefault();
+            Swal.fire({
+                title: '¿En serio querés eliminar este producto? :(',
+                text: "",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.value) {
+                    item.submit();
+                }
+            });
         });
     });
 }
 
 if (deleteAllItems != undefined) {
     deleteAllItems.addEventListener("submit", (e) => {
-        let confirma = confirm("¿Seguro que querés vaciar el carrito?");
-        if (!confirma) {
-            e.preventDefault();
-        }
+        e.preventDefault();
+            Swal.fire({
+                title: '¿En serio querés vaciar el carrito? :(',
+                text: "",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, vaciar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.value) {
+                    deleteAllItems.submit();
+                }
+            });
     });
 }
