@@ -53,8 +53,12 @@ const productsController = {
                 where: {id: req.params.id},
                 include: [{association: "user"}]
             });
-            product.price = parseFloat(product.price);
-            res.render("products/productDetail", {product, formatPrice, user: req.session.userLogged});
+            if (product.stock > 0) {
+                product.price = parseFloat(product.price);
+                res.render("products/productDetail", {product, formatPrice, user: req.session.userLogged});
+            } else {
+                res.render("error"), {user: req.session.userLogged};
+            }
         } catch(error) {
             res.render("error", {message: error, user: req.session.userLogged});
         }
@@ -230,9 +234,9 @@ const productsController = {
                 });
                 res.render("products/productList", {mensaje: "No podés eliminar un producto que no te pertenece", products, user: req.session.userLogged});
             } else {
-                const imageFile = glob.sync(path.join(__dirname, "..", "..", "public", "images", "products", `img-prod-code${product.code}.{jpg,jpeg,png}`));
-                imageFile.forEach(file => fs.unlinkSync(file));
-                await db.Products.destroy({
+                await db.Products.update({
+                    stock: 0
+                }, {
                     where: {
                         id: req.params.id
                     }
