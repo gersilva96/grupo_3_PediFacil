@@ -786,6 +786,17 @@ body.no-scroll {
                                 color: #28a745;
                             }
                         }
+
+                        .product-actions_delete {
+
+                            button {
+                                outline: none;
+
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+                        }
                     }
 
                     .product-actions {

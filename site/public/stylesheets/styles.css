@@ -223,28 +223,7 @@ body.no-scroll {
   background-color: #313A46;
   padding: 20px 0;
   transition: all 400ms;
-  flex-shrink: 0;
-  /*height: 109px;
-
-    @media (min-width: 475px) {
-        height: 113px;
-    }
-
-    @media (min-width: 425px) {
-        height: 120px;
-    }
-
-    @media ($mobile) {
-        height: 132px
-    }
-
-    @media ($tablet) {
-        height: 80px;
-    }
-
-    @media ($desktop) {
-        height: 98px;
-    }*/ }
+  flex-shrink: 0; }
   .footer .row {
     display: flex;
     align-items: center; }
@@ -439,6 +418,10 @@ body.no-scroll {
       color: #073042; }
     .body-section .table-responsive .table tbody tr td a .fa-toggle-on {
       color: #28a745; }
+    .body-section .table-responsive .table tbody tr td .product-actions_delete button {
+      outline: none; }
+      .body-section .table-responsive .table tbody tr td .product-actions_delete button:focus {
+        outline: none; }
     .body-section .table-responsive .table tbody tr .product-actions {
       display: flex;
       flex-flow: row wrap;
