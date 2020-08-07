@@ -122,7 +122,8 @@ let usersController = {
             if (errors.isEmpty()) {
                 req.session.userLogged = user;
                 if (req.body.remember != undefined) {
-                    res.cookie("userLogged", user.id, {maxAge: Date.now()});
+                    const accessHash = await bcrypt.hash((user.id).toString(), 10);
+                    res.cookie("access_token", accessHash, {maxAge: Date.now()});
                 }
                 res.redirect("/users/profile");
             } else {
@@ -135,7 +136,7 @@ let usersController = {
     logout: async (req, res) => {          //POST - Cierra la sesión del usuario logueado - Debe haber un usuario logueado
         try {
             req.session.userLogged = undefined;
-            res.cookie("userLogged", undefined);
+            res.clearCookie("access_token");
             res.redirect("/users/login");
         } catch(error) {
             res.render("error", {message: error, user: req.session.userLogged});
