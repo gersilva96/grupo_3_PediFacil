@@ -30,7 +30,7 @@
                             <select name="selected_address" id="address" class="form-control custom-select" required>
                                 <option disabled selected>Seleccionar una dirección</option>
                                 <% addresses.forEach(address => { %>
-                                    <option value="<%= address.id %>"><%= `${address.first_line}, ${address.city}` %></option>
+                                    <option value="<%= address.id %>"><%= `${address.street} ${address.number}, ${address.city}, ${address.province}` %></option>
                                 <% }); %>
                             </select>
                             <div class="invalid-feedback">
