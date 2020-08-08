@@ -57,6 +57,13 @@ body.no-scroll {
     padding: 5px 0;
     border-bottom: 1px solid $light-gray;
     background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+
+    @media ($desktop) {
+        position: relative;
+    }
 
     .row {
         display: flex;
@@ -99,7 +106,7 @@ body.no-scroll {
 
                 .badge {
                     position: absolute;
-                    bottom: 0;
+                    top: -0.65em;
                     right: -0.65em;
                 }
 
@@ -941,6 +948,20 @@ body.no-scroll {
             display: flex;
             justify-content: flex-end;
         }
+
+        .user-edit-profile-buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+
+                button {
+                    padding: 0;
+                }
+            }
+        }
     }
 
     .form-foot {
@@ -1097,18 +1118,28 @@ body.no-scroll {
 
         .user_data {
 
-            .profile-link {
-                margin-bottom: 20px;
+            .links {
+                display: flex;
+                flex-direction: column;
+
+                a {
+                    margin-bottom: 20px;
+                }
+
+                .links_user {
+                    margin-bottom: 20px;
+                }
             }
         }
 
         @media ($tablet) {
             flex-flow: row wrap;
-            align-items: center;
-            margin-top: 60px;
+            justify-content: flex-start;
+            align-items: flex-start;
 
             .user_avatar {
                 width: 35%;
+                align-self: flex-start;
             }
 
             .user_data {

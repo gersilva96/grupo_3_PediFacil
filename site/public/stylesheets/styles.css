@@ -26,7 +26,13 @@ body.no-scroll {
 .header {
   padding: 5px 0;
   border-bottom: 1px solid #666666;
-  background-color: white; }
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 200; }
+  @media (min-width: 992px) {
+    .header {
+      position: relative; } }
   .header .row {
     display: flex;
     flex-direction: row;
@@ -52,7 +58,7 @@ body.no-scroll {
           color: #4285F4; }
         .header .row .header-icons-right .cart .badge {
           position: absolute;
-          bottom: 0;
+          top: -0.65em;
           right: -0.65em; }
         @media (min-width: 768px) {
           .header .row .header-icons-right .cart {
@@ -507,6 +513,13 @@ body.no-scroll {
       margin-top: 20px;
       display: flex;
       justify-content: flex-end; }
+    .body-section .admin-product .user-edit-profile-buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .body-section .admin-product .user-edit-profile-buttons a button {
+        padding: 0; }
   .body-section .form-foot {
     text-align: center;
     margin-top: 20px; }
@@ -611,15 +624,21 @@ body.no-scroll {
       align-self: center; }
       .body-section .user .user_avatar img {
         width: 100%; }
-    .body-section .user .user_data .profile-link {
-      margin-bottom: 20px; }
+    .body-section .user .user_data .links {
+      display: flex;
+      flex-direction: column; }
+      .body-section .user .user_data .links a {
+        margin-bottom: 20px; }
+      .body-section .user .user_data .links .links_user {
+        margin-bottom: 20px; }
     @media (min-width: 768px) {
       .body-section .user {
         flex-flow: row wrap;
-        align-items: center;
-        margin-top: 60px; }
+        justify-content: flex-start;
+        align-items: flex-start; }
         .body-section .user .user_avatar {
-          width: 35%; }
+          width: 35%;
+          align-self: flex-start; }
         .body-section .user .user_data {
           margin-left: 50px; } }
     @media (min-width: 992px) {
