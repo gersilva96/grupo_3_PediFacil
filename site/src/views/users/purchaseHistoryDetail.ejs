@@ -13,7 +13,7 @@
         <section class="body-section">
             <div class="container">
                 <h1 class="product-section_title"><i class="fas fa-history"></i> Historial de pedidos</h1>
-                <p>Descripición: <strong><% if (order.order_description == undefined) { %>-<% } else { %><%= order.order_description %><% } %></strong></p>
+                <p>Descripición: <strong><% if (order.order_description.length == 0) { %>-<% } else { %><%= order.order_description %><% } %></strong></p>
                 <p>Fecha: <strong><% if (order.order_date.getUTCDate() < 10) { %><%= `0${order.order_date.getUTCDate()}` %><% } else { %><%= order.order_date.getUTCDate() %><% } %>/<% if (order.order_date.getUTCMonth()+1 < 10) { %><%= `0${order.order_date.getUTCMonth()+1}` %><% } else { %><%= order.order_date.getUTCMonth()+1 %><% } %>/<%= order.order_date.getUTCFullYear() %></strong></p>
                 <p>Dirección: <strong><%= `${order.address.first_line}, ${order.address.city}` %></strong></p>
                 <p>Productos:</p>
@@ -33,7 +33,7 @@
                                 <tr>
                                     <td><div class="imagen"><img src="/images/products/<%= product.product.image %>" alt="producto"></div></td>
                                     <td style="min-width: 200px;"><a href="/products/detail/<%= product.product.id %>"><%= product.product.name %></a></td>
-                                    <td>$<%= product.product.price %></td>
+                                    <td><%= formatPrice(parseFloat(product.unit_cost)) %></td>
                                     <td><%= product.quantity %> u.</td>
                                     <td style="min-width: 150px;"><%= formatPrice((product.quantity * parseFloat(product.unit_cost))) %> </td>
                                 </tr>
