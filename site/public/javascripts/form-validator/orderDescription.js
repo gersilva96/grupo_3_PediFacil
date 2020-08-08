@@ -3,7 +3,7 @@ const orderDescriptionField = orderDescriptionForm.querySelector(".form-control"
 
 const orderDescriptionRegEx = /^.{0,50}$/;
 
-let orderDescriptionInput = false;
+let orderDescriptionInput = true;
 
 const check = () => {
     if (!orderDescriptionRegEx.test(orderDescriptionField.value)) {
