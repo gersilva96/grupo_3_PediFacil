@@ -206,14 +206,16 @@ let usersController = {
         try {
             const order = await db.Orders.findOne({
                 where: {order_number: req.params.number},
-                include: [{association: "address"}]
+                include: [{association: "address"}, {association: "status"}]
             });
             if (order == undefined) {
                 const orders = await db.Orders.findAll({where: {user_id: req.session.userLogged.id}});
                 res.render("users/purchaseHistory", {mensaje: "No se encontró la orden", orders, user: req.session.userLogged});
             } else {
                 if (order.user_id != req.session.userLogged.id) {
-                    const orders = await db.Orders.findAll({where: {user_id: req.session.userLogged.id}});
+                    const orders = await db.Orders.findAll({
+                        where: {user_id: req.session.userLogged.id}
+                    });
                     res.render("users/purchaseHistory", {mensaje: "No se encontró la orden", orders, user: req.session.userLogged});
                 } else {
                     const orderProducts = await db.Product_orders.findAll({
