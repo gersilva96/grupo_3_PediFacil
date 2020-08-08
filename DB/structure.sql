@@ -1,3 +1,9 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
 -- -----------------------------------------------------
 -- Schema pedifacil
 -- -----------------------------------------------------
@@ -46,10 +52,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE `pedifacil`.`addresses` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `first_line` VARCHAR(50) NOT NULL,
-  `second_line` VARCHAR(50) NULL DEFAULT NULL,
+  `street` VARCHAR(50) NOT NULL,
+  `number` INT UNSIGNED NOT NULL,
+  `floor` VARCHAR(40) NULL DEFAULT NULL,
+  `apartment` VARCHAR(40) NULL DEFAULT NULL,
   `between_streets` VARCHAR(100) NULL DEFAULT NULL,
   `city` VARCHAR(50) NOT NULL,
+  `province` VARCHAR(50) NOT NULL,
   `phone` BIGINT UNSIGNED NOT NULL,
   `user_id` INT UNSIGNED NOT NULL,
   `createdAt` TIMESTAMP NOT NULL,
@@ -146,8 +155,8 @@ CREATE TABLE `pedifacil`.`orders` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `order_number` INT UNSIGNED ZEROFILL NOT NULL,
   `order_date` DATETIME NOT NULL,
-  `order_total` DECIMAL(10,2),
-  `order_description` VARCHAR(50),
+  `order_total` DECIMAL(10,2) NULL DEFAULT NULL,
+  `order_description` VARCHAR(50) NULL DEFAULT NULL,
   `user_id` INT UNSIGNED NOT NULL,
   `address_id` INT UNSIGNED NOT NULL,
   `status_id` INT UNSIGNED NOT NULL,
@@ -192,3 +201,8 @@ CREATE TABLE `pedifacil`.`product_order` (
     FOREIGN KEY (`product_id`)
     REFERENCES `pedifacil`.`products` (`id`))
 ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
