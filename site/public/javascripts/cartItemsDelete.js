@@ -6,7 +6,7 @@ if (deleteOneItem.length != 0) {
         item.addEventListener("submit", (e) => {
             e.preventDefault();
             Swal.fire({
-                title: '¿En serio querés eliminar este producto? :(',
+                title: '¿En serio querés eliminar este producto?\n:(',
                 text: "",
                 icon: 'warning',
                 showCancelButton: true,
@@ -27,7 +27,7 @@ if (deleteAllItems != undefined) {
     deleteAllItems.addEventListener("submit", (e) => {
         e.preventDefault();
             Swal.fire({
-                title: '¿En serio querés vaciar el carrito? :(',
+                title: '¿En serio querés vaciar el carrito?\n:(',
                 text: "",
                 icon: 'warning',
                 showCancelButton: true,
