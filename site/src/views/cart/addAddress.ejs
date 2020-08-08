@@ -13,30 +13,49 @@
         <section class="body-section">
             <div class="container">
                 <% if (typeof(errors) != "undefined") { %>
-                    <div class="alert alert-danger" role="alert">
-                        <ul>
-                            <% errors.forEach(errores => { %>
-                                <li><%= errores.msg %></li>
-                            <% }) %>
-                        </ul>
-                    </div>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <% errors.forEach(errores => { %>
+                        <li><%= errores.msg %></li>
+                        <% }) %>
+                    </ul>
+                </div>
                 <% } %>
                 <form id="add-address_form" class="admin-product" method="POST" action="/cart/add-new-address">
                     <div class="form-group">
                         <h1 class="form-title">Agregar dirección</h1>
                     </div>
-                    <div class="form-group">
-                        <label for="first_line"><b>*</b> Primera línea:</label>
-                        <input type="text" class="form-control" id="first_line" name="first_line">
-                        <div class="invalid-feedback">
-                            Mínimo 5 caracteres, máximo 50
+                    <div class="form-row">
+                        <div class="col-6 mb-3">
+                            <label for="street"><b>*</b> Calle:</label>
+                            <input type="text" class="form-control" id="street" name="street">
+                            <div class="invalid-feedback">
+                                Al menos 2 caracteres, máximo 50
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="number"><b>*</b> Número:</label>
+                            <input type="number" class="form-control" id="number" name="number">
+                            <div class="invalid-feedback">
+                                Sólo números
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="second_line">Segunda línea:</label>
-                        <input type="text" class="form-control" id="second_line" name="second_line">
-                        <div class="invalid-feedback">
-                            No puede tener más de 50 caracteres
+                    <div class="form-row">
+                        <div class="col-6 mb-3">
+                            <label for="floor">Piso:</label>
+                            <input type="text" class="form-control" id="floor" name="floor">
+                            <div class="invalid-feedback">
+                                Máximo 40 caracteres
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="apartment">Dpto.:</label>
+                            <input type="text" class="form-control" id="apartment" name="apartment"
+                            >
+                            <div class="invalid-feedback">
+                                Máximo 40 caracteres
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -49,6 +68,13 @@
                     <div class="form-group">
                         <label for="city"><b>*</b> Ciudad:</label>
                         <input type="text" class="form-control" id="city" name="city">
+                        <div class="invalid-feedback">
+                            Mínimo 5 caracteres, máximo 50
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="province"><b>*</b> Provincia:</label>
+                        <input type="text" class="form-control" id="province" name="province">
                         <div class="invalid-feedback">
                             Mínimo 5 caracteres, máximo 50
                         </div>
