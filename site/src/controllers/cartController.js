@@ -197,10 +197,13 @@ const cartController = {
             const errors = validationResult(req);
             if (errors.isEmpty()) {
                 await db.Addresses.create({
-                    first_line: req.body.first_line,
-                    second_line: req.body.second_line,
+                    street: req.body.street,
+                    number: parseInt(req.body.number),
+                    floor: req.body.floor,
+                    apartment: req.body.apartment,
                     between_streets: req.body.between_streets,
                     city: req.body.city,
+                    province: req.body.province,
                     phone: req.body.phone,
                     user_id: req.session.userLogged.id
                 });
