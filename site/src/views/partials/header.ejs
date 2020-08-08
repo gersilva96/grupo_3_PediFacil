@@ -11,8 +11,8 @@
             <a href="/" class="logo col-6 col-md-4 col-lg-3"><img id="logo" src="/images/logo/logoColorH.svg" alt="Logo pedí fácil" class="logo_img" id="logo_img"></a>
             <div class="header-icons-right col-3">
                 <button class="search-toggle btn"><i class="fas fa-search"></i></button>
-                <% if (typeof(user) != "undefined" && (user.role_id == 3 || user.role_id == 1)) { %>
-                    <a href="/cart" class="cart"><i class="fas fa-shopping-cart"></i><!--<span class="badge badge-pill badge-info">1</span>--></a>
+                <% if (typeof(user) != "undefined" && (user.role_id == 3)) { %>
+                    <a href="/cart" class="cart"><i class="fas fa-shopping-cart"></i><!--<span class="badge badge-pill badge-danger">1</span>--></a>
                 <% } %>
             </div>
             <div class="col-lg-2">
@@ -33,9 +33,11 @@
                 </div>
                 <% if (typeof(user) != "undefined") { %>
                     <a href="/users/profile"><i class="fas fa-user-circle"></i><span class="user-account-text">Mi cuenta</span></a>
-                    <% if (user.role_id <= 2) { %>
+                    <% if (user.role_id == 1) { %>
+                        <a href="http://localhost:3000/" target="_blank"><i class="fas fa-chart-line"></i><span class="admin-products-text">Dashboard</span></a>
+                    <% } else if (user.role_id == 2) { %>
                         <a href="/products"><i class="fas fa-user-cog"></i><span class="admin-products-text">Productos</span></a>
-                    <% } else { %>
+                    <% } else if (user.role_id == 3) { %>
                         <a href="/cart"><i class="fas fa-shopping-cart"></i><span class="shopping-text">Mi compra</span></a>
                     <% } %>
                 <% } else { %>
