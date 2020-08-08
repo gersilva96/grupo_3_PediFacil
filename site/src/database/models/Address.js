@@ -9,17 +9,28 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        first_line: {
+        street: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        second_line: {
-            type: dataTypes.STRING(50)
+        number: {
+            type: dataTypes.INTEGER(50),
+            allowNull: false
+        },
+        floor: {
+            type: dataTypes.STRING(40)
+        },
+        apartment: {
+            type: dataTypes.STRING(40)
         },
         between_streets: {
             type: dataTypes.STRING(100)
         },
         city: {
+            type: dataTypes.STRING(50),
+            allowNull: false
+        },
+        province: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
