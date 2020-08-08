@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+    const metaThemeColor = document.querySelector("meta.theme-color");
     const body = document.querySelector("body");
     const menuBtn = document.querySelector(".menu");
     const mainNav = document.getElementById("main-nav");
@@ -10,22 +11,45 @@ window.addEventListener("load", () => {
     const darkModeBtn = document.getElementById("darkmode-btn");
     const darkModeSwitch = document.getElementById("darkmode-switch");
 
-    darkModeBtn.addEventListener("click", () => {darkMode()});
+    let darkModeStatus = window.localStorage.getItem("darkmode");
+    if (darkModeStatus === null) {
+        window.localStorage.setItem("darkmode", "inactive");
+    }
 
-    darkModeSwitch.addEventListener("click", () => {darkMode()});
+    const setDarkMode = () => {
+        logo.src = "/images/logo/logoWhiteH.svg";
+        metaThemeColor.setAttribute("content", "#313A46");
+        window.localStorage.setItem("darkmode", "active");
+        body.classList.add("dark");
+        darkModeSwitch.setAttribute("checked", "");
+    }
 
-    let darkModeEnabled;
+    const unsetDarkMode = () => {
+        logo.src = "/images/logo/logoColorH.svg";
+        metaThemeColor.setAttribute("content", "#FFFFFF");
+        window.localStorage.setItem("darkmode", "inactive");
+        body.classList.remove("dark");
+        darkModeSwitch.removeAttribute("checked");
+    }
 
-    const darkMode = () => {
-        body.classList.toggle("dark");
-        if (darkModeEnabled == undefined || !darkModeEnabled) {
-            logo.src = "/images/logo/logoWhiteH.svg";
-            darkModeEnabled = true;
-        } else {
-            logo.src = "/images/logo/logoColorH.svg";
-            darkModeEnabled = false;
+    const toggleDarkMode = () => {
+        let enabled = window.localStorage.getItem("darkmode");
+        if (enabled == "inactive") {
+            setDarkMode()
+        } else if (enabled == "active") {
+            unsetDarkMode();
         }
-    };
+    }
+
+    (darkModeStatus == "active") && setDarkMode();
+    (darkModeStatus == "inactive") && unsetDarkMode();
+
+    darkModeBtn.addEventListener("click", () => {
+        toggleDarkMode();
+        menuBtn.click();
+    });
+
+    darkModeSwitch.addEventListener("click", () => {toggleDarkMode()});
 
     menuBtn.addEventListener("click", () => {
         menuBtn.classList.toggle('opened');
@@ -37,7 +61,7 @@ window.addEventListener("load", () => {
     searchToggle.addEventListener("click", () => {
         lens.style.color = "#4285F4";
         setTimeout(() => {
-            if (!darkModeEnabled) {
+            if (!darkModeStatus) {
                 lens.style.color = "#313A46";
             } else {
                 lens.style.color = "#F9FBFE";
