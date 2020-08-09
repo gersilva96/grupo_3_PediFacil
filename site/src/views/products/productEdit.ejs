@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group">
                         <label for="category">Categoría:</label>
-                        <select class="form-control" name="category" id="category">
+                        <select class="custom-select" name="category" id="category">
                             <option disabled value="">Seleccionar categoría</option>
                             <% categories.forEach(category => { %>
                             <option value="<%= category.id %>" <% if (category.id == product.category_id) { %> selected <% } %>><%= category.name %></option>

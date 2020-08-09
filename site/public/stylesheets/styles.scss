@@ -34,8 +34,8 @@ html {
 body {
     background-color: white;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 a {
@@ -90,6 +90,7 @@ body.no-scroll {
                 padding: 0;
                 margin-right: 15px;
                 position: relative;
+                color: $gray;
 
                 i {
                     color: $gray;
@@ -121,6 +122,7 @@ body.no-scroll {
             .search-toggle {
                 padding: 0;
                 margin-right: 15px;
+                color: $gray;
 
                 i {
                     color: $gray;
@@ -395,7 +397,7 @@ body.no-scroll {
     background-color: $gray;
     padding: 20px 0;
     transition: $transition;
-    flex-shrink: 0;
+    flex-shrink: 0 !important;
 
     .row {
         display: flex;
@@ -456,9 +458,20 @@ body.no-scroll {
 
 .dark {
     background-color: $gray;
+    color: $white-blue;
 
-    .body-section {
+    input, input:focus, .input-group-append span, .input-group-prepend span, textarea, textarea:focus {
+        color: $white-blue;
         background-color: $gray;
+    }
+
+    .error {
+        color: $white-blue !important;
+    }
+
+    .custom-select, .custom-select:focus {
+        background-color: $gray;
+        color: $white-blue;
     }
 
     .header {
@@ -580,21 +593,162 @@ body.no-scroll {
         }
     }
 
+    .body-section {
+        background-color: $gray;
+
+        .products-wrapper {
+
+            .products-title {
+                color: $white-blue;
+            }
+
+            .productbox {
+                background-color: $gray;
+
+                a {
+
+                    .productbox_effect {
+
+                        .card {
+                            background-color: $gray;
+
+                            .card-body {
+
+                                .productbox_price {
+
+                                    .card-title {
+                                        color: $white-blue;
+                                    }
+
+                                    .productbox_price_discount {
+                                        font-weight: 700;
+                                    }
+                                }
+
+                                .card-text {
+                                    color: $white-blue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .product-section_title {
+            color: $white-blue;
+        }
+
+        .table-responsive {
+
+            .table {
+
+                tbody {
+
+                    tr {
+                        color: $white-blue;
+
+                        #order_desc, td {
+
+                            a {
+                                color: $white-blue !important;
+
+                                &:hover {
+                                    color: $light-blue !important;
+                                }
+
+                                i {
+                                    color: $white-blue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .product-detail_h2 {
+            color: $white-blue;
+        }
+
+        .cart_title {
+
+            h1 {
+                color: $white-blue;
+            }
+        }
+
+        .cart {
+
+            .cart-left {
+
+                .cart-left_products {
+
+                    .cart-item {
+
+                        .cart-item_content {
+
+                            .cart-item_content_detail {
+
+                                a {
+                                    color: $white-blue;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .cart-right {
+
+                .cart-right-summary {
+
+                    .cart-right-summary_subtotal {
+                        color: $white-blue;
+                    }
+
+                    .cart-right-summary_total {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
     .footer {
-        border-top: 2px solid $white-blue;
+        border-top: 1px solid $white-blue;
     }
 }
 
 //Estilos de las demás secciones
 #sticky-footer {
-    flex: 1 0 auto;
+    flex: 1 0 auto !important;
 }
 
 .body-section {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: white;
-    //margin-bottom: 60px;
+
+    &#home {
+        padding: 0;
+
+        .carousel-inner {
+
+            .carousel-item {
+                max-width: 100vw;
+
+                a {
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 
     .banner {
 
@@ -755,7 +909,7 @@ body.no-scroll {
                         }
 
                         .imagen {
-                            background-color: gray;
+                            background-color: none;
                             width: 30px;
                             height: 30px;
 
@@ -1178,10 +1332,12 @@ body.no-scroll {
         h1 {
             margin-top: 40px;
             text-align: center;
+            font-weight: 800;
         }
 
         h2 {
             text-align: center;
+            font-weight: 600;
         }
 
         a {

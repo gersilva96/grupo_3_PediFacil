@@ -24,6 +24,7 @@ window.addEventListener("load", () => {
         window.localStorage.setItem("darkmode", "active");
         body.classList.add("dark");
         darkModeSwitch.setAttribute("checked", "");
+        lens.style.color = "#F9FBFE";
     }
 
     const unsetDarkMode = () => {
@@ -33,6 +34,7 @@ window.addEventListener("load", () => {
         window.localStorage.setItem("darkmode", "inactive");
         body.classList.remove("dark");
         darkModeSwitch.removeAttribute("checked");
+        lens.style.color = "#313A46";
     }
 
     const toggleDarkMode = () => {
@@ -64,9 +66,10 @@ window.addEventListener("load", () => {
     searchToggle.addEventListener("click", () => {
         lens.style.color = "#4285F4";
         setTimeout(() => {
-            if (!darkModeStatus) {
+            let dm = window.localStorage.getItem("darkmode");
+            if (dm == "inactive") {
                 lens.style.color = "#313A46";
-            } else {
+            } else if (dm == "active") {
                 lens.style.color = "#F9FBFE";
             }
         }, 100);
