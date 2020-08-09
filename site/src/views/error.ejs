@@ -13,19 +13,23 @@
         <div class="body-section">
             <div class="container">
                 <div class="error">
-                    <p><i class="fas fa-exclamation-triangle"></i></p>
-                    <% if (typeof(error) != "undefined") { %>
-                        <p><%= error.status %></p>
-                        <span>Ups! Error al tratar de ingresar a: <b><%= path %></b></span>
-                    <% } %>
-                    <% if (typeof(accessDenied) != "undefined") { %>
+                    <!--<p><i class="fas fa-exclamation-triangle"></i></p>
+                    <%// if (typeof(error) != "undefined") { %>
+                        <p><%=// error.status %></p>
+                        <span>Ups! Error al tratar de ingresar a: <b><%=// path %></b></span>
+                    <%// } %>
+                    <%// if (typeof(accessDenied) != "undefined") { %>
                         <span><b>Acceso denegado</b></span>
-                        <span><%= accessDenied %></span>
-                    <% } %>
-                    <% if (typeof(message) != "undefined") { %>
+                        <span><%=// accessDenied %></span>
+                    <%// } %>
+                    <%// if (typeof(message) != "undefined") { %>
                         <span>ERROR</span>
-                        <span><b><%= message %></b></span>
-                    <% } %>
+                        <span><b><%=// message %></b></span>
+                    <%// } %>-->
+                    <img src="/images/404.svg" alt="404 error" id="404error">
+                    <h1>¡Ups!</h1>
+                    <h2>Parece que esta página no existe</h2>
+                    <a href="/products/all-products"><button type="button" class="btn btn-info btn-lg"><i class="fas fa-chevron-left"></i> Ver más productos</button></a>
                 </div>
             </div>
         </div>

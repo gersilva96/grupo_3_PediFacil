@@ -269,45 +269,48 @@ body.no-scroll {
         .footer .row .redes {
           margin: 0; } }
 
-.dark .header {
-  border-bottom: 1px solid #F9FBFE;
+.dark {
   background-color: #313A46; }
-  .dark .header .row .menu svg .line {
-    stroke: #F9FBFE;
-    transition: all 400ms; }
-  .dark .header .row .header-icons-right .search-toggle i {
-    color: #F9FBFE; }
-  .dark .header .row .header-icons-right .search-toggle:hover i {
-    color: #4285F4; }
-  .dark .header .row .header-icons-right .cart i {
-    color: #F9FBFE; }
-  .dark .header .row .header-icons-right .cart:hover i {
-    color: #4285F4; }
-  .dark .header .row .products-link i {
-    color: #F9FBFE; }
-  .dark .header .row .products-link span {
-    color: #F9FBFE; }
-  .dark .header .row .products-link:hover i, .dark .header .row .products-link:hover span {
-    color: #4285F4; }
-  .dark .header .row .search-bar .input-group input {
-    background-color: #313A46;
-    color: #F9FBFE; }
-    .dark .header .row .search-bar .input-group input::placeholder {
-      color: #F9FBFE; }
-  .dark .header .row .search-bar .input-group .input-group-append button {
+  .dark .body-section {
     background-color: #313A46; }
-    .dark .header .row .search-bar .input-group .input-group-append button i {
+  .dark .header {
+    border-bottom: 1px solid #F9FBFE;
+    background-color: #313A46; }
+    .dark .header .row .menu svg .line {
+      stroke: #F9FBFE;
+      transition: all 400ms; }
+    .dark .header .row .header-icons-right .search-toggle i {
       color: #F9FBFE; }
-  @media (min-width: 992px) {
-    .dark .header .row .main-nav .darkmode-switch .custom-control-label i {
+    .dark .header .row .header-icons-right .search-toggle:hover i {
+      color: #4285F4; }
+    .dark .header .row .header-icons-right .cart i {
       color: #F9FBFE; }
-    .dark .header .row .main-nav a {
+    .dark .header .row .header-icons-right .cart:hover i {
+      color: #4285F4; }
+    .dark .header .row .products-link i {
       color: #F9FBFE; }
-      .dark .header .row .main-nav a:hover {
-        color: #4285F4; } }
-
-.dark .footer {
-  border-top: 2px solid #F9FBFE; }
+    .dark .header .row .products-link span {
+      color: #F9FBFE; }
+    .dark .header .row .products-link:hover i, .dark .header .row .products-link:hover span {
+      color: #4285F4; }
+    .dark .header .row .search-bar .input-group input {
+      background-color: #313A46;
+      color: #F9FBFE; }
+      .dark .header .row .search-bar .input-group input::placeholder {
+        color: #F9FBFE; }
+    .dark .header .row .search-bar .input-group .input-group-append button {
+      background-color: #313A46; }
+      .dark .header .row .search-bar .input-group .input-group-append button i {
+        color: #F9FBFE; }
+    @media (min-width: 992px) {
+      .dark .header .row .main-nav .darkmode-switch .custom-control-label i {
+        color: #F9FBFE; }
+      .dark .header .row .main-nav a {
+        color: #F9FBFE; }
+        .dark .header .row .main-nav a:hover {
+          color: #4285F4; } }
+  .dark .footer {
+    border-top: 2px solid #F9FBFE; }
 
 #sticky-footer {
   flex: 1 0 auto; }
@@ -654,6 +657,15 @@ body.no-scroll {
     align-items: center;
     color: #313A46;
     margin: 80px 0; }
+    .body-section .error img {
+      max-height: 250px; }
+    .body-section .error h1 {
+      margin-top: 40px;
+      text-align: center; }
+    .body-section .error h2 {
+      text-align: center; }
+    .body-section .error a {
+      margin-top: 40px; }
     .body-section .error p i {
       font-size: 100px;
       margin-bottom: 30px; }

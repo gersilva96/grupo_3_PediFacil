@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
     const lens = searchToggle.querySelector("i");
     const darkModeBtn = document.getElementById("darkmode-btn");
     const darkModeSwitch = document.getElementById("darkmode-switch");
+    const imgError = document.getElementById("404error");
 
     let darkModeStatus = window.localStorage.getItem("darkmode");
     if (darkModeStatus === null) {
@@ -18,6 +19,7 @@ window.addEventListener("load", () => {
 
     const setDarkMode = () => {
         logo.src = "/images/logo/logoWhiteH.svg";
+        (imgError != undefined) && (imgError.src = "/images/404dark.svg");
         metaThemeColor.setAttribute("content", "#313A46");
         window.localStorage.setItem("darkmode", "active");
         body.classList.add("dark");
@@ -26,6 +28,7 @@ window.addEventListener("load", () => {
 
     const unsetDarkMode = () => {
         logo.src = "/images/logo/logoColorH.svg";
+        (imgError != undefined) && (imgError.src = "/images/404.svg");
         metaThemeColor.setAttribute("content", "#FFFFFF");
         window.localStorage.setItem("darkmode", "inactive");
         body.classList.remove("dark");

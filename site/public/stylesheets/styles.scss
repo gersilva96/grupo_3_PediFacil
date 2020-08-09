@@ -455,6 +455,11 @@ body.no-scroll {
 }
 
 .dark {
+    background-color: $gray;
+
+    .body-section {
+        background-color: $gray;
+    }
 
     .header {
         border-bottom: 1px solid $white-blue;
@@ -1165,6 +1170,23 @@ body.no-scroll {
         align-items: center;
         color: $gray;
         margin: 80px 0;
+
+        img {
+            max-height: 250px;
+        }
+
+        h1 {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        a {
+            margin-top: 40px;
+        }
 
         p {
             i {
