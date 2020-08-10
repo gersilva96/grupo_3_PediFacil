@@ -28,11 +28,11 @@ body.no-scroll {
 
 .header {
   padding: 5px 0;
-  border-bottom: 1px solid #666666;
   background-color: white;
   position: sticky;
   top: 0;
-  z-index: 200; }
+  z-index: 200;
+  box-shadow: 0 0 5px #666666; }
   @media (min-width: 992px) {
     .header {
       position: relative; } }
@@ -283,8 +283,8 @@ body.no-scroll {
     background-color: #313A46;
     color: #F9FBFE; }
   .dark .header {
-    border-bottom: 1px solid #F9FBFE;
-    background-color: #313A46; }
+    background-color: #313A46;
+    box-shadow: 0 0 10px #ffffff40; }
     .dark .header .row .menu svg .line {
       stroke: #F9FBFE;
       transition: all 400ms; }

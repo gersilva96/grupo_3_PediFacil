@@ -58,11 +58,11 @@ body.no-scroll {
 
 .header {
     padding: 5px 0;
-    border-bottom: 1px solid $light-gray;
     background-color: white;
     position: sticky;
     top: 0;
     z-index: 200;
+    box-shadow: 0 0 5px $light-gray;
 
     @media ($desktop) {
         position: relative;
@@ -475,8 +475,8 @@ body.no-scroll {
     }
 
     .header {
-        border-bottom: 1px solid $white-blue;
         background-color: $gray;
+        box-shadow: 0 0 10px #ffffff40;
 
         .row {
 
