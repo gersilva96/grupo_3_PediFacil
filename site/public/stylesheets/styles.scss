@@ -714,6 +714,17 @@ body.no-scroll {
                 }
             }
         }
+
+        .form-foot {
+
+            a {
+                color: $white-blue;
+
+                &:hover {
+                    color: $light-blue;
+                }
+            }
+        }
     }
 
     .footer {

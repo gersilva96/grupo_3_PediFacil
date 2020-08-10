@@ -353,6 +353,10 @@ body.no-scroll {
       color: #F9FBFE; }
     .dark .body-section .cart .cart-right .cart-right-summary .cart-right-summary_total {
       font-weight: 600; }
+    .dark .body-section .form-foot a {
+      color: #F9FBFE; }
+      .dark .body-section .form-foot a:hover {
+        color: #4285F4; }
   .dark .footer {
     border-top: 1px solid #F9FBFE; }
 
