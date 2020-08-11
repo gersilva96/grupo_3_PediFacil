@@ -1,6 +1,6 @@
 module.exports = {
   "development": {
-    "username": "root",
+    "username": "USER",
     "password": "PASSWORD",
     "database": "pedifacil",
     "host": "localhost",

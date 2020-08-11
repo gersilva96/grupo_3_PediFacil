@@ -13,7 +13,8 @@ body {
   background-color: white;
   height: 100%;
   display: flex !important;
-  flex-direction: column !important; }
+  flex-direction: column !important;
+  justify-content: space-between !important; }
 
 a {
   color: black;
@@ -349,6 +350,8 @@ body.no-scroll {
     .dark .body-section .cart .cart-left .cart-left_products .cart-item .cart-item_content .cart-item_content_detail a {
       color: #F9FBFE;
       font-weight: 600; }
+    .dark .body-section .cart .cart-left .cart-left_products .cart-item .cart-item_delete i {
+      color: #F9FBFE; }
     .dark .body-section .cart .cart-right .cart-right-summary .cart-right-summary_subtotal {
       color: #F9FBFE; }
     .dark .body-section .cart .cart-right .cart-right-summary .cart-right-summary_total {
@@ -375,9 +378,31 @@ body.no-scroll {
         width: 100%; }
         .body-section#home .carousel-inner .carousel-item a img {
           width: 100%; }
-  .body-section .banner .d-block {
-    height: 50vh;
-    padding: 3vh 0; }
+    .body-section#home .banner {
+      background-color: #4285F4;
+      margin: 0; }
+      .body-section#home .banner .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .body-section#home .banner .container .element {
+          color: white;
+          margin: 20px auto;
+          display: block;
+          width: 200px; }
+          .body-section#home .banner .container .element h2 {
+            text-align: center;
+            margin: 0; }
+          .body-section#home .banner .container .element p {
+            text-align: center;
+            margin: 0; }
+          @media (min-width: 768px) {
+            .body-section#home .banner .container .element {
+              width: 250px; } }
+        @media (min-width: 576px) {
+          .body-section#home .banner .container {
+            flex-direction: row; } }
   .body-section .form-title {
     text-align: center;
     font-weight: 600;
