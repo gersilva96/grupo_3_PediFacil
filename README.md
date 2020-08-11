@@ -4,7 +4,7 @@
 
 **Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronómica.**
 
-**<a href="bit.ly/pedifacil">DEMO DEL PROYECTO</a>**
+**<a href="https://bit.ly/pedifacil" target="_blank">DEMO DEL PROYECTO</a>**
 
 # Problema
 
