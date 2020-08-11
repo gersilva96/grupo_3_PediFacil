@@ -4,6 +4,8 @@
 
 **Pedí Fácil es una plataforma de gestión de pedidos creada para optimizar, modernizar y agilizar el proceso de compra en la industria gastronómica.**
 
+**<a href="bit.ly/pedifacil">DEMO DEL PROYECTO</a>**
+
 # Problema
 
 * #### Restaurantes
@@ -100,7 +102,7 @@
 
 <img align="left" width="70" height="70" src="design/images/README_team1.png">
 > Germán Silva<br>
-- Futuro Full Stack Web Developer<br>
+- Full Stack Web Developer<br>
 - Estudiante de Lic. en Ciencias de la Computación<br>
 <h6></h6>
 <img align="left" width="70" height="70" src="design/images/README_team3.png">
