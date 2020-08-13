@@ -78,6 +78,15 @@
   - Plataforma de gestión de compras en latinoamerica
   ```
 
+# Tecnologías utilizadas
+
+- **HTML** y **CSS** para el maquetado, aprovechando las utilidades de **SASS**
+- **EJS** como Template Engine (motor de plantillas)
+- **JavaScript** para validación de formularios, interacción con el usuario, y scripts de manipulación del DOM
+- **NodeJS** y **Express** para el servidor, utilizando el patrón **MVC** para una mejor organización del mismo
+- **SQL** como base de datos relacional, utilizando **UML** para el diseño y **MySQL** para interactuar con la misma
+- **Sequelize** como **ORM** para representar nuestra DB en código
+
 # Diseño
 
 ### Logo
